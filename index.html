@@ -4,15 +4,21 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Milind Saxena · Data Analyst</title>
-  <meta name="description" content="Data analyst portfolio: Toronto's subway delays, a broken A/B test, profit-based churn targeting, Express Entry cutoffs, India's UPI-vs-cash paradox and Delhi's smog, answered with SQL, Python and statistics.">
+  <meta name="description" content="Milind Saxena, data analyst (product and business analytics): SQL, Python and statistics turned into business decisions. Churn targeting, a broken A/B test, Toronto's subway delays and IPL auction value.">
   <meta property="og:title" content="Milind Saxena · Data Analyst">
-  <meta property="og:description" content="Answering the questions people argue about, with data: why Toronto's subway is late, who's worth saving from churn, what Express Entry really takes, and why India still holds so much cash.">
+  <meta property="og:description" content="I turn messy data into business decisions: who to send a retention offer, whether an A/B test can be trusted, what's really delaying Toronto's subway, and which IPL buys were worth the money.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://boredmongoose.github.io/">
+  <meta property="og:image" content="https://boredmongoose.github.io/assets/social-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Milind Saxena, data analyst: I turn messy data into business decisions. A dot chart of Toronto subway delays since 2014.">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script>
     // mark JS as available (enables the fade-in), and apply a saved theme before first paint
@@ -31,8 +37,8 @@
       </a>
       <nav aria-label="Main">
         <a href="#work">Work</a>
-        <a href="#all-projects">All projects</a>
-        <a href="#skills">Skills</a>
+        <a href="#sql">SQL</a>
+        <a href="projects/retention-dashboard.html">Dashboard</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
         <button class="theme-toggle" type="button" aria-label="Switch between light and dark theme">
@@ -44,373 +50,347 @@
   </header>
 
   <main id="top">
-    <!-- Intro -->
+    <!-- Intro: who, what role, what I can do -->
     <section class="hero wrap">
-      <div class="hero-main">
-        <p class="eyebrow">Data analyst · SQL · Python · Statistics</p>
-        <h1>Messy data in. <span class="h1-accent">Clear decisions</span> out.</h1>
-        <p class="lede">
-          I'm Milind. I clean the data nobody wants to touch, try to prove my own answers wrong before I trust them,
-          and explain the result in plain English. Open to entry-level analyst roles: remote in India, or Toronto/GTA.
-        </p>
-        <ul class="proof" aria-label="At a glance">
-          <li><strong>7</strong><span>end-to-end projects, all code public</span></li>
-          <li><strong>56</strong><span>automated data-quality checks</span></li>
-          <li><strong>267k</strong><span>messy records cleaned in one project</span></li>
-        </ul>
-        <div class="hero-actions">
-          <div class="cta">
-            <a class="btn btn-primary" href="#work">See my work</a>
-            <a class="btn" href="assets/Milind_Saxena_Resume.pdf">Résumé (PDF)</a>
-          </div>
-          <ul class="social" aria-label="Profiles">
-            <li><a href="https://github.com/BoredMongoose">GitHub</a></li>
-            <li><a href="https://www.linkedin.com/in/milind-saxena-54399722a">LinkedIn</a></li>
-            <li><a href="mailto:milind.sax01@gmail.com">milind.sax01@gmail.com</a></li>
+      <div class="hero-grid">
+        <div class="hero-main">
+          <p class="eyebrow">Data Analyst · Product &amp; Business Analytics</p>
+          <h1>I turn messy data into <span class="h1-accent">business decisions</span>.</h1>
+          <p class="lede">
+            I'm Milind. I use SQL, Python and statistics to work out why something is happening, what to do about it,
+            and what it's worth. Open to entry-level analyst roles: remote in India, or Toronto/GTA.
+          </p>
+          <ul class="skill-chips" aria-label="Core skills">
+            <li>SQL</li><li>Python</li><li>pandas</li><li>Statistics</li><li>A/B testing</li><li>Power BI</li>
           </ul>
+          <div class="hero-actions">
+            <div class="cta">
+              <a class="btn btn-primary" href="#work">See my work</a>
+              <a class="btn" href="assets/Milind_Saxena_Resume.pdf">Résumé (PDF)</a>
+            </div>
+            <ul class="social" aria-label="Profiles">
+              <li><a href="https://github.com/BoredMongoose">GitHub</a></li>
+              <li><a href="https://www.linkedin.com/in/milind-saxena-54399722a">LinkedIn</a></li>
+              <li><a href="mailto:milind.sax01@gmail.com">milind.sax01@gmail.com</a></li>
+            </ul>
+          </div>
         </div>
+
+        <!-- Animated chart: the same dots re-form into a chart from each project -->
+        <figure class="hero-viz" aria-label="Animated charts from three of my projects">
+          <div class="viz-tabs" role="group" aria-label="Choose a project">
+            <button type="button" class="viz-tab" aria-pressed="true">Subway delays</button>
+            <button type="button" class="viz-tab" aria-pressed="false">Customer churn</button>
+            <button type="button" class="viz-tab" aria-pressed="false">IPL auction</button>
+          </div>
+          <div class="viz-stage">
+            <canvas role="img" aria-label="Unit chart of Toronto subway delay minutes per year, 2014 to 2025."></canvas>
+            <div class="viz-tip" hidden></div>
+          </div>
+          <figcaption>
+            <p class="viz-q">What's really causing Toronto's subway delays?</p>
+            <p class="viz-a">Delays rose 85% since 2014, and three-quarters of the increase is passengers and the public, not trains.</p>
+            <p class="viz-legend">
+              <span class="viz-item"><span class="key key-hi" aria-hidden="true"></span><span class="viz-hi">Passengers &amp; public</span></span>
+              <span class="viz-item"><span class="key key-lo" aria-hidden="true"></span><span class="viz-lo">Trains, crews &amp; other</span></span>
+              <span class="viz-note">Each dot is 1,000 minutes of delay</span>
+            </p>
+            <a class="viz-link more" href="projects/ttc.html">See the analysis <span aria-hidden="true">→</span></a>
+          </figcaption>
+        </figure>
       </div>
     </section>
 
-    <!-- showcase:start -->
-    <section class="showcase" id="showcase" aria-roledescription="carousel" aria-label="All projects">
-      <div class="showcase-stage">
-        <button type="button" class="sc-arrow sc-prev" aria-label="Previous project"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
-        <ul class="sc-track">
-        <li class="sc-card" data-index="0" aria-roledescription="slide" aria-label="1 of 9: TTC subway delays">
-          <div class="sc-frame" tabindex="0">
-            <img src="assets/cards/ttc.webp" width="1280" height="800" alt="Chart: minutes of delay on Toronto&#x27;s subway rising from about 38,000 a year in 2014–16 to 71,000 in 2023–25.">
-            <div class="sc-label"><span class="sc-badge">Featured</span><span class="sc-title">TTC subway delays</span><span class="sc-hint" aria-hidden="true">Hover for details</span><span class="sc-label-q" aria-hidden="true">Toronto&#x27;s subway delays nearly doubled. What&#x27;s behind them?</span></div>
-            <div class="sc-info">
-              <p class="sc-q"><span>Question</span>Toronto&#x27;s subway delays nearly doubled. What&#x27;s behind them?</p>
-              <p class="sc-a"><span>Answer</span>Passengers, not trains: three-quarters of the extra delay comes from disorderly behaviour, people on the tracks, alarms and medical emergencies. Line 1&#x27;s new signal system halved its signal delays.</p>
-              <ul class="sc-skills" aria-label="Skills used"><li>SQL</li><li>Python</li><li>Statistics</li><li>Data cleaning</li></ul>
-              <p class="sc-links"><a class="" href="projects/ttc.html">Case study →</a><a class="" href="https://github.com/BoredMongoose/ttc-subway-delays" target="_blank" rel="noopener">Code ↗</a></p>
-            </div>
-          </div>
-        </li>
-        <li class="sc-card" data-index="1" aria-roledescription="slide" aria-label="2 of 9: A/B test: Cookie Cats">
-          <div class="sc-frame" tabindex="0">
-            <img src="assets/cards/ab-test.webp" width="1280" height="800" alt="Chart: share of players assigned to the gate-40 group, by rounds played. Players who barely played are over-represented in gate 40.">
-            <div class="sc-label"><span class="sc-badge">Featured</span><span class="sc-title">A/B test: Cookie Cats</span><span class="sc-hint" aria-hidden="true">Hover for details</span><span class="sc-label-q" aria-hidden="true">Should a mobile game move its first gate from level 30 to 40?</span></div>
-            <div class="sc-info">
-              <p class="sc-q"><span>Question</span>Should a mobile game move its first gate from level 30 to 40?</p>
-              <p class="sc-a"><span>Answer</span>A broken random split inflated the famous result. Once fixed, the drop in 7-day retention is less than half as big and uncertain: keep the gate at 30, but re-run the test.</p>
-              <ul class="sc-skills" aria-label="Skills used"><li>A/B testing</li><li>Python</li><li>SQL</li><li>Statistics</li></ul>
-              <p class="sc-links"><a class="" href="projects/ab-test.html">Case study →</a><a class="" href="https://github.com/BoredMongoose/ab-test-cookie-cats" target="_blank" rel="noopener">Code ↗</a></p>
-            </div>
-          </div>
-        </li>
-        <li class="sc-card" data-index="2" aria-roledescription="slide" aria-label="3 of 9: Telco churn">
-          <div class="sc-frame" tabindex="0">
-            <img src="assets/cards/churn.webp" width="1280" height="800" alt="Scatter plot of customers by monthly bill and predicted chance of leaving, with a break-even curve: customers above it are worth a retention offer.">
-            <div class="sc-label"><span class="sc-badge">Featured</span><span class="sc-title">Telco churn</span><span class="sc-hint" aria-hidden="true">Hover for details</span><span class="sc-label-q" aria-hidden="true">Who will cancel, and who&#x27;s worth saving?</span></div>
-            <div class="sc-info">
-              <p class="sc-q"><span>Question</span>Who will cancel, and who&#x27;s worth saving?</p>
-              <p class="sc-a"><span>Answer</span>Deciding by expected profit (risk × value of the customer&#x27;s bill) beats the usual 50% cut-off in all 30 cost scenarios tested, and offering the deal to everyone loses money.</p>
-              <ul class="sc-skills" aria-label="Skills used"><li>Python</li><li>scikit-learn</li><li>SQL</li><li>Machine learning</li></ul>
-              <p class="sc-links"><a class="" href="projects/churn.html">Case study →</a><a class="" href="https://github.com/BoredMongoose/telco-churn-profit" target="_blank" rel="noopener">Code ↗</a></p>
-            </div>
-          </div>
-        </li>
-        <li class="sc-card" data-index="3" aria-roledescription="slide" aria-label="4 of 9: UPI vs. cash">
-          <div class="sc-frame" tabindex="0">
-            <img src="assets/cards/upi.webp" width="1280" height="800" alt="Chart: UPI payments rising from 37% to 91% of GDP while cash stays near 12% of GDP." loading="lazy">
-            <div class="sc-label"><span class="sc-badge">Featured</span><span class="sc-title">UPI vs. cash</span><span class="sc-hint" aria-hidden="true">Hover for details</span><span class="sc-label-q" aria-hidden="true">UPI won. So why is India holding more cash than ever?</span></div>
-            <div class="sc-info">
-              <p class="sc-q"><span>Question</span>UPI won. So why is India holding more cash than ever?</p>
-              <p class="sc-a"><span>Answer</span>UPI replaced cash for paying, not for saving: cash is still 12% of GDP, while UPI now moves the equivalent of 91% of GDP a year.</p>
-              <ul class="sc-skills" aria-label="Skills used"><li>SQL</li><li>Python</li><li>Power BI</li><li>Forecasting</li></ul>
-              <p class="sc-links"><a class="" href="projects/upi.html">Case study →</a><a class="" href="https://github.com/BoredMongoose/upi-cash-paradox" target="_blank" rel="noopener">Code ↗</a></p>
-            </div>
-          </div>
-        </li>
-        <li class="sc-card" data-index="4" aria-roledescription="slide" aria-label="5 of 9: Express Entry draws">
-          <div class="sc-frame" tabindex="0">
-            <img src="assets/cards/express-entry.webp" width="1280" height="800" alt="Stacked bar chart of Express Entry invitations by type of draw, 2015–2026: all-program draws disappear after 2024." loading="lazy">
-            <div class="sc-label"><span class="sc-badge">Featured</span><span class="sc-title">Express Entry draws</span><span class="sc-hint" aria-hidden="true">Hover for details</span><span class="sc-label-q" aria-hidden="true">What CRS score do you need for Canadian PR in 2026?</span></div>
-            <div class="sc-info">
-              <p class="sc-q"><span>Question</span>What CRS score do you need for Canadian PR in 2026?</p>
-              <p class="sc-a"><span>Answer</span>It depends on your stream: 2026 cutoffs ranged from 169 for physicians to 523 for the Canadian Experience Class. A backtested model predicts the next CEC cutoff within 2.4 points on average.</p>
-              <ul class="sc-skills" aria-label="Skills used"><li>SQL</li><li>Python</li><li>Forecasting</li></ul>
-              <p class="sc-links"><a class="" href="projects/express-entry.html">Case study →</a><a class="" href="https://github.com/BoredMongoose/express-entry-draws" target="_blank" rel="noopener">Code ↗</a></p>
-            </div>
-          </div>
-        </li>
-        <li class="sc-card" data-index="5" aria-roledescription="slide" aria-label="6 of 9: Delhi smog">
-          <div class="sc-frame" tabindex="0">
-            <img src="assets/cards/delhi.webp" width="1280" height="800" alt="Chart: Delhi PM2.5 rising far above a weather-only prediction during the crop-burning season." loading="lazy">
-            <div class="sc-label"><span class="sc-badge">Featured</span><span class="sc-title">Delhi smog</span><span class="sc-hint" aria-hidden="true">Hover for details</span><span class="sc-label-q" aria-hidden="true">Who&#x27;s really choking Delhi: Diwali crackers or Punjab&#x27;s stubble fires?</span></div>
-            <div class="sc-info">
-              <p class="sc-q"><span>Question</span>Who&#x27;s really choking Delhi: Diwali crackers or Punjab&#x27;s stubble fires?</p>
-              <p class="sc-a"><span>Answer</span>Stubble smoke drives about 60% of early-November PM2.5. Diwali is one bad night, about 2% of the season&#x27;s extra pollution.</p>
-              <ul class="sc-skills" aria-label="Skills used"><li>Python</li><li>statsmodels</li><li>scikit-learn</li><li>APIs</li></ul>
-              <p class="sc-links"><a class="" href="projects/delhi.html">Case study →</a><a class="" href="https://github.com/BoredMongoose/delhi-smog" target="_blank" rel="noopener">Code ↗</a></p>
-            </div>
-          </div>
-        </li>
-        <li class="sc-card" data-index="6" aria-roledescription="slide" aria-label="7 of 9: Moneyball IPL">
-          <div class="sc-frame" tabindex="0">
-            <img src="assets/cards/ipl.webp" width="1280" height="800" alt="Scatter plot: auction price against runs added for IPL 2025 players, with steals and busts highlighted." loading="lazy">
-            <div class="sc-label"><span class="sc-kind">Case study</span><span class="sc-title">Moneyball IPL</span><span class="sc-hint" aria-hidden="true">Hover for details</span><span class="sc-label-q" aria-hidden="true">Which ₹&#8209;crore IPL buys were busts, and which were steals?</span></div>
-            <div class="sc-info">
-              <p class="sc-q"><span>Question</span>Which ₹&#8209;crore IPL buys were busts, and which were steals?</p>
-              <p class="sc-a"><span>Answer</span>Auction price explained only about 10% of player impact, and 36% of budget buys never played a match.</p>
-              <ul class="sc-skills" aria-label="Skills used"><li>SQL</li><li>Python</li><li>pandas</li></ul>
-              <p class="sc-links"><a class="" href="projects/ipl.html">Case study →</a><a class="" href="https://github.com/BoredMongoose/ipl-moneyball" target="_blank" rel="noopener">Code ↗</a></p>
-            </div>
-          </div>
-        </li>
-        <li class="sc-card" data-index="7" aria-roledescription="slide" aria-label="8 of 9: Global terrorism trends">
-          <div class="sc-frame" tabindex="0">
-            <img src="assets/cards/terrorism.webp" width="1280" height="800" alt="World map of terrorist attack density, 1970 to 2017." loading="lazy">
-            <div class="sc-label"><span class="sc-kind">Analysis</span><span class="sc-title">Global terrorism trends</span><span class="sc-hint" aria-hidden="true">Hover for details</span><span class="sc-label-q" aria-hidden="true">When, where and how have terrorist attacks happened since 1970?</span></div>
-            <div class="sc-info">
-              <p class="sc-q"><span>Question</span>When, where and how have terrorist attacks happened since 1970?</p>
-              <p class="sc-a"><span>Answer</span>181,691 attacks: they peaked in 2014 (16,903), driven by Iraq, Pakistan and Afghanistan, and bombings make up 49% of all attacks.</p>
-              <ul class="sc-skills" aria-label="Skills used"><li>Python</li><li>pandas</li><li>matplotlib</li><li>EDA</li></ul>
-              <p class="sc-links"><a class="" href="https://github.com/BoredMongoose/Terrorism_analysis" target="_blank" rel="noopener">Code ↗</a></p>
-            </div>
-          </div>
-        </li>
-        <li class="sc-card" data-index="8" aria-roledescription="slide" aria-label="9 of 9: Workforce diversity clustering">
-          <div class="sc-frame" tabindex="0">
-            <img src="assets/cards/workforce.webp" width="1280" height="800" alt="Bar chart of the share of women in each US industry sector." loading="lazy">
-            <div class="sc-label"><span class="sc-kind">Analysis</span><span class="sc-title">Workforce diversity clustering</span><span class="sc-hint" aria-hidden="true">Hover for details</span><span class="sc-label-q" aria-hidden="true">How diverse is the US workforce, sector by sector?</span></div>
-            <div class="sc-info">
-              <p class="sc-q"><span>Question</span>How diverse is the US workforce, sector by sector?</p>
-              <p class="sc-a"><span>Answer</span>No sector is ethnically balanced (71–92% white) and construction is 89% male; clustering 110 industries found a distinct Asian-concentrated group.</p>
-              <ul class="sc-skills" aria-label="Skills used"><li>Python</li><li>scikit-learn</li><li>K-Means</li><li>PCA</li></ul>
-              <p class="sc-links"><a class="" href="https://github.com/BoredMongoose/strata-clustering" target="_blank" rel="noopener">Code ↗</a></p>
-            </div>
-          </div>
-        </li>
-        </ul>
-        <button type="button" class="sc-arrow sc-next" aria-label="Next project"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
-      </div>
-      <div class="sc-dots"><button type="button" class="sc-dot" data-go="0" aria-label="Show project 1: TTC subway delays"></button><button type="button" class="sc-dot" data-go="1" aria-label="Show project 2: A/B test: Cookie Cats"></button><button type="button" class="sc-dot" data-go="2" aria-label="Show project 3: Telco churn"></button><button type="button" class="sc-dot" data-go="3" aria-label="Show project 4: UPI vs. cash"></button><button type="button" class="sc-dot" data-go="4" aria-label="Show project 5: Express Entry draws"></button><button type="button" class="sc-dot" data-go="5" aria-label="Show project 6: Delhi smog"></button><button type="button" class="sc-dot" data-go="6" aria-label="Show project 7: Moneyball IPL"></button><button type="button" class="sc-dot" data-go="7" aria-label="Show project 8: Global terrorism trends"></button><button type="button" class="sc-dot" data-go="8" aria-label="Show project 9: Workforce diversity clustering"></button></div>
-      <p class="sc-live" aria-live="polite"></p>
-    </section>
-    <!-- showcase:end -->
-
-    <!-- Projects: chart first, then the question and the finding -->
     <!-- work:start -->
     <section id="work" class="wrap" aria-labelledby="work-title">
-      <h2 id="work-title" class="section-title">Selected work</h2>
-
-      <article class="project reveal" id="ttc">
-        <a class="project-figure" href="projects/ttc.html" aria-label="TTC subway delays case study">
-          <img src="assets/projects/ttc-subway-delays/02_what_changed.webp" width="1600" height="1023" loading="lazy"
-               alt="Bar chart: change in yearly delay minutes by cause between 2014–16 and 2023–25. Disorderly behaviour is up 12,300 minutes, alarms and doors 5,000, people on the tracks 4,700; train equipment is down 800.">
-        </a>
-        <div class="project-body">
-          <div class="project-text">
-            <p class="project-meta"><span class="num">01</span> Transit operations · Toronto</p>
-            <h3><a href="projects/ttc.html">Toronto&#x27;s subway delays nearly doubled. What&#x27;s behind them?</a></h3>
-            <p class="finding"><strong>Finding:</strong> passengers, not trains. Three-quarters of the extra delay comes from disorderly behaviour, people on the tracks, alarms and medical emergencies, while train breakdowns fell 12%. A natural experiment shows Line 1&#x27;s new signals halved its signal delays.</p>
-            <div class="project-foot">
-              <ul class="tags" aria-label="Tools"><li>SQL</li><li>Python</li><li>Statistics</li><li>Data cleaning</li></ul>
-              <span class="links"><a class="more" href="projects/ttc.html">Case study <span aria-hidden="true">→</span></a><a class="code" href="https://github.com/BoredMongoose/ttc-subway-delays">Code ↗</a></span>
-            </div>
-          </div>
-          <ul class="stats">
-            <li><strong>+85%</strong><span>delay minutes per year, 2014–16 to 2023–25</span></li>
-            <li><strong>76%</strong><span>of the increase from passengers and the public</span></li>
-            <li><strong>267k</strong><span>messy incident records cleaned, with 18 automated checks</span></li>
-          </ul>
-        </div>
-      </article>
-      <article class="project reveal" id="ab-test">
-        <a class="project-figure" href="projects/ab-test.html" aria-label="A/B test: Cookie Cats case study">
-          <img src="assets/projects/ab-test-cookie-cats/01_two_answers.webp" width="1600" height="626" loading="lazy"
-               alt="Dot-and-whisker chart. The standard analysis shows gate 40 lowering 7-day retention by 0.82 points (p = 0.002). Comparing only players who reached the gates, the effect is −0.97 points with a 95% interval that crosses zero.">
-        </a>
-        <div class="project-body">
-          <div class="project-text">
-            <p class="project-meta"><span class="num">02</span> Experimentation · Mobile game</p>
-            <h3><a href="projects/ab-test.html">Should a mobile game move its first gate from level 30 to 40?</a></h3>
-            <p class="finding"><strong>Finding:</strong> a health check the usual analysis skips shows the random split was broken: gate 40 got about 800 extra players who barely played. Fixing it cuts the famous effect to less than half and makes it uncertain. Keep the gate at 30, but re-run the test.</p>
-            <div class="project-foot">
-              <ul class="tags" aria-label="Tools"><li>A/B testing</li><li>Python</li><li>SQL</li><li>Statistics</li></ul>
-              <span class="links"><a class="more" href="projects/ab-test.html">Case study <span aria-hidden="true">→</span></a><a class="code" href="https://github.com/BoredMongoose/ab-test-cookie-cats">Code ↗</a></span>
-            </div>
-          </div>
-          <ul class="stats">
-            <li><strong>823</strong><span>extra players in the gate-40 group who never saw a gate (p = 0.0005)</span></li>
-            <li><strong>−0.4 pts</strong><span>real effect on 7-day retention, against −0.8 in the usual analysis</span></li>
-            <li><strong>13</strong><span>unit tests on a reusable statistics toolkit</span></li>
-          </ul>
-        </div>
-      </article>
-      <article class="project reveal" id="churn">
-        <a class="project-figure" href="projects/churn.html" aria-label="Telco churn case study">
+      <div class="section-head">
+        <h2 id="work-title" class="section-title">Selected work</h2>
+        <p class="section-intro">Four business questions, each answered end to end: messy data, SQL, statistics and a recommendation.</p>
+      </div>
+      <article class="flag reveal" id="churn">
+        <a class="flag-figure" href="projects/churn.html" aria-label="Telco churn: case study">
           <img src="assets/projects/telco-churn-profit/04_who_to_target.webp" width="1600" height="999" loading="lazy"
-               alt="Scatter plot of 7,043 customers by monthly bill and predicted chance of leaving. A break-even curve falls from top left to bottom right; customers above it (high risk, higher bill) are worth a retention offer.">
+               alt="Scatter plot of customers by monthly bill and predicted chance of leaving. A break-even curve separates customers worth an offer (high risk and a higher bill) from the rest.">
         </a>
-        <div class="project-body">
-          <div class="project-text">
-            <p class="project-meta"><span class="num">03</span> Customer analytics · Telecom</p>
-            <h3><a href="projects/churn.html">Who will cancel, and who&#x27;s worth saving?</a></h3>
-            <p class="finding"><strong>Finding:</strong> judge the model by profit, not accuracy. Targeting customers whose expected profit is positive (risk × value of their bill) beats the usual 50% cut-off in all 30 cost scenarios tested, and offering the deal to everyone loses money.</p>
-            <div class="project-foot">
-              <ul class="tags" aria-label="Tools"><li>Python</li><li>scikit-learn</li><li>SQL</li><li>Machine learning</li></ul>
-              <span class="links"><a class="more" href="projects/churn.html">Case study <span aria-hidden="true">→</span></a><a class="code" href="https://github.com/BoredMongoose/telco-churn-profit">Code ↗</a></span>
-            </div>
+        <div class="flag-body">
+          <p class="flag-meta"><span class="num">01</span>Customer analytics · Telecom</p>
+          <h3><a href="projects/churn.html">Telco churn</a></h3>
+          <p class="flag-q">Which customers should get a retention offer?</p>
+          <div class="flag-impact"><strong>+$92k</strong><span>profit from one targeted campaign, against −$122k for offering it to everyone (simulated: $60 offer that keeps 30% of would-be leavers)</span></div>
+          <p class="flag-line">Target by expected profit, not a 50% risk cut-off. It wins in every one of 30 cost scenarios.</p>
+          <div class="flag-foot">
+            <ul class="tags" aria-label="Tools"><li>SQL</li><li>Python</li><li>scikit-learn</li><li>Statistics</li></ul>
+            <span class="links"><a class="more" href="projects/churn.html">Case study <span aria-hidden="true">→</span></a><a class="more" href="projects/retention-dashboard.html">Live dashboard <span aria-hidden="true">→</span></a><a class="code" href="https://github.com/BoredMongoose/telco-churn-profit">Code ↗</a></span>
           </div>
-          <ul class="stats">
-            <li><strong>+$92k</strong><span>campaign profit from expected-profit targeting, against +$85k at the 50% cut-off</span></li>
-            <li><strong>30 / 30</strong><span>cost scenarios where it beats the 50% cut-off</span></li>
-            <li><strong>0.84</strong><span>AUC of a well-calibrated logistic regression</span></li>
-          </ul>
         </div>
       </article>
-      <article class="project reveal" id="upi">
-        <a class="project-figure" href="projects/upi.html" aria-label="UPI vs. cash case study">
-          <img src="assets/projects/upi-cash-paradox/01_upi_vs_cash.webp" width="1600" height="1003" loading="lazy"
-               alt="Line chart: UPI payments rise from 37% of GDP in 2021-22 to 91% in 2025-26, while cash in circulation stays flat at about 12% of GDP since 2010-11.">
+      <article class="flag reveal" id="ab-test">
+        <a class="flag-figure" href="projects/ab-test.html" aria-label="Cookie Cats A/B test: case study">
+          <img src="assets/projects/ab-test-cookie-cats/03_why_it_matters.webp" width="1600" height="1037" loading="lazy"
+               alt="Bar chart of 7-day retention by group. Players who never reached level 30 return 4% of the time, players who did return 43%. The gate-40 group has 823 extra players in the low-activity segment.">
         </a>
-        <div class="project-body">
-          <div class="project-text">
-            <p class="project-meta"><span class="num">04</span> Finance · India</p>
-            <h3><a href="projects/upi.html">UPI won. So why is India holding more cash than ever?</a></h3>
-            <p class="finding"><strong>Finding:</strong> UPI replaced cash for paying, not for saving. Cash is still 12% of GDP, exactly where it was before UPI existed.</p>
-            <div class="project-foot">
-              <ul class="tags" aria-label="Tools"><li>SQL</li><li>Python</li><li>Power BI</li><li>Forecasting</li></ul>
-              <span class="links"><a class="more" href="projects/upi.html">Case study <span aria-hidden="true">→</span></a><a class="code" href="https://github.com/BoredMongoose/upi-cash-paradox">Code ↗</a></span>
-            </div>
+        <div class="flag-body">
+          <p class="flag-meta"><span class="num">02</span>Product experimentation · Mobile game</p>
+          <h3><a href="projects/ab-test.html">Cookie Cats A/B test</a></h3>
+          <p class="flag-q">Should we move the game&#x27;s first gate from level 30 to level 40?</p>
+          <div class="flag-impact"><strong>2.3×</strong><span>overstatement of the harm to 7-day retention in the usual analysis (−0.82 vs −0.36 points), caused by the broken split</span></div>
+          <p class="flag-line">A health check the usual analysis skips shows the split was broken. Keep the gate at 30 and re-run.</p>
+          <div class="flag-foot">
+            <ul class="tags" aria-label="Tools"><li>A/B testing</li><li>Python</li><li>SQL</li><li>Statistics</li></ul>
+            <span class="links"><a class="more" href="projects/ab-test.html">Case study <span aria-hidden="true">→</span></a><a class="code" href="https://github.com/BoredMongoose/ab-test-cookie-cats">Code ↗</a></span>
           </div>
-          <ul class="stats">
-            <li><strong>91%</strong><span>UPI&#x27;s yearly value as a share of GDP</span></li>
-            <li><strong>12%</strong><span>cash as a share of GDP, unchanged</span></li>
-            <li><strong>15</strong><span>automated data-quality checks in the SQL pipeline</span></li>
-          </ul>
         </div>
       </article>
-      <article class="project reveal" id="express-entry">
-        <a class="project-figure" href="projects/express-entry.html" aria-label="Express Entry draws case study">
-          <img src="assets/projects/express-entry-draws/01_score_needed_2026.webp" width="1600" height="905" loading="lazy"
-               alt="Dot plot of 2026 Express Entry cutoff scores by stream: physicians 198, senior managers 392, French speakers 400, healthcare 475, trades 476, Canadian Experience Class 516.">
+      <article class="flag reveal" id="ttc">
+        <a class="flag-figure" href="projects/ttc.html" aria-label="TTC subway delays: case study">
+          <img src="assets/projects/ttc-subway-delays/02_what_changed.webp" width="1600" height="1023" loading="lazy"
+               alt="Bar chart of the change in yearly delay minutes by cause between 2014–16 and 2023–25: disorderly behaviour up 12,300 minutes, alarms 5,000, people on the tracks 4,700; train equipment down 800.">
         </a>
-        <div class="project-body">
-          <div class="project-text">
-            <p class="project-meta"><span class="num">05</span> Immigration · Canada</p>
-            <h3><a href="projects/express-entry.html">What CRS score do you need for Canadian PR in 2026?</a></h3>
-            <p class="finding"><strong>Finding:</strong> it depends on your stream more than ever. Canada hasn&#x27;t held an all-program draw since April 2024, and 2026 cutoffs ranged from 169 for physicians to 523 for the Canadian Experience Class. A backtested model predicts the next CEC cutoff within 2.4 points on average.</p>
-            <div class="project-foot">
-              <ul class="tags" aria-label="Tools"><li>SQL</li><li>Python</li><li>Forecasting</li></ul>
-              <span class="links"><a class="more" href="projects/express-entry.html">Case study <span aria-hidden="true">→</span></a><a class="code" href="https://github.com/BoredMongoose/express-entry-draws">Code ↗</a></span>
-            </div>
+        <div class="flag-body">
+          <p class="flag-meta"><span class="num">03</span>Operations analytics · Toronto</p>
+          <h3><a href="projects/ttc.html">TTC subway delays</a></h3>
+          <p class="flag-q">What&#x27;s really causing Toronto&#x27;s subway delays, and where should the TTC act?</p>
+          <div class="flag-impact"><strong>76%</strong><span>of the increase in delays comes from passengers and the public, not the trains</span></div>
+          <p class="flag-line">Passengers, not trains: three-quarters of the extra delay. A natural experiment shows the new signals work.</p>
+          <div class="flag-foot">
+            <ul class="tags" aria-label="Tools"><li>SQL</li><li>Python</li><li>Statistics</li><li>Data cleaning</li></ul>
+            <span class="links"><a class="more" href="projects/ttc.html">Case study <span aria-hidden="true">→</span></a><a class="code" href="https://github.com/BoredMongoose/ttc-subway-delays">Code ↗</a></span>
           </div>
-          <ul class="stats">
-            <li><strong>169–523</strong><span>range of 2026 cutoff scores, by stream</span></li>
-            <li><strong>135k</strong><span>invitations by 1 October 2026, already a record year</span></li>
-            <li><strong>2.4 pts</strong><span>average error predicting the next CEC cutoff</span></li>
-          </ul>
         </div>
       </article>
-      <article class="project reveal" id="delhi">
-        <a class="project-figure" href="projects/delhi.html" aria-label="Delhi smog case study">
-          <img src="assets/projects/delhi-smog/03_weather_normalised.webp" width="1600" height="1230" loading="lazy"
-               alt="Delhi PM2.5 by calendar day against a weather-only prediction. From late October to mid-November actual pollution rises far above the prediction, in step with the number of crop fires.">
+      <article class="flag reveal" id="ipl">
+        <a class="flag-figure" href="projects/ipl.html" aria-label="Moneyball IPL: case study">
+          <img src="assets/projects/ipl-moneyball/01_price_vs_impact.webp" width="1600" height="984" loading="lazy"
+               alt="Scatter plot of auction price against runs added for IPL 2025 players. The fair-price line is almost flat; steals and busts are labelled.">
         </a>
-        <div class="project-body">
-          <div class="project-text">
-            <p class="project-meta"><span class="num">06</span> Environment &amp; health · Delhi</p>
-            <h3><a href="projects/delhi.html">Who&#x27;s really choking Delhi: Diwali crackers or Punjab&#x27;s stubble fires?</a></h3>
-            <p class="finding"><strong>Finding:</strong> stubble smoke drives early-November smog; Diwali is one bad night. Over the whole winter, most of the pollution is Delhi&#x27;s own.</p>
-            <div class="project-foot">
-              <ul class="tags" aria-label="Tools"><li>Python</li><li>statsmodels</li><li>scikit-learn</li><li>APIs</li></ul>
-              <span class="links"><a class="more" href="projects/delhi.html">Case study <span aria-hidden="true">→</span></a><a class="code" href="https://github.com/BoredMongoose/delhi-smog">Code ↗</a></span>
-            </div>
+        <div class="flag-body">
+          <p class="flag-meta"><span class="num">04</span>Sports analytics · IPL 2025</p>
+          <h3><a href="projects/ipl.html">Moneyball IPL</a></h3>
+          <p class="flag-q">Which IPL auction buys were worth the money, and how should a team spend?</p>
+          <div class="flag-impact"><strong>10%</strong><span>of player impact explained by auction price, across ₹1,180 crore spent on 226 players</span></div>
+          <p class="flag-line">Price barely predicts performance. Elite bowlers were the bargains; one hot season is a trap.</p>
+          <div class="flag-foot">
+            <ul class="tags" aria-label="Tools"><li>SQL</li><li>Python</li><li>pandas</li><li>KPI design</li></ul>
+            <span class="links"><a class="more" href="projects/ipl.html">Case study <span aria-hidden="true">→</span></a><a class="code" href="https://github.com/BoredMongoose/ipl-moneyball">Code ↗</a></span>
           </div>
-          <ul class="stats">
-            <li><strong>~60%</strong><span>of early-November PM2.5 from stubble smoke</span></li>
-            <li><strong>~2%</strong><span>Diwali&#x27;s pollution compared with the stubble season</span></li>
-            <li><strong>600k+</strong><span>NASA satellite fire detections analysed</span></li>
-          </ul>
         </div>
       </article>
     </section>
     <!-- work:end -->
 
-    <!-- projects-table:start -->
-    <section id="all-projects" class="wrap reveal" aria-labelledby="all-projects-title">
-      <h2 id="all-projects-title" class="section-title">All projects</h2>
-      <div class="pt-wrap">
-        <table class="projects-table">
-          <thead><tr><th scope="col">Project</th><th scope="col">Question</th><th scope="col">Tools</th><th scope="col">Links</th></tr></thead>
-          <tbody>
-          <tr class="is-featured">
-            <td class="pt-project" data-label="Project"><span class="pt-title">TTC subway delays</span><span class="sc-badge">Featured</span><span class="pt-kind">Case study</span></td>
-            <td class="pt-question" data-label="Question">Toronto&#x27;s subway delays nearly doubled. What&#x27;s behind them?</td>
-            <td class="pt-tools" data-label="Tools">SQL · Python · Statistics · Data cleaning</td>
-            <td class="pt-links" data-label="Links"><a class="" href="projects/ttc.html">Case study →</a><a class="" href="https://github.com/BoredMongoose/ttc-subway-delays" target="_blank" rel="noopener">Code ↗</a></td>
-          </tr>
-          <tr class="is-featured">
-            <td class="pt-project" data-label="Project"><span class="pt-title">A/B test: Cookie Cats</span><span class="sc-badge">Featured</span><span class="pt-kind">Case study</span></td>
-            <td class="pt-question" data-label="Question">Should a mobile game move its first gate from level 30 to 40?</td>
-            <td class="pt-tools" data-label="Tools">A/B testing · Python · SQL · Statistics</td>
-            <td class="pt-links" data-label="Links"><a class="" href="projects/ab-test.html">Case study →</a><a class="" href="https://github.com/BoredMongoose/ab-test-cookie-cats" target="_blank" rel="noopener">Code ↗</a></td>
-          </tr>
-          <tr class="is-featured">
-            <td class="pt-project" data-label="Project"><span class="pt-title">Telco churn</span><span class="sc-badge">Featured</span><span class="pt-kind">Case study</span></td>
-            <td class="pt-question" data-label="Question">Who will cancel, and who&#x27;s worth saving?</td>
-            <td class="pt-tools" data-label="Tools">Python · scikit-learn · SQL · Machine learning</td>
-            <td class="pt-links" data-label="Links"><a class="" href="projects/churn.html">Case study →</a><a class="" href="https://github.com/BoredMongoose/telco-churn-profit" target="_blank" rel="noopener">Code ↗</a></td>
-          </tr>
-          <tr class="is-featured">
-            <td class="pt-project" data-label="Project"><span class="pt-title">UPI vs. cash</span><span class="sc-badge">Featured</span><span class="pt-kind">Case study</span></td>
-            <td class="pt-question" data-label="Question">UPI won. So why is India holding more cash than ever?</td>
-            <td class="pt-tools" data-label="Tools">SQL · Python · Power BI · Forecasting</td>
-            <td class="pt-links" data-label="Links"><a class="" href="projects/upi.html">Case study →</a><a class="" href="https://github.com/BoredMongoose/upi-cash-paradox" target="_blank" rel="noopener">Code ↗</a></td>
-          </tr>
-          <tr class="is-featured">
-            <td class="pt-project" data-label="Project"><span class="pt-title">Express Entry draws</span><span class="sc-badge">Featured</span><span class="pt-kind">Case study</span></td>
-            <td class="pt-question" data-label="Question">What CRS score do you need for Canadian PR in 2026?</td>
-            <td class="pt-tools" data-label="Tools">SQL · Python · Forecasting</td>
-            <td class="pt-links" data-label="Links"><a class="" href="projects/express-entry.html">Case study →</a><a class="" href="https://github.com/BoredMongoose/express-entry-draws" target="_blank" rel="noopener">Code ↗</a></td>
-          </tr>
-          <tr class="is-featured">
-            <td class="pt-project" data-label="Project"><span class="pt-title">Delhi smog</span><span class="sc-badge">Featured</span><span class="pt-kind">Case study</span></td>
-            <td class="pt-question" data-label="Question">Who&#x27;s really choking Delhi: Diwali crackers or Punjab&#x27;s stubble fires?</td>
-            <td class="pt-tools" data-label="Tools">Python · statsmodels · scikit-learn · APIs</td>
-            <td class="pt-links" data-label="Links"><a class="" href="projects/delhi.html">Case study →</a><a class="" href="https://github.com/BoredMongoose/delhi-smog" target="_blank" rel="noopener">Code ↗</a></td>
-          </tr>
-          <tr>
-            <td class="pt-project" data-label="Project"><span class="pt-title">Moneyball IPL</span><span class="pt-kind">Case study</span></td>
-            <td class="pt-question" data-label="Question">Which ₹&#8209;crore IPL buys were busts, and which were steals?</td>
-            <td class="pt-tools" data-label="Tools">SQL · Python · pandas</td>
-            <td class="pt-links" data-label="Links"><a class="" href="projects/ipl.html">Case study →</a><a class="" href="https://github.com/BoredMongoose/ipl-moneyball" target="_blank" rel="noopener">Code ↗</a></td>
-          </tr>
-          <tr>
-            <td class="pt-project" data-label="Project"><span class="pt-title">Global terrorism trends</span><span class="pt-kind">Analysis</span></td>
-            <td class="pt-question" data-label="Question">When, where and how have terrorist attacks happened since 1970?</td>
-            <td class="pt-tools" data-label="Tools">Python · pandas · matplotlib · EDA</td>
-            <td class="pt-links" data-label="Links"><a class="" href="https://github.com/BoredMongoose/Terrorism_analysis" target="_blank" rel="noopener">Code ↗</a></td>
-          </tr>
-          <tr>
-            <td class="pt-project" data-label="Project"><span class="pt-title">Workforce diversity clustering</span><span class="pt-kind">Analysis</span></td>
-            <td class="pt-question" data-label="Question">How diverse is the US workforce, sector by sector?</td>
-            <td class="pt-tools" data-label="Tools">Python · scikit-learn · K-Means · PCA</td>
-            <td class="pt-links" data-label="Links"><a class="" href="https://github.com/BoredMongoose/strata-clustering" target="_blank" rel="noopener">Code ↗</a></td>
-          </tr>
-          </tbody>
-        </table>
+    <!-- more:start -->
+    <section id="more" class="wrap reveal" aria-labelledby="more-title">
+      <div class="section-head">
+        <h2 id="more-title" class="section-title">More projects</h2>
+        <p class="section-intro">Hover over a chart (or tap it) for the question and the answer.</p>
+      </div>
+      <div class="more-grid">
+        <article class="mcard" tabindex="0" aria-label="Retention dashboard">
+          <div class="mcard-media">
+            <img src="assets/cards/dashboard.webp" width="1280" height="800" loading="lazy" alt="">
+            <div class="mcard-label"><span class="mcard-title">Retention dashboard</span><span class="mcard-tools">JavaScript · Data visualization</span></div>
+          </div>
+          <div class="mcard-info">
+            <p class="mcard-q"><span>Business question</span>Who should the retention team contact first, and is it worth it?</p>
+            <p class="mcard-a"><span>Answer</span>2,024 of 7,043 customers are worth a $60 offer, for about $98k expected profit. Change the offer or the filters and the ranked contact list updates live.</p>
+            <p class="mcard-links"><a class="more" href="projects/retention-dashboard.html">Live dashboard <span aria-hidden="true">→</span></a><a class="code" href="https://github.com/BoredMongoose/BoredMongoose.github.io/blob/main/assets/dashboard.js">Code ↗</a></p>
+          </div>
+        </article>
+        <article class="mcard" tabindex="0" aria-label="UPI vs. cash">
+          <div class="mcard-media">
+            <img src="assets/cards/upi.webp" width="1280" height="800" loading="lazy" alt="">
+            <div class="mcard-label"><span class="mcard-title">UPI vs. cash</span><span class="mcard-tools">SQL · Python · Forecasting</span></div>
+          </div>
+          <div class="mcard-info">
+            <p class="mcard-q"><span>Business question</span>UPI won. Should banks plan for less cash?</p>
+            <p class="mcard-a"><span>Answer</span>No. Cash is still about 12% of GDP, as it was before UPI. UPI replaced cash for spending, not for saving, and cash demand keeps growing.</p>
+            <p class="mcard-links"><a class="more" href="projects/upi.html">Case study <span aria-hidden="true">→</span></a><a class="code" href="https://github.com/BoredMongoose/upi-cash-paradox">Code ↗</a></p>
+          </div>
+        </article>
+        <article class="mcard" tabindex="0" aria-label="Express Entry draws">
+          <div class="mcard-media">
+            <img src="assets/cards/express-entry.webp" width="1280" height="800" loading="lazy" alt="">
+            <div class="mcard-label"><span class="mcard-title">Express Entry draws</span><span class="mcard-tools">SQL · Python · Forecasting</span></div>
+          </div>
+          <div class="mcard-info">
+            <p class="mcard-q"><span>Business question</span>What CRS score does a candidate need for Canadian PR in 2026?</p>
+            <p class="mcard-a"><span>Answer</span>It depends on the stream: 2026 cutoffs ran from 169 for physicians to 523 for the Canadian Experience Class. French speakers needed about 400.</p>
+            <p class="mcard-links"><a class="more" href="projects/express-entry.html">Case study <span aria-hidden="true">→</span></a><a class="code" href="https://github.com/BoredMongoose/express-entry-draws">Code ↗</a></p>
+          </div>
+        </article>
+        <article class="mcard" tabindex="0" aria-label="Delhi smog">
+          <div class="mcard-media">
+            <img src="assets/cards/delhi.webp" width="1280" height="800" loading="lazy" alt="">
+            <div class="mcard-label"><span class="mcard-title">Delhi smog</span><span class="mcard-tools">Python · statsmodels · scikit-learn · APIs</span></div>
+          </div>
+          <div class="mcard-info">
+            <p class="mcard-q"><span>Business question</span>Should Delhi&#x27;s anti-smog effort target Diwali firecrackers or crop fires?</p>
+            <p class="mcard-a"><span>Answer</span>Crop fires: about 60% of early-November PM2.5, while Diwali adds about 2% of the season&#x27;s extra pollution. But 84% of winter pollution is Delhi&#x27;s own.</p>
+            <p class="mcard-links"><a class="more" href="projects/delhi.html">Case study <span aria-hidden="true">→</span></a><a class="code" href="https://github.com/BoredMongoose/delhi-smog">Code ↗</a></p>
+          </div>
+        </article>
+        <article class="mcard" tabindex="0" aria-label="Global terrorism trends">
+          <div class="mcard-media">
+            <img src="assets/cards/terrorism.webp" width="1280" height="800" loading="lazy" alt="">
+            <div class="mcard-label"><span class="mcard-title">Global terrorism trends</span><span class="mcard-tools">Python · pandas · matplotlib · EDA</span></div>
+          </div>
+          <div class="mcard-info">
+            <p class="mcard-q"><span>Business question</span>Where, and on what kind of attack, should security planners focus?</p>
+            <p class="mcard-a"><span>Answer</span>Iraq, Pakistan and Afghanistan, which drove the 2014 peak (16,903 attacks), and bombings: 49% of all 181,691 attacks from 1970 to 2017.</p>
+            <p class="mcard-links"><a class="code" href="https://github.com/BoredMongoose/Terrorism_analysis">Code ↗</a></p>
+          </div>
+        </article>
+        <article class="mcard" tabindex="0" aria-label="Workforce diversity clustering">
+          <div class="mcard-media">
+            <img src="assets/cards/workforce.webp" width="1280" height="800" loading="lazy" alt="">
+            <div class="mcard-label"><span class="mcard-title">Workforce diversity clustering</span><span class="mcard-tools">Python · scikit-learn · K-Means · PCA</span></div>
+          </div>
+          <div class="mcard-info">
+            <p class="mcard-q"><span>Business question</span>Which industries most need diversity hiring programs?</p>
+            <p class="mcard-a"><span>Answer</span>Construction, agriculture and mining: 88–92% white, and construction is 89% male. White workers are the majority in every US sector (71–92%).</p>
+            <p class="mcard-links"><a class="code" href="https://github.com/BoredMongoose/strata-clustering">Code ↗</a></p>
+          </div>
+        </article>
       </div>
     </section>
-    <!-- projects-table:end -->
+    <!-- more:end -->
 
-    <!-- Skills: core first, then the rest -->
+    <!-- sql:start -->
+    <section id="sql" class="wrap reveal" aria-labelledby="sql-title">
+      <div class="section-head">
+        <h2 id="sql-title" class="section-title">SQL</h2>
+        <p class="section-intro">SQL is where most of my analysis happens: every project above runs on SQL models with
+          automated data-quality checks. Six queries I'd happily walk through in an interview.</p>
+      </div>
+      <ul class="sql-skills" aria-label="SQL techniques I use">
+        <li>CTEs</li><li>Joins</li><li>Window functions</li><li>LAG &amp; rolling windows</li><li>ROW_NUMBER &amp; RANK</li>
+        <li>ROLLUP &amp; GROUPING SETS</li><li>Conditional aggregation</li><li>Regression in SQL</li><li>Data-quality checks</li>
+      </ul>
+      <div class="sql-grid">
+        <article class="sql-card">
+          <p class="sql-project">Moneyball IPL</p>
+          <h3>Score every ball against a league-average player</h3>
+          <p class="sql-why">The project&#x27;s KPI, &quot;runs added&quot;, built in SQL: each ball is compared with the league&#x27;s rate for that season and phase of the innings.</p>
+          <ul class="sql-tags" aria-label="Techniques"><li>CTEs</li><li>Joins</li><li>KPI design</li></ul>
+          <pre class="sql-code"><code><span class="k">WITH</span> bat <span class="k">AS</span> (
+    <span class="k">SELECT</span> d.season, d.batting_team <span class="k">AS</span> team, d.striker <span class="k">AS</span> player,
+           <span class="f">COUNT</span>(<span class="k">DISTINCT</span> d.match_id)  <span class="k">AS</span> bat_matches,
+           <span class="f">SUM</span>(d.runs_off_bat)  <span class="k">AS</span> runs,
+           <span class="f">SUM</span>(d.faced)  <span class="k">AS</span> balls_faced,
+           <span class="f">SUM</span>(d.striker_out)  <span class="k">AS</span> dismissals,
+           <span class="f">SUM</span>(d.runs_off_bat - d.faced * b.bat_runs_per_ball)
+             - <span class="f">SUM</span>(d.striker_out - d.faced * b.bat_outs_per_ball)
+               * <span class="f">getvariable</span>(<span class="s">&#x27;wicket_value&#x27;</span>)  <span class="k">AS</span> bat_runs_added
+    <span class="k">FROM</span> deliveries d <span class="k">JOIN</span> baselines b <span class="k">USING</span> (season, phase)
+    <span class="k">GROUP</span> <span class="k">BY</span> <span class="k">ALL</span></code></pre>
+          <a class="sql-link" href="https://github.com/BoredMongoose/ipl-moneyball/blob/main/sql/03_player_impact.sql">Full query: sql/03_player_impact.sql ↗</a>
+        </article>
+        <article class="sql-card">
+          <p class="sql-project">Moneyball IPL</p>
+          <h3>A fair-price line and steal/bust rankings</h3>
+          <p class="sql-why">A regression line fitted inside SQL gives every player an expected value for their price; the gap ranks the steals and busts.</p>
+          <ul class="sql-tags" aria-label="Techniques"><li>REGR_SLOPE</li><li>RANK()</li><li>CASE</li></ul>
+          <pre class="sql-code"><code>fit <span class="k">AS</span> (
+    <span class="c">-- simple linear &quot;fair price&quot; line: how many runs added a rupee normally buys</span>
+    <span class="k">SELECT</span> <span class="f">REGR_SLOPE</span>(total_runs_added, price_cr)  <span class="k">AS</span> slope,
+           <span class="f">REGR_INTERCEPT</span>(total_runs_added, price_cr) <span class="k">AS</span> intercept
+    <span class="k">FROM</span> joined
+)
+…
+<span class="k">SELECT</span> j.*,
+       <span class="f">ROUND</span>(fit.intercept + fit.slope * j.price_cr, <span class="n">1</span>)  <span class="k">AS</span> expected_runs_added,
+       <span class="f">ROUND</span>(j.total_runs_added - (fit.intercept + fit.slope * j.price_cr), <span class="n">1</span>)  <span class="k">AS</span> surplus,
+       <span class="k">CASE</span> <span class="k">WHEN</span> j.price_cr &gt;= <span class="n">10</span> <span class="k">THEN</span> <span class="s">&#x27;Marquee (₹10cr+)&#x27;</span>
+            <span class="k">WHEN</span> j.price_cr &gt;= <span class="n">3</span>  <span class="k">THEN</span> <span class="s">&#x27;Mid (₹3-10cr)&#x27;</span>
+            <span class="k">ELSE</span> <span class="s">&#x27;Budget (&lt;₹3cr)&#x27;</span> <span class="k">END</span>  <span class="k">AS</span> price_band,
+       <span class="f">RANK</span>() <span class="k">OVER</span> (<span class="k">ORDER</span> <span class="k">BY</span> j.total_runs_added - (fit.intercept + fit.slope * j.price_cr) <span class="k">DESC</span>) <span class="k">AS</span> steal_rank,
+       <span class="f">RANK</span>() <span class="k">OVER</span> (<span class="k">ORDER</span> <span class="k">BY</span> j.total_runs_added - (fit.intercept + fit.slope * j.price_cr) <span class="k">ASC</span>)  <span class="k">AS</span> bust_rank
+<span class="k">FROM</span> joined j <span class="k">CROSS</span> <span class="k">JOIN</span> fit;</code></pre>
+          <a class="sql-link" href="https://github.com/BoredMongoose/ipl-moneyball/blob/main/sql/04_value.sql">Full query: sql/04_value.sql ↗</a>
+        </article>
+        <article class="sql-card">
+          <p class="sql-project">TTC subway delays</p>
+          <h3>Each station&#x27;s most common cause of delay</h3>
+          <p class="sql-why">Rank causes within each station, keep the top one, and report its share of the station&#x27;s delay.</p>
+          <ul class="sql-tags" aria-label="Techniques"><li>ROW_NUMBER()</li><li>PARTITION BY</li><li>CTEs</li></ul>
+          <pre class="sql-code"><code>top_cause <span class="k">AS</span> (
+    <span class="k">SELECT</span> station, cause_group <span class="k">AS</span> top_cause, minutes <span class="k">AS</span> top_cause_minutes,
+           <span class="f">ROW_NUMBER</span>() <span class="k">OVER</span> (<span class="k">PARTITION</span> <span class="k">BY</span> station <span class="k">ORDER</span> <span class="k">BY</span> minutes <span class="k">DESC</span>) <span class="k">AS</span> rn
+    <span class="k">FROM</span> s
+)
+<span class="k">SELECT</span> t.station, t.delay_minutes, t.delays,
+       <span class="f">ROUND</span>(t.delay_minutes / <span class="n">3.0</span>)  <span class="k">AS</span> minutes_per_year,
+       c.top_cause,
+       <span class="f">ROUND</span>(<span class="n">100</span> * c.top_cause_minutes / t.delay_minutes, <span class="n">1</span>) <span class="k">AS</span> top_cause_share_pct,
+       <span class="f">RANK</span>() <span class="k">OVER</span> (<span class="k">ORDER</span> <span class="k">BY</span> t.delay_minutes <span class="k">DESC</span>)  <span class="k">AS</span> <span class="f">rank</span>
+<span class="k">FROM</span> tot t <span class="k">JOIN</span> top_cause c <span class="k">ON</span> c.station = t.station <span class="k">AND</span> c.rn = <span class="n">1</span></code></pre>
+          <a class="sql-link" href="https://github.com/BoredMongoose/ttc-subway-delays/blob/main/sql/02_marts.sql">Full query: sql/02_marts.sql ↗</a>
+        </article>
+        <article class="sql-card">
+          <p class="sql-project">UPI vs. cash</p>
+          <h3>Month-on-month and year-on-year growth</h3>
+          <p class="sql-why">Growth rates from one named window, plus the events (Diwali, the ₹2000-note withdrawal) behind the bumps.</p>
+          <ul class="sql-tags" aria-label="Techniques"><li>LAG()</li><li>Named windows</li><li>Time series</li></ul>
+          <pre class="sql-code"><code><span class="k">SELECT</span> m.month,
+       <span class="f">ROUND</span>(m.cic_lakh_cr, <span class="n">2</span>)  <span class="k">AS</span> cash_lakh_cr,
+       <span class="f">ROUND</span>(<span class="n">100</span> * (m.cic_lakh_cr / <span class="f">LAG</span>(m.cic_lakh_cr) <span class="k">OVER</span> w - <span class="n">1</span>), <span class="n">2</span>)  <span class="k">AS</span> mom_pct,
+       <span class="f">ROUND</span>(<span class="n">100</span> * (m.cic_lakh_cr / <span class="f">LAG</span>(m.cic_lakh_cr, <span class="n">12</span>) <span class="k">OVER</span> w - <span class="n">1</span>), <span class="n">2</span>)  <span class="k">AS</span> yoy_pct,
+       <span class="f">ROUND</span>(m.cash_with_banks_lakh_cr, <span class="n">2</span>)  <span class="k">AS</span> cash_with_banks_lakh_cr,
+       <span class="f">ROUND</span>(<span class="n">100</span> * m.cic_lakh_cr / m.m3_lakh_cr, <span class="n">2</span>)  <span class="k">AS</span> cash_share_of_money_pct,
+       e.event
+<span class="k">FROM</span> stg_cash_monthly m
+<span class="k">LEFT</span> <span class="k">JOIN</span> events e <span class="k">USING</span> (month)
+<span class="k">WINDOW</span> w <span class="k">AS</span> (<span class="k">ORDER</span> <span class="k">BY</span> m.month)</code></pre>
+          <a class="sql-link" href="https://github.com/BoredMongoose/upi-cash-paradox/blob/main/sql/06_mart_cash_monthly.sql">Full query: sql/06_mart_cash_monthly.sql ↗</a>
+        </article>
+        <article class="sql-card">
+          <p class="sql-project">Telco churn</p>
+          <h3>Churn by contract and tenure, with subtotals</h3>
+          <p class="sql-why">One query returns every segment, each contract&#x27;s subtotal and the grand total.</p>
+          <ul class="sql-tags" aria-label="Techniques"><li>ROLLUP</li><li>COALESCE</li><li>Segmentation</li></ul>
+          <pre class="sql-code"><code><span class="k">CREATE</span> <span class="k">OR</span> <span class="k">REPLACE</span> <span class="k">TABLE</span> mart_contract_tenure <span class="k">AS</span>
+<span class="k">SELECT</span> <span class="f">COALESCE</span>(Contract, <span class="s">&#x27;All contracts&#x27;</span>)  <span class="k">AS</span> contract,
+       <span class="f">COALESCE</span>(tenure_band, <span class="s">&#x27;All tenures&#x27;</span>)  <span class="k">AS</span> tenure_band,
+       <span class="f">MIN</span>(tenure_band_order)  <span class="k">AS</span> band_order,
+       <span class="f">COUNT</span>(*)  <span class="k">AS</span> customers,
+       <span class="f">SUM</span>(churned::INT)  <span class="k">AS</span> churned,
+       <span class="f">ROUND</span>(<span class="n">100</span> * <span class="f">AVG</span>(churned::INT), <span class="n">1</span>)  <span class="k">AS</span> churn_rate_pct
+<span class="k">FROM</span> customers
+<span class="k">GROUP</span> <span class="k">BY</span> <span class="k">ROLLUP</span> (Contract, tenure_band)
+<span class="k">ORDER</span> <span class="k">BY</span> contract, band_order;</code></pre>
+          <a class="sql-link" href="https://github.com/BoredMongoose/telco-churn-profit/blob/main/sql/02_marts.sql">Full query: sql/02_marts.sql ↗</a>
+        </article>
+        <article class="sql-card">
+          <p class="sql-project">Express Entry draws</p>
+          <h3>The check that caught an error in IRCC&#x27;s own data</h3>
+          <p class="sql-why">Score bands must add up to their totals. One published table doesn&#x27;t: a likely transposed digit.</p>
+          <ul class="sql-tags" aria-label="Techniques"><li>FILTER</li><li>Reconciliation</li><li>Data quality</li></ul>
+          <pre class="sql-code"><code><span class="k">WITH</span> sub <span class="k">AS</span> (  <span class="c">-- the 10-point sub-bands must add up to their 50-point parent band</span>
+    <span class="k">SELECT</span> draw_number,
+           <span class="f">SUM</span>(candidates) <span class="k">FILTER</span> (<span class="k">WHERE</span> band = <span class="s">&#x27;451-500&#x27;</span>)  <span class="k">AS</span> b451_500,
+           <span class="f">SUM</span>(candidates) <span class="k">FILTER</span> (<span class="k">WHERE</span> level = <span class="s">&#x27;sub-band&#x27;</span> <span class="k">AND</span> band_low <span class="k">BETWEEN</span> <span class="n">451</span> <span class="k">AND</span> <span class="n">491</span>) <span class="k">AS</span> sub451_500,
+…
+<span class="k">SELECT</span> <span class="s">&#x27;451-500 sub-bands add up (except known draw 247)&#x27;</span>,
+       <span class="f">format</span>(<span class="s">&#x27;mismatches: {}&#x27;</span>, <span class="f">COALESCE</span>(<span class="f">string_agg</span>(draw_number || <span class="s">&#x27; (&#x27;</span> || (b451_500 - sub451_500) || <span class="s">&#x27;)&#x27;</span>, <span class="s">&#x27;, &#x27;</span>), <span class="s">&#x27;none&#x27;</span>)),
+       <span class="f">COALESCE</span>(<span class="f">bool_and</span>(draw_number = <span class="s">&#x27;247&#x27;</span>), <span class="k">true</span>)
+<span class="k">FROM</span> sub <span class="k">WHERE</span> b451_500 &lt;&gt; sub451_500</code></pre>
+          <a class="sql-link" href="https://github.com/BoredMongoose/express-entry-draws/blob/main/sql/03_data_quality.sql">Full query: sql/03_data_quality.sql ↗</a>
+        </article>
+      </div>
+    </section>
+    <!-- sql:end -->
+
+    <!-- Skills -->
     <section id="skills" class="wrap reveal" aria-labelledby="skills-title">
       <h2 id="skills-title" class="section-title">Skills</h2>
       <div class="skills-core">
-        <div><h3>SQL</h3><p>Joins, CTEs, window functions, ROLLUP and GROUPING SETS, automated data-quality checks</p></div>
+        <div><h3>SQL</h3><p>CTEs, joins, window functions, ROLLUP and GROUPING SETS, automated data-quality checks</p></div>
         <div><h3>Python</h3><p>pandas for cleaning and analysis, scikit-learn for models, matplotlib for charts, unit tests</p></div>
+        <div><h3>Statistics</h3><p>A/B testing, regression, difference-in-differences, forecasting with backtests</p></div>
         <div><h3>Power BI</h3><p>Data modelling, DAX measures, dashboards and KPI reporting</p></div>
-        <div><h3>Statistics</h3><p>A/B testing, regression, difference-in-differences, forecasting with backtests, robustness checks</p></div>
         <div><h3>Excel</h3><p>Cleaning, summarising and reporting data</p></div>
       </div>
-      <p class="skills-also"><span>Also used:</span> statsmodels · scipy · DuckDB · Tableau · REST APIs · Jupyter · Git</p>
+      <p class="skills-also"><span>Also used:</span> DuckDB · statsmodels · scipy · Tableau · REST APIs · Jupyter · Git</p>
     </section>
 
     <!-- About -->
@@ -418,12 +398,11 @@
       <h2 id="about-title" class="section-title">About</h2>
       <div class="about-grid">
         <div class="about-text">
-          <p>I studied Computer Science and Economics at McMaster University: the code to wrangle data, and the economics
-            to ask why the answer matters.</p>
-          <p>I like questions people argue about, and I try hard to prove my own answers wrong before I trust them. In the
-            Delhi project, that habit caught a model that looked convincing but was really just measuring the season. In the
-            Cookie Cats A/B test, it caught a broken random split that the usual analysis of that data misses.</p>
-          <p>I'm looking for an entry-level data analyst role.</p>
+          <p>I'm a Computer Science and Economics graduate interested in where data, products and business meet. I like
+            using analysis to answer three questions: why is this happening, what should we do, and how much is it worth?</p>
+          <p>I try to prove my own answers wrong before I trust them. That habit caught a broken random split in the Cookie
+            Cats A/B test, and a model in my Delhi project that was really just measuring the season.</p>
+          <p>I'm looking for an entry-level data or business analyst role.</p>
         </div>
         <div class="about-side">
           <div class="about-photo">
@@ -444,7 +423,7 @@
     <!-- Contact -->
     <section id="contact" class="wrap contact reveal" aria-labelledby="contact-title">
       <h2 id="contact-title" class="section-title">Contact</h2>
-      <p class="contact-line">Looking for entry-level data analyst roles: <strong>remote in India</strong>, or <strong>on-site in Toronto/GTA</strong>.</p>
+      <p class="contact-line">Looking for entry-level data and business analyst roles: <strong>remote in India</strong>, or <strong>on-site in Toronto/GTA</strong>.</p>
       <a class="contact-email" href="mailto:milind.sax01@gmail.com">milind.sax01@gmail.com</a>
       <ul class="social">
         <li><a href="https://www.linkedin.com/in/milind-saxena-54399722a">LinkedIn</a></li>
@@ -455,9 +434,11 @@
   </main>
 
   <footer class="site-footer">
-    <div class="wrap">© 2026 Milind Saxena · Built with plain HTML &amp; CSS</div>
+    <div class="wrap">© 2026 Milind Saxena · Built with plain HTML, CSS and JavaScript</div>
   </footer>
 
+  <script src="assets/hero-data.js" defer></script>
+  <script src="assets/hero.js" defer></script>
   <script src="script.js"></script>
 </body>
 </html>

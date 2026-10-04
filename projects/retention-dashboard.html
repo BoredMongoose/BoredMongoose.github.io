@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Retention dashboard · Milind Saxena</title>
+  <meta name="description" content="Interactive retention dashboard: churn risk for 7,043 customers, an adjustable retention offer, and a ranked list of who to contact first.">
+  <meta property="og:title" content="Retention dashboard · Milind Saxena">
+  <meta property="og:description" content="Interactive retention dashboard: churn risk for 7,043 customers, an adjustable retention offer, and a ranked list of who to contact first.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://boredmongoose.github.io/projects/retention-dashboard.html">
+  <meta property="og:image" content="https://boredmongoose.github.io/assets/social-preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../assets/dashboard.css">
+  <script>
+    document.documentElement.classList.add("js");
+    try { var t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="../index.html">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8"/><path d="M8 23v-5M13.5 23v-9M19 23v-12M24.5 23V8"/></svg>
+        <span class="brand-name">Milind Saxena<span class="brand-dot" aria-hidden="true">.</span></span>
+      </a>
+      <nav aria-label="Main">
+        <a href="../index.html#work">All projects</a>
+        <a href="churn.html">Churn case study</a>
+        <a href="../index.html#contact">Contact</a>
+        <button class="theme-toggle" type="button" aria-label="Switch between light and dark theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.2M12 19.8V22M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2 12h2.2M19.8 12H22M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="dash wrap">
+    <p class="case-back"><a href="../index.html#work">← All projects</a></p>
+    <p class="eyebrow">Customer analytics · Live dashboard</p>
+    <h1>Retention dashboard: who should we contact first?</h1>
+    <p class="dash-intro">Churn risk for 7,043 customers, from my <a href="churn.html">churn project</a>. Set what the
+      retention offer costs and how often it works, filter the customers, and the dashboard works out who is worth
+      contacting and what the campaign should earn.</p>
+
+    <div class="dash-layout">
+      <aside class="dash-controls" aria-label="Offer settings and filters">
+        <fieldset>
+          <legend>The offer</legend>
+          <label class="slider">
+            <span>Cost per customer <output id="cost-out">$60</output></span>
+            <input type="range" id="cost" min="10" max="150" step="5" value="60">
+          </label>
+          <label class="slider">
+            <span>Would-be leavers it keeps <output id="rate-out">30%</output></span>
+            <input type="range" id="rate" min="5" max="60" step="5" value="30">
+          </label>
+          <p class="dash-assume">A kept customer stays 12 more months, at a 60% margin on their bill.</p>
+        </fieldset>
+        <fieldset>
+          <legend>Contract</legend>
+          <div class="chips" data-filter="contract"></div>
+        </fieldset>
+        <fieldset>
+          <legend>Internet</legend>
+          <div class="chips" data-filter="internet"></div>
+        </fieldset>
+        <fieldset>
+          <legend>Payment</legend>
+          <div class="chips" data-filter="payment"></div>
+        </fieldset>
+        <fieldset>
+          <legend>Tenure</legend>
+          <div class="chips" data-filter="tenure"></div>
+        </fieldset>
+        <button type="button" class="btn dash-reset" id="reset">Reset everything</button>
+      </aside>
+
+      <section class="dash-main" aria-label="Results">
+        <div class="kpis" aria-live="polite">
+          <div class="kpi"><span class="kpi-label">Customers</span><strong id="k-customers">–</strong><span class="kpi-sub" id="k-customers-sub"></span></div>
+          <div class="kpi"><span class="kpi-label">Expected to leave</span><strong id="k-leave">–</strong><span class="kpi-sub" id="k-leave-sub"></span></div>
+          <div class="kpi"><span class="kpi-label">Revenue at risk</span><strong id="k-risk">–</strong><span class="kpi-sub">per month</span></div>
+          <div class="kpi kpi-hi"><span class="kpi-label">Worth an offer</span><strong id="k-target">–</strong><span class="kpi-sub" id="k-target-sub"></span></div>
+          <div class="kpi kpi-hi"><span class="kpi-label">Expected profit</span><strong id="k-profit">–</strong><span class="kpi-sub" id="k-profit-sub"></span></div>
+        </div>
+
+        <div class="dash-charts">
+          <figure class="dash-card">
+            <figcaption><strong>Who's worth an offer</strong><span>Each dot is a customer. Above the line, the offer pays for itself.</span></figcaption>
+            <div class="dash-scatter"><canvas role="img" aria-label="Scatter plot of customers by monthly bill and chance of leaving, with a break-even line."></canvas><div class="viz-tip" hidden></div></div>
+            <p class="dash-legend"><span class="key key-hi" aria-hidden="true"></span>Worth an offer <span class="key key-lo" aria-hidden="true"></span>Not worth it</p>
+          </figure>
+          <figure class="dash-card">
+            <figcaption><strong>Why they're at risk</strong><span>Main reason the model flags each customer worth an offer.</span></figcaption>
+            <div class="bars" id="reasons"></div>
+            <figcaption class="sub-caption"><strong>Revenue at risk by contract</strong><span>Expected monthly revenue lost to churn (risk × bill).</span></figcaption>
+            <div class="bars" id="risk-contract"></div>
+          </figure>
+        </div>
+
+        <div class="dash-card">
+          <div class="dash-table-head">
+            <div><h2>Contact first</h2><p>Top 25 by expected profit of the offer.</p></div>
+            <button type="button" class="btn" id="download">Download the full list (CSV)</button>
+          </div>
+          <div class="table-wrap">
+            <table class="dash-table">
+              <thead><tr><th scope="col">Customer</th><th scope="col">Risk</th><th scope="col">Bill</th><th scope="col">Expected profit</th><th scope="col">Main reason</th><th scope="col">Second reason</th></tr></thead>
+              <tbody id="contact-rows"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <p class="dash-note">Risks are out-of-fold predictions from a logistic regression (5-fold cross-validation), so no
+          customer is scored by a model that saw them. "Expected profit" is the model's own estimate. Scored against what
+          customers actually did, the same targeting at the default settings earned about $92,000. Data: IBM's Telco
+          Customer Churn sample (a fictional company). In production this would score active customers every month.
+          <a href="https://github.com/BoredMongoose/telco-churn-profit">Code ↗</a></p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">© 2026 Milind Saxena</div>
+  </footer>
+  <script src="../script.js"></script>
+  <script src="../assets/dashboard.js"></script>
+</body>
+</html>

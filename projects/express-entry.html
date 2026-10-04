@@ -3,12 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>What CRS score do you need for Canadian PR in 2026? · Milind Saxena</title>
-  <meta name="description" content="It depends on your stream more than your score. Canada hasn&#x27;t held an all-program Express Entry draw since April 2024. In 2026, 41% of invitations wen">
+  <title>Express Entry in 2026: your stream matters more than your score · Milind Saxena</title>
+  <meta name="description" content="It depends on the stream, not just the score: 2026 cutoffs ran from 169 for physicians to 523 for the Canadian Experience Class, and French speakers…">
+  <meta property="og:title" content="Express Entry in 2026: your stream matters more than your score · Milind Saxena">
+  <meta property="og:description" content="It depends on the stream, not just the score: 2026 cutoffs ran from 169 for physicians to 523 for the Canadian Experience Class, and French speakers…">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://boredmongoose.github.io/projects/express-entry.html">
+  <meta property="og:image" content="https://boredmongoose.github.io/assets/social-preview.png">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
   <script>
     document.documentElement.classList.add("js");
@@ -33,8 +39,13 @@
   <main class="case wrap">
     <p class="case-back"><a href="../index.html#work">← All projects</a></p>
     <p class="eyebrow">Immigration · Canada</p>
-    <h1>What CRS score do you need for Canadian PR in 2026?</h1>
-    <div class="case-answer"><p class="case-answer-label">The answer</p><p>It depends on your stream more than your score. Canada hasn&#x27;t held an all-program Express Entry draw since April 2024. In 2026, 41% of invitations went to the Canadian Experience Class, 37% to French speakers and 15% to occupation categories, and cutoffs ranged from 169 for physicians to 523 for the CEC. Once the draw size is known, the next CEC cutoff is predictable within about 2.4 points.</p></div>
+    <h1>Express Entry in 2026: your stream matters more than your score</h1>
+    <dl class="impact-box">
+      <div class="ib-wide ib-question"><dt>Business question</dt><dd>What CRS score does a candidate need for Canadian PR in 2026?</dd></div>
+      <div class="ib-half"><dt>Key finding</dt><dd>It depends on the stream, not just the score: 2026 cutoffs ran from 169 for physicians to 523 for the Canadian Experience Class, and French speakers needed about 400. There hasn&#x27;t been an all-program draw since April 2024.</dd></div>
+      <div class="ib-half"><dt>Recommendation</dt><dd>Category eligibility matters more than a few extra points: 2026 category cutoffs were 40–120 points below the CEC&#x27;s. And once a draw&#x27;s size is announced, its cutoff can be estimated within a few points.</dd></div>
+      <div class="ib-wide ib-impact"><dt>Estimated impact</dt><dd><strong>2.4 pts</strong><span>Average error predicting the next CEC cutoff, against 4.4 for &#x27;same as last time&#x27; (29 draws, rolling backtest).</span></dd></div>
+    </dl>
     <dl class="case-facts">
       <div><dt>Data</dt><dd>All 448 Express Entry draws, January 2015 to 1 October 2026, plus the pool&#x27;s score distribution (IRCC)</dd></div>
       <div><dt>Methods</dt><dd>SQL modelling, data-quality checks, regression forecasting with a rolling backtest</dd></div>
@@ -78,6 +89,25 @@
       <li>42 CEC draws is a small sample, and policy changes can move cutoffs in ways history can&#x27;t predict.</li>
       <li>This is an analysis of public data, not immigration advice.</li>
     </ul>
+
+    <div class="case-two">
+      <div>
+        <h2 class="section-title">What I learned</h2>
+        <ul class="case-list">
+          <li>Government data changes shape: 22 draw names for 15 streams needed a proper mapping layer.</li>
+          <li>Always backtest. The model that looked best in-sample (with the pool size) was worse on draws it hadn&#x27;t seen.</li>
+          <li>Official data has errors too: one of IRCC&#x27;s own tables contains what looks like a transposed digit.</li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="section-title">What I'd do next</h2>
+        <ol class="case-list">
+          <li>Forecast draw sizes as well, using the immigration levels plan.</li>
+          <li>Publish an updating cutoff tracker after each draw.</li>
+          <li>Model category draws once there are enough of them.</li>
+        </ol>
+      </div>
+    </div>
 
     <p class="case-next"><a class="btn btn-primary" href="https://github.com/BoredMongoose/express-entry-draws">See the code on GitHub</a>
       <a class="btn" href="../index.html#work">Back to all projects</a></p>

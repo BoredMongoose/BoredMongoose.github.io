@@ -4,11 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Who will cancel, and who&#x27;s worth saving? · Milind Saxena</title>
-  <meta name="description" content="Don&#x27;t send the retention offer to everyone the model flags. With a $60 offer that keeps 30% of would-be leavers, offering it to everyone loses $122,00">
+  <meta name="description" content="Targeting by expected profit (churn risk × value of the customer&#x27;s bill) beat the usual &#x27;risk above 50%&#x27; rule in all 30 cost scenarios tested. Offering…">
+  <meta property="og:title" content="Who will cancel, and who&#x27;s worth saving? · Milind Saxena">
+  <meta property="og:description" content="Targeting by expected profit (churn risk × value of the customer&#x27;s bill) beat the usual &#x27;risk above 50%&#x27; rule in all 30 cost scenarios tested. Offering…">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://boredmongoose.github.io/projects/churn.html">
+  <meta property="og:image" content="https://boredmongoose.github.io/assets/social-preview.png">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
   <script>
     document.documentElement.classList.add("js");
@@ -34,7 +40,16 @@
     <p class="case-back"><a href="../index.html#work">← All projects</a></p>
     <p class="eyebrow">Customer analytics · Telecom</p>
     <h1>Who will cancel, and who&#x27;s worth saving?</h1>
-    <div class="case-answer"><p class="case-answer-label">The answer</p><p>Don&#x27;t send the retention offer to everyone the model flags. With a $60 offer that keeps 30% of would-be leavers, offering it to everyone loses $122,000, and the usual &#x27;risk above 50%&#x27; rule earns $85,000. Targeting only customers whose expected profit is positive (risk × chance the offer works × value of their bill) earns $92,000, and that rule wins across all 30 cost and success scenarios tested.</p></div>
+    <dl class="impact-box">
+      <div class="ib-wide ib-question"><dt>Business question</dt><dd>Which customers should get a retention offer?</dd></div>
+      <div class="ib-half"><dt>Key finding</dt><dd>Targeting by expected profit (churn risk × value of the customer&#x27;s bill) beat the usual &#x27;risk above 50%&#x27; rule in all 30 cost scenarios tested. Offering the deal to everyone loses money.</dd></div>
+      <div class="ib-half"><dt>Recommendation</dt><dd>Send the offer to the 29% of customers whose expected profit is positive: almost all are on month-to-month fibre plans paying $70+ a month, and 57% of them did leave (against 26.5% overall).</dd></div>
+      <div class="ib-wide ib-impact"><dt>Estimated impact</dt><dd><strong>+$92k</strong><span>Profit from one targeted campaign, against −$122k for offering it to everyone (simulated: $60 offer that keeps 30% of would-be leavers).</span></dd></div>
+    </dl>
+    <div class="case-dashboard">
+      <p><strong>Try it:</strong> change the offer's cost and success rate, filter the customers, and download who to contact.</p>
+      <a class="btn btn-primary" href="retention-dashboard.html">Open the live dashboard</a>
+    </div>
     <dl class="case-facts">
       <div><dt>Data</dt><dd>IBM&#x27;s sample data for a fictional telecom company, 7,043 customers</dd></div>
       <div><dt>Methods</dt><dd>Classification, calibration, permutation importance, profit-based decisions</dd></div>
@@ -78,6 +93,26 @@
       <li>The offer&#x27;s cost and success rate are assumptions. A real campaign should measure them with a holdout group first.</li>
       <li>The data is a snapshot, so it can&#x27;t say when a customer will leave.</li>
     </ul>
+
+    <div class="case-two">
+      <div>
+        <h2 class="section-title">What I learned</h2>
+        <ul class="case-list">
+          <li>A good AUC doesn&#x27;t make a good decision. The cut-off has to come from the economics of the offer, not from 50%.</li>
+          <li>Calibration matters as soon as probabilities get multiplied by money, which is why I kept the logistic regression over a slightly higher-scoring random forest.</li>
+          <li>Simple models are easier to defend in a meeting: every prediction comes with two plain-English reasons.</li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="section-title">What I'd do next</h2>
+        <ol class="case-list">
+          <li>Run the offer as an A/B test with a holdout group, to measure the real success rate before scaling it up.</li>
+          <li>Score active customers every month and check that the risk ranking holds on new data.</li>
+          <li>Model when customers leave (survival analysis), so the offer arrives before they decide.</li>
+          <li>Replace the flat 12-month value with each customer&#x27;s lifetime value.</li>
+        </ol>
+      </div>
+    </div>
 
     <p class="case-next"><a class="btn btn-primary" href="https://github.com/BoredMongoose/telco-churn-profit">See the code on GitHub</a>
       <a class="btn" href="../index.html#work">Back to all projects</a></p>

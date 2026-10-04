@@ -4,11 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Toronto&#x27;s subway delays nearly doubled. What&#x27;s behind them? · Milind Saxena</title>
-  <meta name="description" content="Mostly passengers and the public, not the trains. The subway lost 71,000 minutes a year to delays in 2023–25, 85% more than in 2014–16, and three-quar">
+  <meta name="description" content="Delay minutes rose 85% since 2014, and three-quarters of the increase comes from incidents involving passengers and the public. Train breakdowns fell 12%…">
+  <meta property="og:title" content="Toronto&#x27;s subway delays nearly doubled. What&#x27;s behind them? · Milind Saxena">
+  <meta property="og:description" content="Delay minutes rose 85% since 2014, and three-quarters of the increase comes from incidents involving passengers and the public. Train breakdowns fell 12%…">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://boredmongoose.github.io/projects/ttc.html">
+  <meta property="og:image" content="https://boredmongoose.github.io/assets/social-preview.png">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
   <script>
     document.documentElement.classList.add("js");
@@ -34,7 +40,12 @@
     <p class="case-back"><a href="../index.html#work">← All projects</a></p>
     <p class="eyebrow">Transit operations · Toronto</p>
     <h1>Toronto&#x27;s subway delays nearly doubled. What&#x27;s behind them?</h1>
-    <div class="case-answer"><p class="case-answer-label">The answer</p><p>Mostly passengers and the public, not the trains. The subway lost 71,000 minutes a year to delays in 2023–25, 85% more than in 2014–16, and three-quarters of the increase comes from disorderly behaviour, people on the tracks, passenger alarms and medical emergencies. Train breakdowns fell 12%. Line 1&#x27;s new signal system worked: it has about half the signal delays Line 2&#x27;s trend predicts.</p></div>
+    <dl class="impact-box">
+      <div class="ib-wide ib-question"><dt>Business question</dt><dd>What&#x27;s really causing Toronto&#x27;s subway delays, and where should the TTC act?</dd></div>
+      <div class="ib-half"><dt>Key finding</dt><dd>Delay minutes rose 85% since 2014, and three-quarters of the increase comes from incidents involving passengers and the public. Train breakdowns fell 12%, and Line 1&#x27;s new signal system halved its signal delays.</dd></div>
+      <div class="ib-half"><dt>Recommendation</dt><dd>Spend where the minutes went: faster response to passenger, security and track-level incidents (57% of delay minutes) and Line 1&#x27;s door cameras. Line 1&#x27;s results support upgrading Line 2&#x27;s signals.</dd></div>
+      <div class="ib-wide ib-impact"><dt>Estimated impact</dt><dd><strong>76%</strong><span>Of the increase in delays comes from passengers and the public, not the trains. Passenger and public incidents now cost about 40,600 delay minutes a year, so every 10% cut in them saves about 4,000.</span></dd></div>
+    </dl>
     <dl class="case-facts">
       <div><dt>Data</dt><dd>267,571 TTC subway incidents, January 2014 to August 2026 (City of Toronto Open Data)</dd></div>
       <div><dt>Methods</dt><dd>Data cleaning, SQL modelling, difference-in-differences</dd></div>
@@ -82,6 +93,26 @@
       <li>Some of the rise in disorderly-behaviour incidents may be more reporting, since the city added safety staff in January 2023.</li>
       <li>The signal comparison assumes Line 2 shows what Line 1 would have done without the upgrade.</li>
     </ul>
+
+    <div class="case-two">
+      <div>
+        <h2 class="section-title">What I learned</h2>
+        <ul class="case-list">
+          <li>Most of the work was cleaning: 111 spellings of a subway line and 2,221 spellings of its stations. The automated checks caught problems I&#x27;d never have spotted by eye.</li>
+          <li>A comparison group turns &#x27;before and after&#x27; into evidence. Line 2 showed what Line 1 would have done without its upgrade.</li>
+          <li>New technology brings new failure modes: the signal upgrade removed old faults but added new ones, and one-person trains added door-camera delays.</li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="section-title">What I'd do next</h2>
+        <ol class="case-list">
+          <li>Add ridership, so delays are weighted by the number of passengers they hit, not just minutes.</li>
+          <li>Get time-to-clear for each incident type, to find which response steps take longest.</li>
+          <li>Repeat the signal comparison when Line 2&#x27;s upgrade starts.</li>
+          <li>Turn the marts into a monthly operations dashboard by line, station and cause.</li>
+        </ol>
+      </div>
+    </div>
 
     <p class="case-next"><a class="btn btn-primary" href="https://github.com/BoredMongoose/ttc-subway-delays">See the code on GitHub</a>
       <a class="btn" href="../index.html#work">Back to all projects</a></p>

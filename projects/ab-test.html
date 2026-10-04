@@ -3,12 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Should a mobile game move its first gate from level 30 to 40? · Milind Saxena</title>
-  <meta name="description" content="Keep it at 30, but the famous result is weaker than it looks. The usual analysis of this test finds that the later gate cuts 7-day retention by 0.8 po">
+  <title>Cookie Cats: the broken split behind a famous A/B test · Milind Saxena</title>
+  <meta name="description" content="The test&#x27;s random split was broken: one group got 823 extra players who barely played. Corrected, the later gate lowers 7-day retention by about 1 point…">
+  <meta property="og:title" content="Cookie Cats: the broken split behind a famous A/B test · Milind Saxena">
+  <meta property="og:description" content="The test&#x27;s random split was broken: one group got 823 extra players who barely played. Corrected, the later gate lowers 7-day retention by about 1 point…">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://boredmongoose.github.io/projects/ab-test.html">
+  <meta property="og:image" content="https://boredmongoose.github.io/assets/social-preview.png">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
   <script>
     document.documentElement.classList.add("js");
@@ -33,8 +39,13 @@
   <main class="case wrap">
     <p class="case-back"><a href="../index.html#work">← All projects</a></p>
     <p class="eyebrow">Experimentation · Mobile game</p>
-    <h1>Should a mobile game move its first gate from level 30 to 40?</h1>
-    <div class="case-answer"><p class="case-answer-label">The answer</p><p>Keep it at 30, but the famous result is weaker than it looks. The usual analysis of this test finds that the later gate cuts 7-day retention by 0.8 points. But the random split was broken: the gate-40 group got about 800 extra players who barely played. Comparing only players who reached the gates, the effect is less than half as big across all players and no longer statistically clear.</p></div>
+    <h1>Cookie Cats: the broken split behind a famous A/B test</h1>
+    <dl class="impact-box">
+      <div class="ib-wide ib-question"><dt>Business question</dt><dd>Should we move the game&#x27;s first gate from level 30 to level 40?</dd></div>
+      <div class="ib-half"><dt>Key finding</dt><dd>The test&#x27;s random split was broken: one group got 823 extra players who barely played. Corrected, the later gate lowers 7-day retention by about 1 point among players who reach it, but the result isn&#x27;t statistically clear.</dd></div>
+      <div class="ib-half"><dt>Recommendation</dt><dd>Keep the gate at level 30, fix the assignment problem, and re-run with about 217,000 installs before making the change.</dd></div>
+      <div class="ib-wide ib-impact"><dt>Estimated impact</dt><dd><strong>2.3×</strong><span>Overstatement of the harm to 7-day retention in the usual analysis (−0.82 vs −0.36 points), caused by the broken split.</span></dd></div>
+    </dl>
     <dl class="case-facts">
       <div><dt>Data</dt><dd>90,189 players of Cookie Cats, randomly assigned to two versions</dd></div>
       <div><dt>Methods</dt><dd>Sample-ratio check, A/A segment, z-tests, Bayesian analysis, power analysis</dd></div>
@@ -78,6 +89,26 @@
       <li>The cause of the broken split is unknown. The fix assumes it only affected players who never reached a gate, which the even split above level 30 supports.</li>
       <li>One game at one point in time.</li>
     </ul>
+
+    <div class="case-two">
+      <div>
+        <h2 class="section-title">What I learned</h2>
+        <ul class="case-list">
+          <li>Check the experiment before the results. A sample-ratio test takes seconds, and here it changed the answer.</li>
+          <li>Splitting by something the treatment can&#x27;t affect (players who never reached a gate) is a clean way to find where a test went wrong.</li>
+          <li>A p-value of 0.07 isn&#x27;t &#x27;no effect&#x27;. For a product decision, the probability that one option is better (96% here) and the cost of being wrong are more useful.</li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="section-title">What I'd do next</h2>
+        <ol class="case-list">
+          <li>Trace the extra players through install source, device, app version and the assignment logs.</li>
+          <li>Add an automatic sample-ratio alert to the experiment dashboard, so a broken split is caught on day one.</li>
+          <li>Re-run with about 41,000 players per group who reach level 30, with in-app revenue as a guardrail metric.</li>
+          <li>Check whether the effect differs for players who reach the gate quickly or slowly.</li>
+        </ol>
+      </div>
+    </div>
 
     <p class="case-next"><a class="btn btn-primary" href="https://github.com/BoredMongoose/ab-test-cookie-cats">See the code on GitHub</a>
       <a class="btn" href="../index.html#work">Back to all projects</a></p>

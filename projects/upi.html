@@ -4,11 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>UPI won. So why is India holding more cash than ever? · Milind Saxena</title>
-  <meta name="description" content="Because cash was never just for paying. UPI&#x27;s yearly value grew from 37% to 91% of GDP in four years, yet cash in circulation is still about 12% of GD">
+  <meta name="description" content="No. Cash is still about 12% of GDP, where it was before UPI existed, while UPI now moves the equivalent of 91% of GDP a year. UPI replaced cash for…">
+  <meta property="og:title" content="UPI won. So why is India holding more cash than ever? · Milind Saxena">
+  <meta property="og:description" content="No. Cash is still about 12% of GDP, where it was before UPI existed, while UPI now moves the equivalent of 91% of GDP a year. UPI replaced cash for…">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://boredmongoose.github.io/projects/upi.html">
+  <meta property="og:image" content="https://boredmongoose.github.io/assets/social-preview.png">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
   <script>
     document.documentElement.classList.add("js");
@@ -34,11 +40,16 @@
     <p class="case-back"><a href="../index.html#work">← All projects</a></p>
     <p class="eyebrow">Finance · India</p>
     <h1>UPI won. So why is India holding more cash than ever?</h1>
-    <div class="case-answer"><p class="case-answer-label">The answer</p><p>Because cash was never just for paying. UPI&#x27;s yearly value grew from 37% to 91% of GDP in four years, yet cash in circulation is still about 12% of GDP, the same as in 2014-15, before UPI existed. UPI replaced cash for spending, not for saving.</p></div>
+    <dl class="impact-box">
+      <div class="ib-wide ib-question"><dt>Business question</dt><dd>UPI won. Should banks plan for less cash?</dd></div>
+      <div class="ib-half"><dt>Key finding</dt><dd>No. Cash is still about 12% of GDP, where it was before UPI existed, while UPI now moves the equivalent of 91% of GDP a year. UPI replaced cash for spending, not for saving.</dd></div>
+      <div class="ib-half"><dt>Recommendation</dt><dd>Plan cash logistics (ATMs, currency chests, note printing) for steady growth, not decline: cash is forecast to reach ₹48 lakh crore by May 2027.</dd></div>
+      <div class="ib-wide ib-impact"><dt>Estimated impact</dt><dd><strong>1.1%</strong><span>Average error of the cash-demand forecast in a 25-period backtest (forecast: ₹48.1 lakh crore by May 2027, 80% range ₹46.2–50.0).</span></dd></div>
+    </dl>
     <dl class="case-facts">
       <div><dt>Data</dt><dd>Reserve Bank of India statistics (4 tables), World Bank GDP</dd></div>
       <div><dt>Period</dt><dd>2010-11 to 2025-26</dd></div>
-      <div><dt>Tools</dt><dd>SQL (DuckDB), Python, Power BI</dd></div>
+      <div><dt>Tools</dt><dd>SQL (DuckDB), Python (statsmodels)</dd></div>
       <div><dt>Code</dt><dd><a href="https://github.com/BoredMongoose/upi-cash-paradox">github.com/BoredMongoose/upi-cash-paradox ↗</a></dd></div>
     </dl>
 
@@ -78,6 +89,25 @@
       <li>There&#x27;s no direct measure of how often people use cash, such as ATM withdrawals. &quot;UPI took the small payments&quot; is inferred from ticket sizes and card volumes.</li>
       <li>Official UPI figures in this source start in 2021-22.</li>
     </ul>
+
+    <div class="case-two">
+      <div>
+        <h2 class="section-title">What I learned</h2>
+        <ul class="case-list">
+          <li>Ratios can lie when a definition changes: India&#x27;s GDP base-year change would have created a fake 3-point jump in cash-to-GDP.</li>
+          <li>Stocks and flows can be compared on trend, not on size.</li>
+          <li>Checking two official tables against each other catches errors neither shows alone.</li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="section-title">What I'd do next</h2>
+        <ol class="case-list">
+          <li>Add ATM withdrawal data, to measure how much cash is actually used, not just held.</li>
+          <li>Break cash demand down by region and note denomination.</li>
+          <li>Re-run the forecast as each month&#x27;s RBI data arrives and track its errors.</li>
+        </ol>
+      </div>
+    </div>
 
     <p class="case-next"><a class="btn btn-primary" href="https://github.com/BoredMongoose/upi-cash-paradox">See the code on GitHub</a>
       <a class="btn" href="../index.html#work">Back to all projects</a></p>

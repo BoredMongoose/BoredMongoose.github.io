@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Should a mobile game move its first gate from level 30 to 40? · Milind Saxena</title>
+  <meta name="description" content="Keep it at 30, but the famous result is weaker than it looks. The usual analysis of this test finds that the later gate cuts 7-day retention by 0.8 po">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script>
+    document.documentElement.classList.add("js");
+    try { var t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="../index.html"><span class="brand-name">Milind Saxena<span class="brand-dot" aria-hidden="true">.</span></span></a>
+      <nav aria-label="Main">
+        <a href="../index.html#work">All projects</a>
+        <a href="../index.html#contact">Contact</a>
+        <button class="theme-toggle" type="button" aria-label="Switch between light and dark theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.2M12 19.8V22M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2 12h2.2M19.8 12H22M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="case wrap">
+    <p class="case-back"><a href="../index.html#work">← All projects</a></p>
+    <p class="eyebrow">Experimentation · Mobile game</p>
+    <h1>Should a mobile game move its first gate from level 30 to 40?</h1>
+    <div class="case-answer"><p class="case-answer-label">The answer</p><p>Keep it at 30, but the famous result is weaker than it looks. The usual analysis of this test finds that the later gate cuts 7-day retention by 0.8 points. But the random split was broken: the gate-40 group got about 800 extra players who barely played. Comparing only players who reached the gates, the effect is less than half as big across all players and no longer statistically clear.</p></div>
+    <dl class="case-facts">
+      <div><dt>Data</dt><dd>90,189 players of Cookie Cats, randomly assigned to two versions</dd></div>
+      <div><dt>Methods</dt><dd>Sample-ratio check, A/A segment, z-tests, Bayesian analysis, power analysis</dd></div>
+      <div><dt>Tools</dt><dd>Python: scipy, statsmodels; SQL (DuckDB); unit tests</dd></div>
+      <div><dt>Code</dt><dd><a href="https://github.com/BoredMongoose/ab-test-cookie-cats">github.com/BoredMongoose/ab-test-cookie-cats ↗</a></dd></div>
+    </dl>
+
+    <h2 class="section-title">Results</h2>
+    <figure class="case-figure">
+      <img src="../assets/projects/ab-test-cookie-cats/01_two_answers.webp" width="1600" height="626" loading="lazy" alt="Two answers to the same question. Grey: the usual analysis of all players. Blue: only players who reached the gates, where the two groups are comparable. The 7-day drop is −0.97 points with an interval that crosses zero.">
+      <figcaption><strong>Two answers to the same question.</strong> Grey: the usual analysis of all players. Blue: only players who reached the gates, where the two groups are comparable. The 7-day drop is −0.97 points with an interval that crosses zero.</figcaption>
+    </figure>
+    <figure class="case-figure">
+      <img src="../assets/projects/ab-test-cookie-cats/02_where_the_imbalance_is.webp" width="1600" height="964" loading="lazy" alt="The extra gate-40 players barely played. Players with fewer than 29 rounds never reached a gate, so the two versions were identical for them, and the groups should be the same size. They aren&#x27;t (p = 0.0005), while players who reached the gates split almost exactly evenly.">
+      <figcaption><strong>The extra gate-40 players barely played.</strong> Players with fewer than 29 rounds never reached a gate, so the two versions were identical for them, and the groups should be the same size. They aren&#x27;t (p = 0.0005), while players who reached the gates split almost exactly evenly.</figcaption>
+    </figure>
+    <figure class="case-figure">
+      <img src="../assets/projects/ab-test-cookie-cats/03_why_it_matters.webp" width="1600" height="1037" loading="lazy" alt="Why the imbalance changes the answer. The extra players return 4% of the time, against 43% for players who reached the gates, so they drag gate 40&#x27;s average down.">
+      <figcaption><strong>Why the imbalance changes the answer.</strong> The extra players return 4% of the time, against 43% for players who reached the gates, so they drag gate 40&#x27;s average down.</figcaption>
+    </figure>
+    <figure class="case-figure">
+      <img src="../assets/projects/ab-test-cookie-cats/04_how_sure.webp" width="1589" height="985" loading="lazy" alt="Gate 30 is still probably the better choice. A Bayesian view: a 96% chance gate 30 is better for 7-day retention, down from 99.9% in the usual analysis.">
+      <figcaption><strong>Gate 30 is still probably the better choice.</strong> A Bayesian view: a 96% chance gate 30 is better for 7-day retention, down from 99.9% in the usual analysis.</figcaption>
+    </figure>
+    <figure class="case-figure">
+      <img src="../assets/projects/ab-test-cookie-cats/05_power.webp" width="1600" height="918" loading="lazy" alt="The test was too small to settle a 1-point effect. It had 44% power for the effect it found; settling it needs about 2.4 times as many players.">
+      <figcaption><strong>The test was too small to settle a 1-point effect.</strong> It had 44% power for the effect it found; settling it needs about 2.4 times as many players.</figcaption>
+    </figure>
+
+    <h2 class="section-title">How I did it</h2>
+    <ol class="case-method">
+      <li>Checked the experiment before the results: a sample-ratio test showed the groups were too uneven for chance (p = 0.009).</li>
+      <li>Found where the extra players were by splitting players by whether they could have seen a gate (at least 29 rounds played). That split is decided before any gate, so it&#x27;s a fair A/A test inside the A/B test.</li>
+      <li>Re-estimated the effect only among players who reached the gates, where the split is clean, then scaled it to all players.</li>
+      <li>Wrote a small statistics toolkit (sample-ratio test, z-test, Bayesian comparison, power, Holm correction) with 13 unit tests against scipy and statsmodels. The tests caught a missing factor of 2 in my first sample-size formula.</li>
+    </ol>
+
+    <h2 class="section-title">What could make this wrong</h2>
+    <ul class="case-caveats">
+      <li>There&#x27;s no revenue data: gate 40 might earn more from players who pay to skip it.</li>
+      <li>The cause of the broken split is unknown. The fix assumes it only affected players who never reached a gate, which the even split above level 30 supports.</li>
+      <li>One game at one point in time.</li>
+    </ul>
+
+    <p class="case-next"><a class="btn btn-primary" href="https://github.com/BoredMongoose/ab-test-cookie-cats">See the code on GitHub</a>
+      <a class="btn" href="../index.html#work">Back to all projects</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">© 2026 Milind Saxena</div>
+  </footer>
+  <script src="../script.js"></script>
+</body>
+</html>

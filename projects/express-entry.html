@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What CRS score do you need for Canadian PR in 2026? · Milind Saxena</title>
+  <meta name="description" content="It depends on your stream more than your score. Canada hasn&#x27;t held an all-program Express Entry draw since April 2024. In 2026, 41% of invitations wen">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script>
+    document.documentElement.classList.add("js");
+    try { var t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="../index.html"><span class="brand-name">Milind Saxena<span class="brand-dot" aria-hidden="true">.</span></span></a>
+      <nav aria-label="Main">
+        <a href="../index.html#work">All projects</a>
+        <a href="../index.html#contact">Contact</a>
+        <button class="theme-toggle" type="button" aria-label="Switch between light and dark theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.2M12 19.8V22M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2 12h2.2M19.8 12H22M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="case wrap">
+    <p class="case-back"><a href="../index.html#work">← All projects</a></p>
+    <p class="eyebrow">Immigration · Canada</p>
+    <h1>What CRS score do you need for Canadian PR in 2026?</h1>
+    <div class="case-answer"><p class="case-answer-label">The answer</p><p>It depends on your stream more than your score. Canada hasn&#x27;t held an all-program Express Entry draw since April 2024. In 2026, 41% of invitations went to the Canadian Experience Class, 37% to French speakers and 15% to occupation categories, and cutoffs ranged from 169 for physicians to 523 for the CEC. Once the draw size is known, the next CEC cutoff is predictable within about 2.4 points.</p></div>
+    <dl class="case-facts">
+      <div><dt>Data</dt><dd>All 448 Express Entry draws, January 2015 to 1 October 2026, plus the pool&#x27;s score distribution (IRCC)</dd></div>
+      <div><dt>Methods</dt><dd>SQL modelling, data-quality checks, regression forecasting with a rolling backtest</dd></div>
+      <div><dt>Tools</dt><dd>SQL (DuckDB), Python: pandas, statsmodels</dd></div>
+      <div><dt>Code</dt><dd><a href="https://github.com/BoredMongoose/express-entry-draws">github.com/BoredMongoose/express-entry-draws ↗</a></dd></div>
+    </dl>
+
+    <h2 class="section-title">Results</h2>
+    <figure class="case-figure">
+      <img src="../assets/projects/express-entry-draws/01_score_needed_2026.webp" width="1600" height="905" loading="lazy" alt="In 2026, the score you needed depended on your stream. Median cutoffs: physicians 198, French speakers 400, healthcare 475, trades 476, Canadian Experience Class 516.">
+      <figcaption><strong>In 2026, the score you needed depended on your stream.</strong> Median cutoffs: physicians 198, French speakers 400, healthcare 475, trades 476, Canadian Experience Class 516.</figcaption>
+    </figure>
+    <figure class="case-figure">
+      <img src="../assets/projects/express-entry-draws/02_who_gets_invited.webp" width="1600" height="964" loading="lazy" alt="Canada stopped inviting candidates from all programs at once. Invitations by type of draw. 2026 is already a record year, with 135,215 invitations by 1 October.">
+      <figcaption><strong>Canada stopped inviting candidates from all programs at once.</strong> Invitations by type of draw. 2026 is already a record year, with 135,215 invitations by 1 October.</figcaption>
+    </figure>
+    <figure class="case-figure">
+      <img src="../assets/projects/express-entry-draws/03_cutoff_history.webp" width="1600" height="976" loading="lazy" alt="Since 2023, each stream has its own bar. Every draw&#x27;s cutoff since 2015, including a draw of 27,332 invitations with a cutoff of 75 in February 2021.">
+      <figcaption><strong>Since 2023, each stream has its own bar.</strong> Every draw&#x27;s cutoff since 2015, including a draw of 27,332 invitations with a cutoff of 75 in February 2021.</figcaption>
+    </figure>
+    <figure class="case-figure">
+      <img src="../assets/projects/express-entry-draws/04_size_vs_cutoff.webp" width="1600" height="1014" loading="lazy" alt="Bigger draws mean lower cutoffs. For Canadian Experience Class draws, each doubling of the draw size lowers the cutoff about 8 points.">
+      <figcaption><strong>Bigger draws mean lower cutoffs.</strong> For Canadian Experience Class draws, each doubling of the draw size lowers the cutoff about 8 points.</figcaption>
+    </figure>
+    <figure class="case-figure">
+      <img src="../assets/projects/express-entry-draws/05_backtest.webp" width="1600" height="841" loading="lazy" alt="A simple model beats &#x27;same as last time&#x27;. Draw size, the last cutoff and the days since the last draw predict each cutoff within 2.4 points on average across 29 test draws, against 4.4 points for repeating the last cutoff.">
+      <figcaption><strong>A simple model beats &#x27;same as last time&#x27;.</strong> Draw size, the last cutoff and the days since the last draw predict each cutoff within 2.4 points on average across 29 test draws, against 4.4 points for repeating the last cutoff.</figcaption>
+    </figure>
+
+    <h2 class="section-title">How I did it</h2>
+    <ol class="case-method">
+      <li>Downloaded IRCC&#x27;s full draw history (the data behind its rounds-of-invitations page) and mapped 22 draw names, which change almost every year, to 15 streams.</li>
+      <li>Decoded the pool&#x27;s 18 unlabelled distribution fields into CRS score bands and built the analysis tables in SQL.</li>
+      <li>Wrote 11 data-quality checks. One caught an error in IRCC&#x27;s own table: in draw 247 (April 2023) the 10-point score bands add up to 180 fewer candidates than their total, which looks like a transposed digit.</li>
+      <li>Compared six forecasting approaches with a rolling backtest (each draw predicted only from earlier draws), and reported prediction intervals for the next draw.</li>
+    </ol>
+
+    <h2 class="section-title">What could make this wrong</h2>
+    <ul class="case-caveats">
+      <li>The forecast needs the draw size, which IRCC announces with the draw: it answers &#x27;what if&#x27;, not &#x27;when&#x27;.</li>
+      <li>42 CEC draws is a small sample, and policy changes can move cutoffs in ways history can&#x27;t predict.</li>
+      <li>This is an analysis of public data, not immigration advice.</li>
+    </ul>
+
+    <p class="case-next"><a class="btn btn-primary" href="https://github.com/BoredMongoose/express-entry-draws">See the code on GitHub</a>
+      <a class="btn" href="../index.html#work">Back to all projects</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">© 2026 Milind Saxena</div>
+  </footer>
+  <script src="../script.js"></script>
+</body>
+</html>

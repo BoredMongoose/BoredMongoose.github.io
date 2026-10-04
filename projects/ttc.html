@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Toronto&#x27;s subway delays nearly doubled. What&#x27;s behind them? · Milind Saxena</title>
+  <meta name="description" content="Mostly passengers and the public, not the trains. The subway lost 71,000 minutes a year to delays in 2023–25, 85% more than in 2014–16, and three-quar">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script>
+    document.documentElement.classList.add("js");
+    try { var t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="../index.html"><span class="brand-name">Milind Saxena<span class="brand-dot" aria-hidden="true">.</span></span></a>
+      <nav aria-label="Main">
+        <a href="../index.html#work">All projects</a>
+        <a href="../index.html#contact">Contact</a>
+        <button class="theme-toggle" type="button" aria-label="Switch between light and dark theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.2M12 19.8V22M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2 12h2.2M19.8 12H22M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="case wrap">
+    <p class="case-back"><a href="../index.html#work">← All projects</a></p>
+    <p class="eyebrow">Transit operations · Toronto</p>
+    <h1>Toronto&#x27;s subway delays nearly doubled. What&#x27;s behind them?</h1>
+    <div class="case-answer"><p class="case-answer-label">The answer</p><p>Mostly passengers and the public, not the trains. The subway lost 71,000 minutes a year to delays in 2023–25, 85% more than in 2014–16, and three-quarters of the increase comes from disorderly behaviour, people on the tracks, passenger alarms and medical emergencies. Train breakdowns fell 12%. Line 1&#x27;s new signal system worked: it has about half the signal delays Line 2&#x27;s trend predicts.</p></div>
+    <dl class="case-facts">
+      <div><dt>Data</dt><dd>267,571 TTC subway incidents, January 2014 to August 2026 (City of Toronto Open Data)</dd></div>
+      <div><dt>Methods</dt><dd>Data cleaning, SQL modelling, difference-in-differences</dd></div>
+      <div><dt>Tools</dt><dd>SQL (DuckDB), Python: pandas, statsmodels</dd></div>
+      <div><dt>Code</dt><dd><a href="https://github.com/BoredMongoose/ttc-subway-delays">github.com/BoredMongoose/ttc-subway-delays ↗</a></dd></div>
+    </dl>
+
+    <h2 class="section-title">Results</h2>
+    <figure class="case-figure">
+      <img src="../assets/projects/ttc-subway-delays/01_delays_trend.webp" width="1600" height="935" loading="lazy" alt="Delays nearly doubled. Minutes of delay in the previous 12 months. There are more delays (+57%) and they last longer (6.7 to 8.0 minutes); delays of 30+ minutes went from 92 to 223 a year.">
+      <figcaption><strong>Delays nearly doubled.</strong> Minutes of delay in the previous 12 months. There are more delays (+57%) and they last longer (6.7 to 8.0 minutes); delays of 30+ minutes went from 92 to 223 a year.</figcaption>
+    </figure>
+    <figure class="case-figure">
+      <img src="../assets/projects/ttc-subway-delays/02_what_changed.webp" width="1600" height="1023" loading="lazy" alt="It&#x27;s mostly not the trains. Change in delay minutes per year by cause. Disorderly behaviour alone rose 12,300 minutes; train equipment fell 800.">
+      <figcaption><strong>It&#x27;s mostly not the trains.</strong> Change in delay minutes per year by cause. Disorderly behaviour alone rose 12,300 minutes; train equipment fell 800.</figcaption>
+    </figure>
+    <figure class="case-figure">
+      <img src="../assets/projects/ttc-subway-delays/05_atc_signals.webp" width="1600" height="902" loading="lazy" alt="Line 1&#x27;s new signals halved its signal delays. Line 1 switched to automatic train control in 2017–2022; Line 2 kept the old signals. After the switch, Line 1 had 47% fewer signal delays than Line 2&#x27;s trend predicts (95% interval 27–61%).">
+      <figcaption><strong>Line 1&#x27;s new signals halved its signal delays.</strong> Line 1 switched to automatic train control in 2017–2022; Line 2 kept the old signals. After the switch, Line 1 had 47% fewer signal delays than Line 2&#x27;s trend predicts (95% interval 27–61%).</figcaption>
+    </figure>
+    <figure class="case-figure">
+      <img src="../assets/projects/ttc-subway-delays/07_door_cameras.webp" width="1600" height="905" loading="lazy" alt="One-person trains brought a new kind of delay. Since Line 1 dropped its second crew member in 2021–22, problems with the door-monitoring cameras have cost it about 3,600 minutes a year.">
+      <figcaption><strong>One-person trains brought a new kind of delay.</strong> Since Line 1 dropped its second crew member in 2021–22, problems with the door-monitoring cameras have cost it about 3,600 minutes a year.</figcaption>
+    </figure>
+    <figure class="case-figure">
+      <img src="../assets/projects/ttc-subway-delays/08_when.webp" width="1600" height="728" loading="lazy" alt="Delays peak when service starts and in the afternoon rush. In the first hour of service, 77% of delay comes from trains, track, crews and overnight work that isn&#x27;t finished on time; for the rest of the day, passengers cause most of it.">
+      <figcaption><strong>Delays peak when service starts and in the afternoon rush.</strong> In the first hour of service, 77% of delay comes from trains, track, crews and overnight work that isn&#x27;t finished on time; for the rest of the day, passengers cause most of it.</figcaption>
+    </figure>
+    <figure class="case-figure">
+      <img src="../assets/projects/ttc-subway-delays/09_stations.webp" width="1600" height="1080" loading="lazy" alt="The interchanges and the ends of the lines lose the most time. Bloor-Yonge tops the list. Disorderly behaviour is the leading cause at 12 of the 15 worst stations.">
+      <figcaption><strong>The interchanges and the ends of the lines lose the most time.</strong> Bloor-Yonge tops the list. Disorderly behaviour is the leading cause at 12 of the 15 worst stations.</figcaption>
+    </figure>
+
+    <h2 class="section-title">How I did it</h2>
+    <ol class="case-method">
+      <li>Downloaded 12 years of delay logs (23 Excel sheets and a CSV) from Toronto&#x27;s open-data API.</li>
+      <li>Cleaned hand-typed fields: 111 spellings of the subway line became 5 values, and 2,221 spellings of locations were matched to the 75 stations with an alias list and fuzzy matching (99.9% resolved). I also repaired the TTC&#x27;s double-encoded code list and removed 271 duplicate rows.</li>
+      <li>Grouped 234 TTC delay codes into 13 plain-English causes, and built the analysis tables in SQL with 18 automated data-quality checks. The checks caught real problems, such as duplicates that differed only in a junk direction value.</li>
+      <li>Tested Line 1&#x27;s new signal system against Line 2 with a difference-in-differences model, and checked it three ways: the two lines moved in parallel before the upgrade, using Line 4 as the comparison gives the same answer, and non-signal delays (a placebo) didn&#x27;t improve.</li>
+    </ol>
+
+    <h2 class="section-title">What could make this wrong</h2>
+    <ul class="case-caveats">
+      <li>Delay minutes measure the service, not passengers: a delay at 8am affects more riders than one at 11pm, and the data has no ridership.</li>
+      <li>Some of the rise in disorderly-behaviour incidents may be more reporting, since the city added safety staff in January 2023.</li>
+      <li>The signal comparison assumes Line 2 shows what Line 1 would have done without the upgrade.</li>
+    </ul>
+
+    <p class="case-next"><a class="btn btn-primary" href="https://github.com/BoredMongoose/ttc-subway-delays">See the code on GitHub</a>
+      <a class="btn" href="../index.html#work">Back to all projects</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">© 2026 Milind Saxena</div>
+  </footer>
+  <script src="../script.js"></script>
+</body>
+</html>

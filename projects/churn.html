@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Who will cancel, and who&#x27;s worth saving? · Milind Saxena</title>
+  <meta name="description" content="Don&#x27;t send the retention offer to everyone the model flags. With a $60 offer that keeps 30% of would-be leavers, offering it to everyone loses $122,00">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script>
+    document.documentElement.classList.add("js");
+    try { var t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="../index.html"><span class="brand-name">Milind Saxena<span class="brand-dot" aria-hidden="true">.</span></span></a>
+      <nav aria-label="Main">
+        <a href="../index.html#work">All projects</a>
+        <a href="../index.html#contact">Contact</a>
+        <button class="theme-toggle" type="button" aria-label="Switch between light and dark theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.2M12 19.8V22M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2 12h2.2M19.8 12H22M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="case wrap">
+    <p class="case-back"><a href="../index.html#work">← All projects</a></p>
+    <p class="eyebrow">Customer analytics · Telecom</p>
+    <h1>Who will cancel, and who&#x27;s worth saving?</h1>
+    <div class="case-answer"><p class="case-answer-label">The answer</p><p>Don&#x27;t send the retention offer to everyone the model flags. With a $60 offer that keeps 30% of would-be leavers, offering it to everyone loses $122,000, and the usual &#x27;risk above 50%&#x27; rule earns $85,000. Targeting only customers whose expected profit is positive (risk × chance the offer works × value of their bill) earns $92,000, and that rule wins across all 30 cost and success scenarios tested.</p></div>
+    <dl class="case-facts">
+      <div><dt>Data</dt><dd>IBM&#x27;s sample data for a fictional telecom company, 7,043 customers</dd></div>
+      <div><dt>Methods</dt><dd>Classification, calibration, permutation importance, profit-based decisions</dd></div>
+      <div><dt>Tools</dt><dd>Python: scikit-learn, pandas; SQL (DuckDB); unit tests</dd></div>
+      <div><dt>Code</dt><dd><a href="https://github.com/BoredMongoose/telco-churn-profit">github.com/BoredMongoose/telco-churn-profit ↗</a></dd></div>
+    </dl>
+
+    <h2 class="section-title">Results</h2>
+    <figure class="case-figure">
+      <img src="../assets/projects/telco-churn-profit/01_who_leaves.webp" width="1600" height="941" loading="lazy" alt="New month-to-month customers are the risk. 55% of month-to-month customers in their first 6 months had left, against 3% of two-year customers. Month-to-month customers account for 87% of the monthly revenue lost to churn.">
+      <figcaption><strong>New month-to-month customers are the risk.</strong> 55% of month-to-month customers in their first 6 months had left, against 3% of two-year customers. Month-to-month customers account for 87% of the monthly revenue lost to churn.</figcaption>
+    </figure>
+    <figure class="case-figure">
+      <img src="../assets/projects/telco-churn-profit/02_models.webp" width="1600" height="701" loading="lazy" alt="Three models, the same accuracy. Logistic regression (AUC 0.843) matches a random forest and gradient boosting, and its probabilities are well calibrated, which matters when they get multiplied by money.">
+      <figcaption><strong>Three models, the same accuracy.</strong> Logistic regression (AUC 0.843) matches a random forest and gradient boosting, and its probabilities are well calibrated, which matters when they get multiplied by money.</figcaption>
+    </figure>
+    <figure class="case-figure">
+      <img src="../assets/projects/telco-churn-profit/04_who_to_target.webp" width="1600" height="999" loading="lazy" alt="Who&#x27;s worth an offer depends on their bill, not just their risk. Customers above the break-even curve are worth contacting. For a $100-a-month customer that&#x27;s a 28% risk; for a $30 customer, 93%.">
+      <figcaption><strong>Who&#x27;s worth an offer depends on their bill, not just their risk.</strong> Customers above the break-even curve are worth contacting. For a $100-a-month customer that&#x27;s a 28% risk; for a $30 customer, 93%.</figcaption>
+    </figure>
+    <figure class="case-figure">
+      <img src="../assets/projects/telco-churn-profit/05_rules.webp" width="1600" height="778" loading="lazy" alt="Deciding by expected profit beats the default 50% cut-off. Profit from each targeting rule, scored on out-of-fold predictions for all 7,043 customers: $7,200 more than the 50% rule (95% bootstrap interval $2,600–$11,800).">
+      <figcaption><strong>Deciding by expected profit beats the default 50% cut-off.</strong> Profit from each targeting rule, scored on out-of-fold predictions for all 7,043 customers: $7,200 more than the 50% rule (95% bootstrap interval $2,600–$11,800).</figcaption>
+    </figure>
+    <figure class="case-figure">
+      <img src="../assets/projects/telco-churn-profit/06_sensitivity.webp" width="1600" height="1004" loading="lazy" alt="It wins in every scenario. Extra profit over the 50% rule for 30 combinations of offer cost and success rate. When the offer is expensive and rarely works, the 50% rule loses money, and the profit rule targets almost nobody.">
+      <figcaption><strong>It wins in every scenario.</strong> Extra profit over the 50% rule for 30 combinations of offer cost and success rate. When the offer is expensive and rarely works, the 50% rule loses money, and the profit rule targets almost nobody.</figcaption>
+    </figure>
+
+    <h2 class="section-title">How I did it</h2>
+    <ol class="case-method">
+      <li>Explored churn by segment in SQL (contract × tenure with ROLLUP subtotals, revenue at risk) after 7 data checks.</li>
+      <li>Compared logistic regression, random forest and gradient boosting on out-of-fold predictions (5-fold cross-validation), then kept the simplest, best-calibrated model. I dropped total billed, which is mostly tenure × bill and only blurred the explanations.</li>
+      <li>Turned probabilities into decisions with explicit economics: offer cost, success rate, months kept and margin, all in one place, with unit tests on the profit maths.</li>
+      <li>Delivered a ranked list for the retention team with each customer&#x27;s risk, the expected profit of contacting them, and the two main reasons the model flags them.</li>
+    </ol>
+
+    <h2 class="section-title">What could make this wrong</h2>
+    <ul class="case-caveats">
+      <li>It&#x27;s sample data for a fictional company: realistic patterns, not a real business.</li>
+      <li>The offer&#x27;s cost and success rate are assumptions. A real campaign should measure them with a holdout group first.</li>
+      <li>The data is a snapshot, so it can&#x27;t say when a customer will leave.</li>
+    </ul>
+
+    <p class="case-next"><a class="btn btn-primary" href="https://github.com/BoredMongoose/telco-churn-profit">See the code on GitHub</a>
+      <a class="btn" href="../index.html#work">Back to all projects</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">© 2026 Milind Saxena</div>
+  </footer>
+  <script src="../script.js"></script>
+</body>
+</html>

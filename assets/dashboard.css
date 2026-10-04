@@ -11,7 +11,8 @@
   position: sticky; top: 80px; padding: 18px; border: 1px solid var(--line); border-radius: var(--radius);
   background: var(--surface);
 }
-.dash-controls fieldset { margin: 0 0 18px; padding: 0; border: 0; }
+.dash-controls fieldset { margin: 0 0 18px; padding: 0; border: 0; min-width: 0; }
+.dash-main { min-width: 0; }
 .dash-controls legend { margin-bottom: 8px; font-size: 12px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-3); }
 .slider { display: block; margin-bottom: 14px; font-size: 14px; color: var(--ink-2); }
 .slider span { display: flex; justify-content: space-between; gap: 8px; }
@@ -78,7 +79,7 @@
   .dash-charts { grid-template-columns: 1fr; }
 }
 @media (max-width: 860px) {
-  .dash-layout { grid-template-columns: 1fr; }
+  .dash-layout { grid-template-columns: minmax(0, 1fr); }   /* minmax: the wide table scrolls instead of widening the page */
   .dash-controls { position: static; }
   .dash-controls { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 18px; }
   .dash-controls fieldset:first-child, .dash-reset { grid-column: 1 / -1; }

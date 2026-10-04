@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Moneyball IPL: which ₹-crore buys were busts, and which were steals? · Milind Saxena</title>
+  <meta name="description" content="Auction price explained only about 10% of what players actually delivered in IPL 2025. Jasprit Bumrah and ₹1-crore Jaydev Unadkat were the best value;">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script>
+    document.documentElement.classList.add("js");
+    try { var t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="../index.html"><span class="brand-name">Milind Saxena<span class="brand-dot" aria-hidden="true">.</span></span></a>
+      <nav aria-label="Main">
+        <a href="../index.html#work">All projects</a>
+        <a href="../index.html#contact">Contact</a>
+        <button class="theme-toggle" type="button" aria-label="Switch between light and dark theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.2M12 19.8V22M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2 12h2.2M19.8 12H22M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="case wrap">
+    <p class="case-back"><a href="../index.html#work">← All projects</a></p>
+    <p class="eyebrow">Sports analytics · IPL 2025</p>
+    <h1>Moneyball IPL: which ₹&#8209;crore buys were busts, and which were steals?</h1>
+    <div class="case-answer"><p class="case-answer-label">The answer</p><p>Auction price explained only about 10% of what players actually delivered in IPL 2025. Jasprit Bumrah and ₹1&#8209;crore Jaydev Unadkat were the best value; ₹27&#8209;crore Rishabh Pant and Ravi Bishnoi were among the costliest flops. And 36% of cheap buys never played a match.</p></div>
+    <dl class="case-facts">
+      <div><dt>Data</dt><dd>Every ball of IPL 2015–2026 (Cricsheet), 226 auction prices (Wikipedia)</dd></div>
+      <div><dt>Metric</dt><dd>Runs added vs. an average player</dd></div>
+      <div><dt>Tools</dt><dd>SQL (DuckDB), Python, pandas</dd></div>
+      <div><dt>Code</dt><dd><a href="https://github.com/BoredMongoose/ipl-moneyball">github.com/BoredMongoose/ipl-moneyball ↗</a></dd></div>
+    </dl>
+
+    <h2 class="section-title">Results</h2>
+    <figure class="case-figure">
+      <img src="../assets/projects/ipl-moneyball/02_steals_and_busts.webp" width="1600" height="1359" loading="lazy" alt="The 10 best and worst buys of IPL 2025. Blue players delivered more than their price predicted; red players delivered less.">
+      <figcaption><strong>The 10 best and worst buys of IPL 2025.</strong> Blue players delivered more than their price predicted; red players delivered less.</figcaption>
+    </figure>
+    <figure class="case-figure">
+      <img src="../assets/projects/ipl-moneyball/01_price_vs_impact.webp" width="1600" height="984" loading="lazy" alt="Price barely predicts performance. Each dot is a player. The dashed fair-price line is almost flat: paying more bought only a little more impact on average.">
+      <figcaption><strong>Price barely predicts performance.</strong> Each dot is a player. The dashed fair-price line is almost flat: paying more bought only a little more impact on average.</figcaption>
+    </figure>
+    <figure class="case-figure">
+      <img src="../assets/projects/ipl-moneyball/03_price_bands.webp" width="1600" height="846" loading="lazy" alt="Cheap buys are lottery tickets. 36% of players bought for under ₹3 crore never got a game. Marquee players beat an average player more often (58%).">
+      <figcaption><strong>Cheap buys are lottery tickets.</strong> 36% of players bought for under ₹3 crore never got a game. Marquee players beat an average player more often (58%).</figcaption>
+    </figure>
+    <figure class="case-figure">
+      <img src="../assets/projects/ipl-moneyball/04_metric_validation.webp" width="1600" height="1168" loading="lazy" alt="Checking the metric means something. Teams whose players added more runs won more often (correlation 0.73 across 106 team-seasons).">
+      <figcaption><strong>Checking the metric means something.</strong> Teams whose players added more runs won more often (correlation 0.73 across 106 team-seasons).</figcaption>
+    </figure>
+    <figure class="case-figure">
+      <img src="../assets/projects/ipl-moneyball/05_regression_to_mean.webp" width="1600" height="977" loading="lazy" alt="Last season&#x27;s heroes come back to earth. The top 20% of 2025 performers added far less in 2026. One great season is mostly luck, so paying for it is risky.">
+      <figcaption><strong>Last season&#x27;s heroes come back to earth.</strong> The top 20% of 2025 performers added far less in 2026. One great season is mostly luck, so paying for it is risky.</figcaption>
+    </figure>
+
+    <h2 class="section-title">How I did it</h2>
+    <ol class="case-method">
+      <li>Defined &quot;runs added&quot;: every ball is compared with what a league-average player would have done on that ball, in the same season and phase of the innings. Batters gain for scoring faster and losing their wicket less often than average; bowlers the reverse.</li>
+      <li>Wrote the metric in SQL with window functions and league baselines.</li>
+      <li>Matched auction names to scorecard names (&quot;Ruturaj Gaikwad&quot; vs &quot;RD Gaikwad&quot;) using exact matches, an alias list, surname plus initial, and fuzzy matching; four were fixed by hand.</li>
+      <li>Checked the work: league totals must add up to zero each season (this caught a bug where missing values were silently skipped), and the results barely change if a wicket is valued at 3, 6 or 10 runs.</li>
+    </ol>
+
+    <h2 class="section-title">What could make this wrong</h2>
+    <ul class="case-caveats">
+      <li>Fielding, captaincy and wicket-keeping aren&#x27;t measured.</li>
+      <li>One season is a small sample; rankings describe what happened, not true ability.</li>
+      <li>Mid-season replacement signings aren&#x27;t included.</li>
+    </ul>
+
+    <p class="case-next"><a class="btn btn-primary" href="https://github.com/BoredMongoose/ipl-moneyball">See the code on GitHub</a>
+      <a class="btn" href="../index.html#work">Back to all projects</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">© 2026 Milind Saxena</div>
+  </footer>
+  <script src="../script.js"></script>
+</body>
+</html>

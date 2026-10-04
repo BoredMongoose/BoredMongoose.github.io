@@ -48,8 +48,8 @@
         <p class="eyebrow">Data Analyst · SQL · Python · Power BI</p>
         <h1>I answer the questions people argue about, with data.</h1>
         <p class="lede">
-          Hi, I'm Milind. I take messy public data, from cricket auctions and satellite fire maps to
-          central-bank tables, and turn it into clear answers, with the checks to back them up.
+          Hi, I'm Milind. I take messy public data and turn it into clear answers, with the checks to back them up.
+          Open to entry-level data analyst roles in India (remote) and Toronto/GTA.
         </p>
         <div class="cta">
           <a class="btn btn-primary" href="#work">See my work</a>
@@ -64,129 +64,112 @@
       <nav class="hero-index" aria-label="Projects">
         <p class="hero-index-label">Three questions, answered</p>
         <ol>
-          <li><a href="#ipl"><span class="num">01</span><span>Which ₹&#8209;crore IPL buys were busts, and which were steals?</span></a></li>
+          <li><a href="#upi"><span class="num">01</span><span>UPI won. So why is India holding more cash than ever?</span></a></li>
           <li><a href="#delhi"><span class="num">02</span><span>Who's really choking Delhi: Diwali crackers or stubble fires?</span></a></li>
-          <li><a href="#upi"><span class="num">03</span><span>UPI won. So why is India holding more cash than ever?</span></a></li>
+          <li><a href="#ipl"><span class="num">03</span><span>Which ₹&#8209;crore IPL buys were busts, and which were steals?</span></a></li>
         </ol>
       </nav>
     </section>
 
-    <!-- Projects -->
+    <!-- Projects: chart first, then the question and the finding -->
     <section id="work" class="wrap" aria-labelledby="work-title">
       <h2 id="work-title" class="section-title">Selected work</h2>
 
-      <article class="project reveal" id="ipl">
-        <a class="project-figure" href="https://github.com/BoredMongoose/ipl-moneyball" aria-label="IPL project on GitHub">
-          <img src="assets/ipl-price-vs-impact.webp" width="1600" height="984" loading="lazy"
-               alt="Scatter plot of auction price against runs added for 226 IPL 2025 players. The points barely follow the fair-price line: Bumrah, Suryakumar Yadav and Pooran sit far above it, Pant, Rashid Khan and Bishnoi far below.">
+      <article class="project reveal" id="upi">
+        <a class="project-figure" href="projects/upi.html" aria-label="UPI vs cash case study">
+          <img src="assets/projects/upi-cash-paradox/01_upi_vs_cash.webp" width="1600" height="1003" loading="lazy"
+               alt="Line chart: UPI payments rise from 37% of GDP in 2021-22 to 91% in 2025-26, while cash in circulation stays flat at about 12% of GDP since 2010-11.">
         </a>
         <div class="project-body">
-          <p class="project-meta"><span class="num">01</span> Sports analytics · IPL 2025</p>
-          <h3>Moneyball IPL: which ₹&#8209;crore buys were busts, and which were steals?</h3>
-          <p class="answer">
-            Price explained only about a tenth of what players actually delivered. Jasprit Bumrah and ₹1&#8209;crore
-            Jaydev Unadkat were steals. ₹27&#8209;crore Rishabh Pant was among the costliest flops.
-          </p>
+          <div class="project-text">
+            <p class="project-meta"><span class="num">01</span> Finance · India</p>
+            <h3><a href="projects/upi.html">UPI won. So why is India holding more cash than ever?</a></h3>
+            <p class="finding"><strong>Finding:</strong> UPI replaced cash for paying, not for saving. Cash is still 12% of GDP, exactly where it was before UPI existed.</p>
+            <div class="project-foot">
+              <ul class="tags" aria-label="Tools"><li>SQL</li><li>Python</li><li>Power BI</li><li>Forecasting</li></ul>
+              <span class="links"><a class="more" href="projects/upi.html">Case study <span aria-hidden="true">→</span></a><a class="code" href="https://github.com/BoredMongoose/upi-cash-paradox">Code ↗</a></span>
+            </div>
+          </div>
           <ul class="stats">
-            <li><strong>10%</strong><span>of on-field impact explained by price</span></li>
-            <li><strong>36%</strong><span>of budget buys never played a match</span></li>
-            <li><strong>r = 0.73</strong><span>my metric against team win rates</span></li>
+            <li><strong>91%</strong><span>UPI's yearly value as a share of GDP</span></li>
+            <li><strong>12%</strong><span>cash as a share of GDP, unchanged</span></li>
+            <li><strong>15</strong><span>automated data-quality checks in the SQL pipeline</span></li>
           </ul>
-          <p class="method">
-            Built a "runs added" metric from every ball of the season in SQL, matched 226 auction prices to scorecard
-            names, and checked that the metric predicts winning before trusting it.
-          </p>
-          <ul class="tags" aria-label="Tools"><li>SQL</li><li>DuckDB</li><li>Python</li><li>pandas</li></ul>
-          <a class="more" href="https://github.com/BoredMongoose/ipl-moneyball">Code &amp; write-up <span aria-hidden="true">→</span></a>
         </div>
       </article>
 
       <article class="project reveal" id="delhi">
-        <a class="project-figure" href="https://github.com/BoredMongoose/delhi-smog" aria-label="Delhi smog project on GitHub">
-          <img src="assets/delhi-weather-normalised.webp" width="1600" height="1230" loading="lazy"
-               alt="Delhi PM2.5 by calendar day, averaged over 2015 to 2019, against a weather-only prediction. From late October to mid-November actual pollution rises far above the prediction, in step with the number of crop fires shown below.">
+        <a class="project-figure" href="projects/delhi.html" aria-label="Delhi smog case study">
+          <img src="assets/projects/delhi-smog/03_weather_normalised.webp" width="1600" height="1230" loading="lazy"
+               alt="Delhi PM2.5 by calendar day against a weather-only prediction. From late October to mid-November actual pollution rises far above the prediction, in step with the number of crop fires.">
         </a>
         <div class="project-body">
-          <p class="project-meta"><span class="num">02</span> Environment &amp; health · Delhi</p>
-          <h3>Who's really choking Delhi: Diwali crackers or Punjab's stubble fires?</h3>
-          <p class="answer">
-            Both, but not equally. Stubble smoke drives most of early November's smog. Diwali night is one of the
-            year's worst, but it's brief. Over the whole winter, most of the pollution is Delhi's own.
-          </p>
+          <div class="project-text">
+            <p class="project-meta"><span class="num">02</span> Environment &amp; health · Delhi</p>
+            <h3><a href="projects/delhi.html">Who's really choking Delhi: Diwali crackers or Punjab's stubble fires?</a></h3>
+            <p class="finding"><strong>Finding:</strong> stubble smoke drives early-November smog; Diwali is one bad night. Over the whole winter, most of the pollution is Delhi's own.</p>
+            <div class="project-foot">
+              <ul class="tags" aria-label="Tools"><li>Python</li><li>Statistics</li><li>APIs</li></ul>
+              <span class="links"><a class="more" href="projects/delhi.html">Case study <span aria-hidden="true">→</span></a><a class="code" href="https://github.com/BoredMongoose/delhi-smog">Code ↗</a></span>
+            </div>
+          </div>
           <ul class="stats">
             <li><strong>~60%</strong><span>of early-November PM2.5 from stubble smoke</span></li>
             <li><strong>~2%</strong><span>Diwali's pollution compared with the stubble season</span></li>
-            <li><strong>84%</strong><span>of winter exposure from Delhi's own pollution</span></li>
+            <li><strong>600k+</strong><span>NASA satellite fire detections analysed</span></li>
           </ul>
-          <p class="method">
-            Combined 600,000+ NASA satellite fire detections with five years of air-quality and weather data. A placebo
-            test showed the obvious regression was wrong, so I built a weather-normalisation model instead.
-          </p>
-          <ul class="tags" aria-label="Tools"><li>Python</li><li>statsmodels</li><li>scikit-learn</li><li>NASA &amp; weather APIs</li></ul>
-          <a class="more" href="https://github.com/BoredMongoose/delhi-smog">Notebook &amp; write-up <span aria-hidden="true">→</span></a>
         </div>
       </article>
 
-      <article class="project reveal" id="upi">
-        <a class="project-figure" href="https://github.com/BoredMongoose/upi-cash-paradox" aria-label="UPI and cash project on GitHub">
-          <img src="assets/upi-vs-cash.webp" width="1600" height="1003" loading="lazy"
-               alt="Line chart of UPI payments and cash in circulation as a share of GDP. UPI rises from 37% of GDP in 2021-22 to 91% in 2025-26, while cash stays flat at about 12% of GDP since 2010-11.">
+      <article class="project reveal" id="ipl">
+        <a class="project-figure" href="projects/ipl.html" aria-label="IPL case study">
+          <img src="assets/projects/ipl-moneyball/02_steals_and_busts.webp" width="1600" height="1359" loading="lazy"
+               alt="Bar chart of the 10 best and 10 worst IPL 2025 buys by value for money: Bumrah, Suryakumar Yadav and Prasidh Krishna top the steals; Bishnoi, Rashid Khan and Pant are the biggest busts.">
         </a>
         <div class="project-body">
-          <p class="project-meta"><span class="num">03</span> Finance &amp; economics · India</p>
-          <h3>UPI won. So why is India holding more cash than ever?</h3>
-          <p class="answer">
-            Because cash was never just for paying. UPI now moves the equivalent of 91% of GDP a year, yet cash is still
-            12% of GDP, where it was before UPI existed. UPI replaced cash for spending, not for saving.
-          </p>
+          <div class="project-text">
+            <p class="project-meta"><span class="num">03</span> Sports analytics · IPL 2025</p>
+            <h3><a href="projects/ipl.html">Moneyball IPL: which ₹&#8209;crore buys were busts, and which were steals?</a></h3>
+            <p class="finding"><strong>Finding:</strong> price explained only about a tenth of what players delivered. ₹1&#8209;crore Jaydev Unadkat was a steal; ₹27&#8209;crore Rishabh Pant a costly flop.</p>
+            <p class="definition"><strong>Runs added</strong> = runs a player scored or saved compared with an average player facing the same balls, in the same phase of the innings.</p>
+            <div class="project-foot">
+              <ul class="tags" aria-label="Tools"><li>SQL</li><li>Python</li><li>pandas</li></ul>
+              <span class="links"><a class="more" href="projects/ipl.html">Case study <span aria-hidden="true">→</span></a><a class="code" href="https://github.com/BoredMongoose/ipl-moneyball">Code ↗</a></span>
+            </div>
+          </div>
           <ul class="stats">
-            <li><strong>91%</strong><span>UPI's yearly value as a share of GDP</span></li>
-            <li><strong>12%</strong><span>cash as a share of GDP, unchanged</span></li>
-            <li><strong>1.1%</strong><span>average error of my cash-demand forecast</span></li>
+            <li><strong>10%</strong><span>of player impact explained by auction price</span></li>
+            <li><strong>36%</strong><span>of budget buys never played a match</span></li>
+            <li><strong>0.73</strong><span>correlation of the metric with team win rates</span></li>
           </ul>
-          <p class="method">
-            SQL pipeline over RBI and World Bank data with 15 automated data-quality checks, a Holt-Winters forecast of
-            cash demand tested on 25 past periods, and a Power BI dashboard.
-          </p>
-          <ul class="tags" aria-label="Tools"><li>SQL</li><li>Power BI</li><li>DAX</li><li>Python</li><li>Forecasting</li></ul>
-          <a class="more" href="https://github.com/BoredMongoose/upi-cash-paradox">Code, dashboard &amp; write-up <span aria-hidden="true">→</span></a>
         </div>
       </article>
     </section>
 
-    <!-- Skills -->
+    <!-- Skills: core first, then the rest -->
     <section id="skills" class="wrap reveal" aria-labelledby="skills-title">
       <h2 id="skills-title" class="section-title">Skills</h2>
-      <div class="skills-grid">
-        <div>
-          <h3>SQL</h3>
-          <ul><li>CTEs &amp; window functions</li><li>Staging → mart data models</li><li>Automated data-quality checks</li><li>DuckDB</li></ul>
-        </div>
-        <div>
-          <h3>Python</h3>
-          <ul><li>pandas, NumPy</li><li>statsmodels, scikit-learn</li><li>ETL &amp; data pipelines</li><li>Jupyter, REST APIs</li></ul>
-        </div>
-        <div>
-          <h3>BI &amp; visualisation</h3>
-          <ul><li>Power BI &amp; DAX</li><li>Tableau</li><li>Dashboards &amp; KPI reporting</li><li>Excel</li></ul>
-        </div>
-        <div>
-          <h3>Methods</h3>
-          <ul><li>Statistical analysis &amp; regression</li><li>Forecasting &amp; backtesting</li><li>Clustering &amp; machine learning</li><li>Placebo &amp; robustness checks</li></ul>
-        </div>
+      <div class="skills-core">
+        <div><h3>SQL</h3><p>Joins, CTEs, window functions, aggregations, data-quality checks</p></div>
+        <div><h3>Python</h3><p>pandas for cleaning, reshaping and analysis; matplotlib for charts</p></div>
+        <div><h3>Power BI</h3><p>Data modelling, DAX measures, dashboards and KPI reporting</p></div>
+        <div><h3>Statistics</h3><p>Regression, hypothesis tests, forecasting, sanity and robustness checks</p></div>
+        <div><h3>Excel</h3><p>Cleaning, summarising and reporting data</p></div>
       </div>
+      <p class="skills-also"><span>Also used:</span> statsmodels · scikit-learn · Tableau · DuckDB · REST APIs · Jupyter · Git</p>
     </section>
 
     <!-- About -->
     <section id="about" class="wrap about reveal" aria-labelledby="about-title">
       <h2 id="about-title" class="section-title">About</h2>
       <div class="about-grid">
-        <p class="about-text">
-          I like questions that people argue about, and answering them with public data. I work mostly in SQL,
-          Python and Power BI, and I care about checking my own work: every project here includes a test that could
-          have proven me wrong, and one of them did. I'm looking for an entry-level data analyst role, open to remote
-          work in India.
-        </p>
+        <div class="about-text">
+          <p>I studied Computer Science and Economics at McMaster University: the code to wrangle data, and the economics
+            to ask why the answer matters.</p>
+          <p>I like questions people argue about, and I try hard to prove my own answers wrong before I trust them. In the
+            Delhi project, that check caught a model that looked convincing but was really just measuring the season.</p>
+          <p>I'm looking for an entry-level data analyst role.</p>
+        </div>
         <div class="about-side">
           <div class="about-photo">
             <picture>
@@ -195,9 +178,9 @@
             </picture>
           </div>
           <div class="edu">
-          <p class="edu-label">Education</p>
-          <p class="edu-degree">Honours B.A., Computer Science &amp; Economics</p>
-          <p class="edu-school">McMaster University · 2023 · Dean's Honour List</p>
+            <p class="edu-label">Education</p>
+            <p class="edu-degree">Honours B.A., Computer Science &amp; Economics</p>
+            <p class="edu-school">McMaster University · 2023 · Dean's Honour List</p>
           </div>
         </div>
       </div>
@@ -206,7 +189,7 @@
     <!-- Contact -->
     <section id="contact" class="wrap contact reveal" aria-labelledby="contact-title">
       <h2 id="contact-title" class="section-title">Contact</h2>
-      <p class="contact-line">Have a role, a dataset or a question worth arguing about?</p>
+      <p class="contact-line">Looking for entry-level data analyst roles: <strong>remote in India</strong>, or <strong>on-site in Toronto/GTA</strong>.</p>
       <a class="contact-email" href="mailto:milind.sax01@gmail.com">milind.sax01@gmail.com</a>
       <ul class="social">
         <li><a href="https://www.linkedin.com/in/milind-saxena-54399722a">LinkedIn</a></li>

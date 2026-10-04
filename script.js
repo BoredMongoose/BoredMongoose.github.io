@@ -34,3 +34,61 @@ if ("IntersectionObserver" in window) {
 } else {
   reveals.forEach((el) => el.classList.add("visible"));
 }
+
+// Project carousel: centre card plus faded neighbours, arrows, dots, keyboard and swipe
+const showcase = document.querySelector(".showcase");
+if (showcase) {
+  const cards = [...showcase.querySelectorAll(".sc-card")];
+  const dots = [...showcase.querySelectorAll(".sc-dot")];
+  const live = showcase.querySelector(".sc-live");
+  const touch = window.matchMedia("(hover: none)").matches;
+  const n = cards.length;
+  let active = 0;
+
+  if (touch) showcase.querySelectorAll(".sc-hint").forEach((h) => { h.textContent = "Tap for details"; });
+
+  function render() {
+    cards.forEach((card, i) => {
+      let d = (i - active + n) % n;
+      if (d > n / 2) d -= n;                                   // shortest way round the loop
+      card.dataset.pos = Math.abs(d) <= 2 ? String(d) : "hidden";
+      const isActive = d === 0;
+      card.setAttribute("aria-hidden", isActive ? "false" : "true");
+      card.querySelectorAll("a, .sc-frame").forEach((el) => { el.tabIndex = isActive ? 0 : -1; });
+      if (!isActive) card.classList.remove("is-open");
+    });
+    dots.forEach((dot, i) => dot.setAttribute("aria-current", i === active ? "true" : "false"));
+    live.textContent = "Project " + (active + 1) + " of " + n + ": " + cards[active].querySelector(".sc-title").textContent;
+  }
+
+  const go = (i) => { active = (i + n) % n; render(); };
+  showcase.querySelector(".sc-prev").addEventListener("click", () => go(active - 1));
+  showcase.querySelector(".sc-next").addEventListener("click", () => go(active + 1));
+  dots.forEach((dot) => dot.addEventListener("click", () => go(Number(dot.dataset.go))));
+
+  cards.forEach((card, i) => {
+    card.querySelector(".sc-frame").addEventListener("click", (e) => {
+      if (i !== active) { e.preventDefault(); go(i); return; }       // a side card brings itself to the centre
+      if (touch && !e.target.closest("a")) card.classList.toggle("is-open");
+    });
+  });
+
+  showcase.addEventListener("keydown", (e) => {
+    if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+    e.preventDefault();
+    go(active + (e.key === "ArrowRight" ? 1 : -1));
+    cards[active].querySelector(".sc-frame").focus({ preventScroll: true });
+  });
+
+  let startX = null;
+  const stage = showcase.querySelector(".showcase-stage");
+  stage.addEventListener("pointerdown", (e) => { startX = e.clientX; });
+  stage.addEventListener("pointerup", (e) => {
+    if (startX === null) return;
+    const dx = e.clientX - startX;
+    startX = null;
+    if (Math.abs(dx) > 50) go(active + (dx < 0 ? 1 : -1));
+  });
+
+  render();
+}

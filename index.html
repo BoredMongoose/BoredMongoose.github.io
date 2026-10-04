@@ -30,6 +30,7 @@
       </a>
       <nav aria-label="Main">
         <a href="#work">Work</a>
+        <a href="#all-projects">All projects</a>
         <a href="#skills">Skills</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
@@ -51,25 +52,140 @@
           Hi, I'm Milind. I take messy public data and turn it into clear answers, with the checks to back them up.
           Open to entry-level data analyst roles in India (remote) and Toronto/GTA.
         </p>
-        <div class="cta">
-          <a class="btn btn-primary" href="#work">See my work</a>
-          <a class="btn" href="assets/Milind_Saxena_Resume.pdf">Résumé (PDF)</a>
+        <div class="hero-actions">
+          <div class="cta">
+            <a class="btn btn-primary" href="#work">See my work</a>
+            <a class="btn" href="assets/Milind_Saxena_Resume.pdf">Résumé (PDF)</a>
+          </div>
+          <ul class="social" aria-label="Profiles">
+            <li><a href="https://github.com/BoredMongoose">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/milind-saxena-54399722a">LinkedIn</a></li>
+            <li><a href="mailto:milind.sax01@gmail.com">milind.sax01@gmail.com</a></li>
+          </ul>
         </div>
-        <ul class="social" aria-label="Profiles">
-          <li><a href="https://github.com/BoredMongoose">GitHub</a></li>
-          <li><a href="https://www.linkedin.com/in/milind-saxena-54399722a">LinkedIn</a></li>
-          <li><a href="mailto:milind.sax01@gmail.com">milind.sax01@gmail.com</a></li>
-        </ul>
       </div>
-      <nav class="hero-index" aria-label="Projects">
-        <p class="hero-index-label">Three questions, answered</p>
-        <ol>
-          <li><a href="#upi"><span class="num">01</span><span>UPI won. So why is India holding more cash than ever?</span></a></li>
-          <li><a href="#delhi"><span class="num">02</span><span>Who's really choking Delhi: Diwali crackers or stubble fires?</span></a></li>
-          <li><a href="#ipl"><span class="num">03</span><span>Which ₹&#8209;crore IPL buys were busts, and which were steals?</span></a></li>
-        </ol>
-      </nav>
     </section>
+
+    <!-- showcase:start -->
+    <section class="showcase" id="showcase" aria-roledescription="carousel" aria-label="All projects">
+      <div class="showcase-stage">
+        <button type="button" class="sc-arrow sc-prev" aria-label="Previous project"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <ul class="sc-track">
+        <li class="sc-card" data-index="0" aria-roledescription="slide" aria-label="1 of 9: UPI vs. cash">
+          <div class="sc-frame" tabindex="0">
+            <img src="assets/cards/upi.webp" width="1280" height="800" alt="Chart: UPI payments rising from 37% to 91% of GDP while cash stays near 12% of GDP.">
+            <div class="sc-label"><span class="sc-badge">Featured</span><span class="sc-title">UPI vs. cash</span><span class="sc-hint" aria-hidden="true">Hover for details</span><span class="sc-label-q" aria-hidden="true">UPI won. So why is India holding more cash than ever?</span></div>
+            <div class="sc-info">
+              <p class="sc-q"><span>Question</span>UPI won. So why is India holding more cash than ever?</p>
+              <p class="sc-a"><span>Answer</span>UPI replaced cash for paying, not for saving: cash is still 12% of GDP, while UPI now moves the equivalent of 91% of GDP a year.</p>
+              <ul class="sc-skills" aria-label="Skills used"><li>SQL</li><li>Python</li><li>Power BI</li><li>Forecasting</li></ul>
+              <p class="sc-links"><a class="" href="projects/upi.html">Case study →</a><a class="" href="https://github.com/BoredMongoose/upi-cash-paradox" target="_blank" rel="noopener">Code ↗</a></p>
+            </div>
+          </div>
+        </li>
+        <li class="sc-card" data-index="1" aria-roledescription="slide" aria-label="2 of 9: Delhi smog">
+          <div class="sc-frame" tabindex="0">
+            <img src="assets/cards/delhi.webp" width="1280" height="800" alt="Chart: Delhi PM2.5 rising far above a weather-only prediction during the crop-burning season.">
+            <div class="sc-label"><span class="sc-badge">Featured</span><span class="sc-title">Delhi smog</span><span class="sc-hint" aria-hidden="true">Hover for details</span><span class="sc-label-q" aria-hidden="true">Who&#x27;s really choking Delhi: Diwali crackers or Punjab&#x27;s stubble fires?</span></div>
+            <div class="sc-info">
+              <p class="sc-q"><span>Question</span>Who&#x27;s really choking Delhi: Diwali crackers or Punjab&#x27;s stubble fires?</p>
+              <p class="sc-a"><span>Answer</span>Stubble smoke drives about 60% of early-November PM2.5. Diwali is one bad night, about 2% of the season&#x27;s extra pollution.</p>
+              <ul class="sc-skills" aria-label="Skills used"><li>Python</li><li>statsmodels</li><li>scikit-learn</li><li>APIs</li></ul>
+              <p class="sc-links"><a class="" href="projects/delhi.html">Case study →</a><a class="" href="https://github.com/BoredMongoose/delhi-smog" target="_blank" rel="noopener">Code ↗</a></p>
+            </div>
+          </div>
+        </li>
+        <li class="sc-card" data-index="2" aria-roledescription="slide" aria-label="3 of 9: Moneyball IPL">
+          <div class="sc-frame" tabindex="0">
+            <img src="assets/cards/ipl.webp" width="1280" height="800" alt="Scatter plot: auction price against runs added for IPL 2025 players, with steals and busts highlighted.">
+            <div class="sc-label"><span class="sc-badge">Featured</span><span class="sc-title">Moneyball IPL</span><span class="sc-hint" aria-hidden="true">Hover for details</span><span class="sc-label-q" aria-hidden="true">Which ₹&#8209;crore IPL buys were busts, and which were steals?</span></div>
+            <div class="sc-info">
+              <p class="sc-q"><span>Question</span>Which ₹&#8209;crore IPL buys were busts, and which were steals?</p>
+              <p class="sc-a"><span>Answer</span>Auction price explained only about 10% of player impact, and 36% of budget buys never played a match.</p>
+              <ul class="sc-skills" aria-label="Skills used"><li>SQL</li><li>Python</li><li>pandas</li></ul>
+              <p class="sc-links"><a class="" href="projects/ipl.html">Case study →</a><a class="" href="https://github.com/BoredMongoose/ipl-moneyball" target="_blank" rel="noopener">Code ↗</a></p>
+            </div>
+          </div>
+        </li>
+        <li class="sc-card" data-index="3" aria-roledescription="slide" aria-label="4 of 9: Global terrorism trends">
+          <div class="sc-frame" tabindex="0">
+            <img src="assets/cards/terrorism.webp" width="1280" height="800" alt="World map of terrorist attack density, 1970 to 2017." loading="lazy">
+            <div class="sc-label"><span class="sc-kind">Analysis</span><span class="sc-title">Global terrorism trends</span><span class="sc-hint" aria-hidden="true">Hover for details</span><span class="sc-label-q" aria-hidden="true">When, where and how have terrorist attacks happened since 1970?</span></div>
+            <div class="sc-info">
+              <p class="sc-q"><span>Question</span>When, where and how have terrorist attacks happened since 1970?</p>
+              <p class="sc-a"><span>Answer</span>181,691 attacks: they peaked in 2014 (16,903), driven by Iraq, Pakistan and Afghanistan, and bombings make up 49% of all attacks.</p>
+              <ul class="sc-skills" aria-label="Skills used"><li>Python</li><li>pandas</li><li>matplotlib</li><li>EDA</li></ul>
+              <p class="sc-links"><a class="" href="https://github.com/BoredMongoose/Terrorism_analysis" target="_blank" rel="noopener">Code ↗</a></p>
+            </div>
+          </div>
+        </li>
+        <li class="sc-card" data-index="4" aria-roledescription="slide" aria-label="5 of 9: Workforce diversity clustering">
+          <div class="sc-frame" tabindex="0">
+            <img src="assets/cards/workforce.webp" width="1280" height="800" alt="Bar chart of the share of women in each US industry sector." loading="lazy">
+            <div class="sc-label"><span class="sc-kind">Analysis</span><span class="sc-title">Workforce diversity clustering</span><span class="sc-hint" aria-hidden="true">Hover for details</span><span class="sc-label-q" aria-hidden="true">How diverse is the US workforce, sector by sector?</span></div>
+            <div class="sc-info">
+              <p class="sc-q"><span>Question</span>How diverse is the US workforce, sector by sector?</p>
+              <p class="sc-a"><span>Answer</span>No sector is ethnically balanced (71–92% white) and construction is 89% male; clustering 110 industries found a distinct Asian-concentrated group.</p>
+              <ul class="sc-skills" aria-label="Skills used"><li>Python</li><li>scikit-learn</li><li>K-Means</li><li>PCA</li></ul>
+              <p class="sc-links"><a class="" href="https://github.com/BoredMongoose/strata-clustering" target="_blank" rel="noopener">Code ↗</a></p>
+            </div>
+          </div>
+        </li>
+        <li class="sc-card" data-index="5" aria-roledescription="slide" aria-label="6 of 9: UFO sightings dashboard">
+          <div class="sc-frame" tabindex="0">
+            <img src="assets/cards/ufo.webp" width="1280" height="800" alt="Power BI dashboard of UFO sightings with a map, filters, shape breakdown and yearly trend." loading="lazy">
+            <div class="sc-label"><span class="sc-kind">Dashboard</span><span class="sc-title">UFO sightings dashboard</span><span class="sc-hint" aria-hidden="true">Hover for details</span><span class="sc-label-q" aria-hidden="true">Where and when do people report UFO sightings?</span></div>
+            <div class="sc-info">
+              <p class="sc-q"><span>Question</span>Where and when do people report UFO sightings?</p>
+              <p class="sc-a"><span>Answer</span>An interactive dashboard: filter by country, city and date to see where sightings cluster, which shapes are reported most and how reports change over time.</p>
+              <ul class="sc-skills" aria-label="Skills used"><li>Power BI</li><li>Maps</li><li>Slicers</li></ul>
+              <p class="sc-links"><a class="" href="https://app.powerbi.com/view?r=eyJrIjoiZTUyYzAxMzMtZjM5Ny00OGMxLThhMWQtNTA3MzY4NmQ0Mjc0IiwidCI6ImRmODY3OWNkLWE4MGUtNDVkOC05OWFjLWM4M2VkN2ZmOTVhMCJ9" target="_blank" rel="noopener">Live dashboard ↗</a></p>
+            </div>
+          </div>
+        </li>
+        <li class="sc-card" data-index="6" aria-roledescription="slide" aria-label="7 of 9: Remote work &amp; mental health">
+          <div class="sc-frame" tabindex="0">
+            <img src="assets/cards/mental-health.webp" width="1280" height="800" alt="Power BI dashboard on employee mental health with KPI cards, charts and a world map." loading="lazy">
+            <div class="sc-label"><span class="sc-kind">Dashboard</span><span class="sc-title">Remote work &amp; mental health</span><span class="sc-hint" aria-hidden="true">Hover for details</span><span class="sc-label-q" aria-hidden="true">How is remote work affecting employees&#x27; mental health?</span></div>
+            <div class="sc-info">
+              <p class="sc-q"><span>Question</span>How is remote work affecting employees&#x27; mental health?</p>
+              <p class="sc-a"><span>Answer</span>Across 5,000 employees the average social-isolation rating is 2.99 out of 5, and more lack access to mental-health resources (2.6K) than have it (2.4K).</p>
+              <ul class="sc-skills" aria-label="Skills used"><li>Power BI</li><li>KPI cards</li><li>Filters</li></ul>
+              <p class="sc-links"><a class="" href="https://app.powerbi.com/view?r=eyJrIjoiZWUxYjM4NzMtNzUxOC00M2MyLWI1YzEtOWRjZjRkMmM3ZGRiIiwidCI6ImRmODY3OWNkLWE4MGUtNDVkOC05OWFjLWM4M2VkN2ZmOTVhMCJ9" target="_blank" rel="noopener">Live dashboard ↗</a></p>
+            </div>
+          </div>
+        </li>
+        <li class="sc-card" data-index="7" aria-roledescription="slide" aria-label="8 of 9: Medicine lookup">
+          <div class="sc-frame" tabindex="0">
+            <img src="assets/cards/medicine.webp" width="1280" height="800" alt="Power BI medicine lookup dashboard showing manufacturer, uses, side effects and a review donut chart." loading="lazy">
+            <div class="sc-label"><span class="sc-kind">Dashboard</span><span class="sc-title">Medicine lookup</span><span class="sc-hint" aria-hidden="true">Hover for details</span><span class="sc-label-q" aria-hidden="true">What does a medicine treat, and how do people rate it?</span></div>
+            <div class="sc-info">
+              <p class="sc-q"><span>Question</span>What does a medicine treat, and how do people rate it?</p>
+              <p class="sc-a"><span>Answer</span>A lookup dashboard: choose a medicine to see its manufacturer, composition, uses, side effects and how reviewers rated it.</p>
+              <ul class="sc-skills" aria-label="Skills used"><li>Power BI</li><li>Slicers</li><li>Report design</li></ul>
+              <p class="sc-links"><a class="" href="https://app.powerbi.com/view?r=eyJrIjoiMzUzMWU0NTEtNjk2NC00ZjgzLWEzNDEtNDZhNzBlODRkNjIzIiwidCI6ImRmODY3OWNkLWE4MGUtNDVkOC05OWFjLWM4M2VkN2ZmOTVhMCJ9" target="_blank" rel="noopener">Live dashboard ↗</a></p>
+            </div>
+          </div>
+        </li>
+        <li class="sc-card" data-index="8" aria-roledescription="slide" aria-label="9 of 9: AI SQL query generator">
+          <div class="sc-frame" tabindex="0">
+            <img src="assets/cards/sql-generator.webp" width="1280" height="800" alt="Illustration: a plain-English question turned into a SQL query by the OpenAI API." loading="lazy">
+            <div class="sc-label"><span class="sc-kind">App</span><span class="sc-title">AI SQL query generator</span><span class="sc-hint" aria-hidden="true">Hover for details</span><span class="sc-label-q" aria-hidden="true">Can someone query a database without knowing SQL?</span></div>
+            <div class="sc-info">
+              <p class="sc-q"><span>Question</span>Can someone query a database without knowing SQL?</p>
+              <p class="sc-a"><span>Answer</span>A web app that sends a plain-English question to OpenAI&#x27;s API and returns a ready-to-run SQL query.</p>
+              <ul class="sc-skills" aria-label="Skills used"><li>JavaScript</li><li>React</li><li>Node.js</li><li>OpenAI API</li></ul>
+              <p class="sc-links"><a class="" href="https://github.com/BoredMongoose/sql-gen-frontend" target="_blank" rel="noopener">Code ↗</a></p>
+            </div>
+          </div>
+        </li>
+        </ul>
+        <button type="button" class="sc-arrow sc-next" aria-label="Next project"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+      </div>
+      <div class="sc-dots"><button type="button" class="sc-dot" data-go="0" aria-label="Show project 1: UPI vs. cash"></button><button type="button" class="sc-dot" data-go="1" aria-label="Show project 2: Delhi smog"></button><button type="button" class="sc-dot" data-go="2" aria-label="Show project 3: Moneyball IPL"></button><button type="button" class="sc-dot" data-go="3" aria-label="Show project 4: Global terrorism trends"></button><button type="button" class="sc-dot" data-go="4" aria-label="Show project 5: Workforce diversity clustering"></button><button type="button" class="sc-dot" data-go="5" aria-label="Show project 6: UFO sightings dashboard"></button><button type="button" class="sc-dot" data-go="6" aria-label="Show project 7: Remote work &amp; mental health"></button><button type="button" class="sc-dot" data-go="7" aria-label="Show project 8: Medicine lookup"></button><button type="button" class="sc-dot" data-go="8" aria-label="Show project 9: AI SQL query generator"></button></div>
+      <p class="sc-live" aria-live="polite"></p>
+    </section>
+    <!-- showcase:end -->
 
     <!-- Projects: chart first, then the question and the finding -->
     <section id="work" class="wrap" aria-labelledby="work-title">
@@ -145,6 +261,73 @@
         </div>
       </article>
     </section>
+
+    <!-- projects-table:start -->
+    <section id="all-projects" class="wrap reveal" aria-labelledby="all-projects-title">
+      <h2 id="all-projects-title" class="section-title">All projects</h2>
+      <div class="pt-wrap">
+        <table class="projects-table">
+          <thead><tr><th scope="col">Project</th><th scope="col">Question</th><th scope="col">Tools</th><th scope="col">Links</th></tr></thead>
+          <tbody>
+          <tr class="is-featured">
+            <td class="pt-project" data-label="Project"><span class="pt-title">UPI vs. cash</span><span class="sc-badge">Featured</span><span class="pt-kind">Case study</span></td>
+            <td class="pt-question" data-label="Question">UPI won. So why is India holding more cash than ever?</td>
+            <td class="pt-tools" data-label="Tools">SQL · Python · Power BI · Forecasting</td>
+            <td class="pt-links" data-label="Links"><a class="" href="projects/upi.html">Case study →</a><a class="" href="https://github.com/BoredMongoose/upi-cash-paradox" target="_blank" rel="noopener">Code ↗</a></td>
+          </tr>
+          <tr class="is-featured">
+            <td class="pt-project" data-label="Project"><span class="pt-title">Delhi smog</span><span class="sc-badge">Featured</span><span class="pt-kind">Case study</span></td>
+            <td class="pt-question" data-label="Question">Who&#x27;s really choking Delhi: Diwali crackers or Punjab&#x27;s stubble fires?</td>
+            <td class="pt-tools" data-label="Tools">Python · statsmodels · scikit-learn · APIs</td>
+            <td class="pt-links" data-label="Links"><a class="" href="projects/delhi.html">Case study →</a><a class="" href="https://github.com/BoredMongoose/delhi-smog" target="_blank" rel="noopener">Code ↗</a></td>
+          </tr>
+          <tr class="is-featured">
+            <td class="pt-project" data-label="Project"><span class="pt-title">Moneyball IPL</span><span class="sc-badge">Featured</span><span class="pt-kind">Case study</span></td>
+            <td class="pt-question" data-label="Question">Which ₹&#8209;crore IPL buys were busts, and which were steals?</td>
+            <td class="pt-tools" data-label="Tools">SQL · Python · pandas</td>
+            <td class="pt-links" data-label="Links"><a class="" href="projects/ipl.html">Case study →</a><a class="" href="https://github.com/BoredMongoose/ipl-moneyball" target="_blank" rel="noopener">Code ↗</a></td>
+          </tr>
+          <tr>
+            <td class="pt-project" data-label="Project"><span class="pt-title">Global terrorism trends</span><span class="pt-kind">Analysis</span></td>
+            <td class="pt-question" data-label="Question">When, where and how have terrorist attacks happened since 1970?</td>
+            <td class="pt-tools" data-label="Tools">Python · pandas · matplotlib · EDA</td>
+            <td class="pt-links" data-label="Links"><a class="" href="https://github.com/BoredMongoose/Terrorism_analysis" target="_blank" rel="noopener">Code ↗</a></td>
+          </tr>
+          <tr>
+            <td class="pt-project" data-label="Project"><span class="pt-title">Workforce diversity clustering</span><span class="pt-kind">Analysis</span></td>
+            <td class="pt-question" data-label="Question">How diverse is the US workforce, sector by sector?</td>
+            <td class="pt-tools" data-label="Tools">Python · scikit-learn · K-Means · PCA</td>
+            <td class="pt-links" data-label="Links"><a class="" href="https://github.com/BoredMongoose/strata-clustering" target="_blank" rel="noopener">Code ↗</a></td>
+          </tr>
+          <tr>
+            <td class="pt-project" data-label="Project"><span class="pt-title">UFO sightings dashboard</span><span class="pt-kind">Dashboard</span></td>
+            <td class="pt-question" data-label="Question">Where and when do people report UFO sightings?</td>
+            <td class="pt-tools" data-label="Tools">Power BI · Maps · Slicers</td>
+            <td class="pt-links" data-label="Links"><a class="" href="https://app.powerbi.com/view?r=eyJrIjoiZTUyYzAxMzMtZjM5Ny00OGMxLThhMWQtNTA3MzY4NmQ0Mjc0IiwidCI6ImRmODY3OWNkLWE4MGUtNDVkOC05OWFjLWM4M2VkN2ZmOTVhMCJ9" target="_blank" rel="noopener">Live dashboard ↗</a></td>
+          </tr>
+          <tr>
+            <td class="pt-project" data-label="Project"><span class="pt-title">Remote work &amp; mental health</span><span class="pt-kind">Dashboard</span></td>
+            <td class="pt-question" data-label="Question">How is remote work affecting employees&#x27; mental health?</td>
+            <td class="pt-tools" data-label="Tools">Power BI · KPI cards · Filters</td>
+            <td class="pt-links" data-label="Links"><a class="" href="https://app.powerbi.com/view?r=eyJrIjoiZWUxYjM4NzMtNzUxOC00M2MyLWI1YzEtOWRjZjRkMmM3ZGRiIiwidCI6ImRmODY3OWNkLWE4MGUtNDVkOC05OWFjLWM4M2VkN2ZmOTVhMCJ9" target="_blank" rel="noopener">Live dashboard ↗</a></td>
+          </tr>
+          <tr>
+            <td class="pt-project" data-label="Project"><span class="pt-title">Medicine lookup</span><span class="pt-kind">Dashboard</span></td>
+            <td class="pt-question" data-label="Question">What does a medicine treat, and how do people rate it?</td>
+            <td class="pt-tools" data-label="Tools">Power BI · Slicers · Report design</td>
+            <td class="pt-links" data-label="Links"><a class="" href="https://app.powerbi.com/view?r=eyJrIjoiMzUzMWU0NTEtNjk2NC00ZjgzLWEzNDEtNDZhNzBlODRkNjIzIiwidCI6ImRmODY3OWNkLWE4MGUtNDVkOC05OWFjLWM4M2VkN2ZmOTVhMCJ9" target="_blank" rel="noopener">Live dashboard ↗</a></td>
+          </tr>
+          <tr>
+            <td class="pt-project" data-label="Project"><span class="pt-title">AI SQL query generator</span><span class="pt-kind">App</span></td>
+            <td class="pt-question" data-label="Question">Can someone query a database without knowing SQL?</td>
+            <td class="pt-tools" data-label="Tools">JavaScript · React · Node.js · OpenAI API</td>
+            <td class="pt-links" data-label="Links"><a class="" href="https://github.com/BoredMongoose/sql-gen-frontend" target="_blank" rel="noopener">Code ↗</a></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <!-- projects-table:end -->
 
     <!-- Skills: core first, then the rest -->
     <section id="skills" class="wrap reveal" aria-labelledby="skills-title">

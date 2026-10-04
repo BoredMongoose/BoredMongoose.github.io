@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Milind Saxena · Data Analyst</title>
+  <meta name="description" content="Data analyst portfolio: IPL auction value, Delhi's smog and India's UPI-vs-cash paradox, answered with SQL, Python and Power BI.">
+  <meta property="og:title" content="Milind Saxena · Data Analyst">
+  <meta property="og:description" content="Answering the questions people argue about, with data: IPL auctions, Delhi's smog, and why India still holds so much cash.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    // mark JS as available (enables the fade-in), and apply a saved theme before first paint
+    document.documentElement.classList.add("js");
+    try { var t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#work">Skip to projects</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" aria-label="Milind Saxena, back to top">
+        <span class="brand-mark" aria-hidden="true">MS</span>
+        <span class="brand-name">Milind Saxena</span>
+      </a>
+      <nav aria-label="Main">
+        <a href="#work">Work</a>
+        <a href="#skills">Skills</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <button class="theme-toggle" type="button" aria-label="Switch between light and dark theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.2M12 19.8V22M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2 12h2.2M19.8 12H22M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Intro -->
+    <section class="hero wrap">
+      <div class="hero-main">
+        <p class="eyebrow">Data Analyst · SQL · Python · Power BI</p>
+        <h1>I answer the questions people argue about, with data.</h1>
+        <p class="lede">
+          Hi, I'm Milind. I take messy public data, from cricket auctions and satellite fire maps to
+          central-bank tables, and turn it into clear answers, with the checks to back them up.
+        </p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#work">See my work</a>
+          <a class="btn" href="assets/Milind_Saxena_Resume.pdf">Résumé (PDF)</a>
+        </div>
+        <ul class="social" aria-label="Profiles">
+          <li><a href="https://github.com/GITHUB_USERNAME">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/milind-saxena-54399722a">LinkedIn</a></li>
+          <li><a href="mailto:milind.sax01@gmail.com">milind.sax01@gmail.com</a></li>
+        </ul>
+      </div>
+      <nav class="hero-index" aria-label="Projects">
+        <p class="hero-index-label">Three questions, answered</p>
+        <ol>
+          <li><a href="#ipl"><span class="num">01</span><span>Which ₹-crore IPL buys were busts, and which were steals?</span></a></li>
+          <li><a href="#delhi"><span class="num">02</span><span>Who's really choking Delhi: Diwali crackers or stubble fires?</span></a></li>
+          <li><a href="#upi"><span class="num">03</span><span>UPI won. So why is India holding more cash than ever?</span></a></li>
+        </ol>
+      </nav>
+    </section>
+
+    <!-- Projects -->
+    <section id="work" class="wrap" aria-labelledby="work-title">
+      <h2 id="work-title" class="section-title">Selected work</h2>
+
+      <article class="project reveal" id="ipl">
+        <a class="project-figure" href="https://github.com/GITHUB_USERNAME/ipl-moneyball" aria-label="IPL project on GitHub">
+          <img src="assets/ipl-price-vs-impact.webp" width="1600" height="984" loading="lazy"
+               alt="Scatter plot of auction price against runs added for 226 IPL 2025 players. The points barely follow the fair-price line: Bumrah, Suryakumar Yadav and Pooran sit far above it, Pant, Rashid Khan and Bishnoi far below.">
+        </a>
+        <div class="project-body">
+          <p class="project-meta"><span class="num">01</span> Sports analytics · IPL 2025</p>
+          <h3>Moneyball IPL: which ₹-crore buys were busts, and which were steals?</h3>
+          <p class="answer">
+            Price explained only about a tenth of what players actually delivered. Jasprit Bumrah and ₹1-crore
+            Jaydev Unadkat were steals. ₹27-crore Rishabh Pant was among the costliest flops.
+          </p>
+          <ul class="stats">
+            <li><strong>10%</strong><span>of on-field impact explained by price</span></li>
+            <li><strong>36%</strong><span>of budget buys never played a match</span></li>
+            <li><strong>r = 0.73</strong><span>my metric against team win rates</span></li>
+          </ul>
+          <p class="method">
+            Built a "runs added" metric from every ball of the season in SQL, matched 226 auction prices to scorecard
+            names, and checked that the metric predicts winning before trusting it.
+          </p>
+          <ul class="tags" aria-label="Tools"><li>SQL</li><li>DuckDB</li><li>Python</li><li>pandas</li></ul>
+          <a class="more" href="https://github.com/GITHUB_USERNAME/ipl-moneyball">Code &amp; write-up <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <article class="project reveal" id="delhi">
+        <a class="project-figure" href="https://github.com/GITHUB_USERNAME/delhi-smog" aria-label="Delhi smog project on GitHub">
+          <img src="assets/delhi-weather-normalised.webp" width="1600" height="1230" loading="lazy"
+               alt="Delhi PM2.5 by calendar day, averaged over 2015 to 2019, against a weather-only prediction. From late October to mid-November actual pollution rises far above the prediction, in step with the number of crop fires shown below.">
+        </a>
+        <div class="project-body">
+          <p class="project-meta"><span class="num">02</span> Environment &amp; health · Delhi</p>
+          <h3>Who's really choking Delhi: Diwali crackers or Punjab's stubble fires?</h3>
+          <p class="answer">
+            Both, but not equally. Stubble smoke drives most of early November's smog. Diwali night is one of the
+            year's worst, but it's brief. Over the whole winter, most of the pollution is Delhi's own.
+          </p>
+          <ul class="stats">
+            <li><strong>~60%</strong><span>of early-November PM2.5 from stubble smoke</span></li>
+            <li><strong>~2%</strong><span>Diwali's pollution compared with the stubble season</span></li>
+            <li><strong>84%</strong><span>of winter exposure from Delhi's own pollution</span></li>
+          </ul>
+          <p class="method">
+            Combined 600,000+ NASA satellite fire detections with five years of air-quality and weather data. A placebo
+            test showed the obvious regression was wrong, so I built a weather-normalisation model instead.
+          </p>
+          <ul class="tags" aria-label="Tools"><li>Python</li><li>statsmodels</li><li>scikit-learn</li><li>NASA &amp; weather APIs</li></ul>
+          <a class="more" href="https://github.com/GITHUB_USERNAME/delhi-smog">Notebook &amp; write-up <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <article class="project reveal" id="upi">
+        <a class="project-figure" href="https://github.com/GITHUB_USERNAME/upi-cash-paradox" aria-label="UPI and cash project on GitHub">
+          <img src="assets/upi-vs-cash.webp" width="1600" height="1003" loading="lazy"
+               alt="Line chart of UPI payments and cash in circulation as a share of GDP. UPI rises from 37% of GDP in 2021-22 to 91% in 2025-26, while cash stays flat at about 12% of GDP since 2010-11.">
+        </a>
+        <div class="project-body">
+          <p class="project-meta"><span class="num">03</span> Finance &amp; economics · India</p>
+          <h3>UPI won. So why is India holding more cash than ever?</h3>
+          <p class="answer">
+            Because cash was never just for paying. UPI now moves the equivalent of 91% of GDP a year, yet cash is still
+            12% of GDP, where it was before UPI existed. UPI replaced cash for spending, not for saving.
+          </p>
+          <ul class="stats">
+            <li><strong>91%</strong><span>UPI's yearly value as a share of GDP</span></li>
+            <li><strong>12%</strong><span>cash as a share of GDP, unchanged</span></li>
+            <li><strong>1.1%</strong><span>average error of my cash-demand forecast</span></li>
+          </ul>
+          <p class="method">
+            SQL pipeline over RBI and World Bank data with 15 automated data-quality checks, a Holt-Winters forecast of
+            cash demand tested on 25 past periods, and a Power BI dashboard.
+          </p>
+          <ul class="tags" aria-label="Tools"><li>SQL</li><li>Power BI</li><li>DAX</li><li>Python</li><li>Forecasting</li></ul>
+          <a class="more" href="https://github.com/GITHUB_USERNAME/upi-cash-paradox">Code, dashboard &amp; write-up <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="wrap reveal" aria-labelledby="skills-title">
+      <h2 id="skills-title" class="section-title">Skills</h2>
+      <div class="skills-grid">
+        <div>
+          <h3>SQL</h3>
+          <ul><li>CTEs &amp; window functions</li><li>Staging → mart data models</li><li>Automated data-quality checks</li><li>DuckDB</li></ul>
+        </div>
+        <div>
+          <h3>Python</h3>
+          <ul><li>pandas, NumPy</li><li>statsmodels, scikit-learn</li><li>matplotlib</li><li>Jupyter, REST APIs</li></ul>
+        </div>
+        <div>
+          <h3>BI &amp; visualisation</h3>
+          <ul><li>Power BI &amp; DAX</li><li>Dashboard design</li><li>Accessible chart design</li><li>Excel</li></ul>
+        </div>
+        <div>
+          <h3>Methods</h3>
+          <ul><li>Regression &amp; hypothesis tests</li><li>Forecasting &amp; backtesting</li><li>Placebo &amp; robustness checks</li><li>Git &amp; GitHub</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="wrap about reveal" aria-labelledby="about-title">
+      <h2 id="about-title" class="section-title">About</h2>
+      <div class="about-grid">
+        <p class="about-text">
+          I like questions that people argue about, and answering them with public data. I work mostly in SQL,
+          Python and Power BI, and I care about checking my own work: every project here includes a test that could
+          have proven me wrong, and one of them did. I'm looking for an entry-level data analyst role, open to remote
+          work in India.
+        </p>
+        <div class="edu">
+          <p class="edu-label">Education</p>
+          <p class="edu-degree">Honours B.A., Computer Science &amp; Economics</p>
+          <p class="edu-school">McMaster University · 2023 · Dean's Honour List</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="wrap contact reveal" aria-labelledby="contact-title">
+      <h2 id="contact-title" class="section-title">Contact</h2>
+      <p class="contact-line">Have a role, a dataset or a question worth arguing about?</p>
+      <a class="contact-email" href="mailto:milind.sax01@gmail.com">milind.sax01@gmail.com</a>
+      <ul class="social">
+        <li><a href="https://www.linkedin.com/in/milind-saxena-54399722a">LinkedIn</a></li>
+        <li><a href="https://github.com/GITHUB_USERNAME">GitHub</a></li>
+        <li><a href="assets/Milind_Saxena_Resume.pdf">Résumé (PDF)</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">© 2026 Milind Saxena · Built with plain HTML &amp; CSS</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

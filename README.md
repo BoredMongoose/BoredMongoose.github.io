@@ -14,6 +14,11 @@ A single-page portfolio in plain HTML and CSS: no framework or build step. It ha
 - [ ] Add the résumé as `assets/Milind_Saxena_Resume.pdf`.
 - [ ] Optional: add the Power BI dashboard screenshot to the UPI project card.
 
+## Portrait
+
+`assets/milind.png` / `.webp` is a background-removed cutout (lightly retouched) so it blends into either theme.
+The source photo and the retouch script live outside this repo.
+
 ## Editing
 
 - Content: `index.html`, with one `<article class="project">` per project.

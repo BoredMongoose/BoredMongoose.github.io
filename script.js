@@ -1,16 +1,12 @@
-// Theme toggle: remembers the visitor's choice when the browser allows storage
+// Theme toggle: the site is cream by default; the visitor can switch to dark, and the choice is remembered
+// when the browser allows storage
 const root = document.documentElement;
 const toggle = document.querySelector(".theme-toggle");
 
-function currentTheme() {
-  if (root.dataset.theme) return root.dataset.theme;
-  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-}
-
 toggle.addEventListener("click", () => {
-  const next = currentTheme() === "dark" ? "light" : "dark";
+  const next = root.dataset.theme === "dark" ? "light" : "dark";
   root.dataset.theme = next;
-  try { localStorage.setItem("theme", next); } catch (e) { /* storage blocked: theme still switches */ }
+  try { localStorage.setItem("site-theme", next); } catch (e) { /* storage blocked: theme still switches */ }
 });
 
 // Header border once the page scrolls

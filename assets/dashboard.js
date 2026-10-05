@@ -135,7 +135,8 @@
 
   function readColours() {
     const css = getComputedStyle(document.documentElement);
-    colours = { hi: css.getPropertyValue("--accent").trim(), lo: css.getPropertyValue("--ink-3").trim(),
+    colours = { hi: css.getPropertyValue("--accent").trim(),
+                lo: css.getPropertyValue("--dot-muted").trim() || css.getPropertyValue("--ink-3").trim(),
                 ink: css.getPropertyValue("--ink-2").trim(), line: css.getPropertyValue("--line").trim() };
   }
   function resize() {
@@ -166,7 +167,7 @@
 
     for (const pass of [0, 1]) {                         // draw the "not worth it" dots first, the targets on top
       ctx.fillStyle = pass ? colours.hi : colours.lo;
-      ctx.globalAlpha = pass ? 0.85 : 0.35;
+      ctx.globalAlpha = pass ? 0.85 : 0.65;
       for (const c of view) {
         if ((c.ev > 0) !== Boolean(pass)) continue;
         ctx.beginPath(); ctx.arc(px(c.bill), py(c.p), 2.1, 0, Math.PI * 2); ctx.fill();

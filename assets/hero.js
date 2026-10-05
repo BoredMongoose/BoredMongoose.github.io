@@ -36,7 +36,8 @@
   function readColours() {
     const css = getComputedStyle(document.documentElement);
     const v = (name) => css.getPropertyValue(name).trim();
-    colours = { hi: v("--accent"), lo: v("--ink-3"), ink: v("--ink-2"), faint: v("--line"), surface: v("--surface") };
+    colours = { hi: v("--accent"), lo: v("--dot-muted") || v("--ink-3"), ink: v("--ink-2"), text: v("--ink"),
+                faint: v("--line"), surface: v("--surface") };
   }
 
   // ---- geometry ------------------------------------------------------------------------------
@@ -191,6 +192,35 @@
     ctx.restore();
   }
 
+  // ring and name the outliers (IPL: the biggest steals and busts); some names drop out on narrow screens
+  function drawOutliers(scene) {
+    if (!scene.outliers || labelAlpha <= 0) return;
+    const p = plot(scene);
+    ctx.save();
+    ctx.globalAlpha = labelAlpha;
+    ctx.font = "600 11px Inter, system-ui, sans-serif";
+    ctx.textBaseline = "middle";
+    ctx.lineJoin = "round";
+    for (const o of scene.outliers) {
+      if (W < (o.min_w || 0)) continue;
+      const [x, y] = scene.points[o.i];
+      const px = p.left + x * p.w, py = p.bottom - y * p.h;
+      ctx.strokeStyle = colours.text;
+      ctx.lineWidth = 1.4;
+      ctx.beginPath();
+      ctx.arc(px, py, scene.r + 3.5, 0, Math.PI * 2);
+      ctx.stroke();
+      const tw = ctx.measureText(o.label).width;
+      const lx = Math.min(Math.max(o.side === "l" ? px - 11 - tw : px + 11, 2), W - tw - 2);
+      ctx.lineWidth = 4;                              // a halo in the card colour keeps the name readable over dots
+      ctx.strokeStyle = colours.surface;
+      ctx.strokeText(o.label, lx, py);
+      ctx.fillStyle = colours.text;
+      ctx.fillText(o.label, lx, py);
+    }
+    ctx.restore();
+  }
+
   function draw(now = performance.now()) {
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.clearRect(0, 0, W, H);
@@ -218,6 +248,7 @@
       ctx.fill();
     }
     ctx.globalAlpha = 1;
+    if (!moving && settled) drawOutliers(scene);
     if (hoverDot) {
       ctx.strokeStyle = colours.ink;
       ctx.lineWidth = 1.5;
@@ -329,8 +360,9 @@
 
   new ResizeObserver(() => {
     const oldW = W, oldH = H;
-    resize();
-    if (Math.abs(oldW - W) > 1 || Math.abs(oldH - H) > 1) { goTo(active, false); }
+    resize();                                       // resizing the canvas also clears it...
+    if (Math.abs(oldW - W) > 1 || Math.abs(oldH - H) > 1) goTo(active, false);
+    else draw();                                    // ...so always redraw (with reduced motion nothing else would)
   }).observe(stage);
 
   new MutationObserver(() => { readColours(); draw(); })

@@ -291,8 +291,8 @@ section { scroll-margin-top: 80px; }
   transition: opacity 0.25s ease, transform 0.25s ease;
 }
 .mcard-info a { pointer-events: none; }                         /* hidden links can't be clicked by accident */
-.mcard:hover .mcard-info, .mcard:focus-within .mcard-info { opacity: 1; transform: none; }
-.mcard:hover .mcard-info a, .mcard:focus-within .mcard-info a { pointer-events: auto; }
+.mcard:hover .mcard-info, .mcard:has(:focus-visible) .mcard-info { opacity: 1; transform: none; }   /* keyboard focus only, so a click doesn't leave it open */
+.mcard:hover .mcard-info a, .mcard:has(:focus-visible) .mcard-info a { pointer-events: auto; }
 .mcard-info p { margin: 0; }
 .mcard-info p > span:first-child {
   display: block; margin-bottom: 2px; font-size: 10.5px; font-weight: 600; letter-spacing: 0.07em;

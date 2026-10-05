@@ -9,6 +9,11 @@ toggle.addEventListener("click", () => {
   try { localStorage.setItem("site-theme", next); } catch (e) { /* storage blocked: theme still switches */ }
 });
 
+// Coming back with the Back button restores the page as it was, including the clicked card's focus: clear it
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted && document.activeElement) document.activeElement.blur();
+});
+
 // Header border once the page scrolls
 const header = document.querySelector(".site-header");
 const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 8);

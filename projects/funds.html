@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Active vs. index: do Indian large-cap funds beat a Nifty 50 index fund? · Milind Saxena</title>
+  <meta name="description" content="Over 2013–2026, 19 of the 20 surviving active funds did: 12.7% a year for the median fund vs 11.05% for the index fund. But it comes in cycles: from 2019…">
+  <meta property="og:title" content="Active vs. index: do Indian large-cap funds beat a Nifty 50 index fund? · Milind Saxena">
+  <meta property="og:description" content="Over 2013–2026, 19 of the 20 surviving active funds did: 12.7% a year for the median fund vs 11.05% for the index fund. But it comes in cycles: from 2019…">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://boredmongoose.github.io/projects/funds.html">
+  <meta property="og:image" content="https://boredmongoose.github.io/assets/og/funds.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="628">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <style>.case-page { --case-accent: #2f6f4f; }</style>
+  <script>
+    document.documentElement.classList.add("js");
+    try { var t = localStorage.getItem("site-theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body class="case-page">
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8"/><path d="M8 23v-5M13.5 23v-9M19 23v-12M24.5 23V8"/></svg><span class="brand-name">Milind Saxena<span class="brand-dot" aria-hidden="true">.</span></span></a>
+      <nav aria-label="Main">
+        <a href="../index.html#work">All projects</a>
+        <a href="../index.html#contact">Contact</a>
+        <button class="theme-toggle" type="button" aria-label="Switch between light and dark theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.2M12 19.8V22M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2 12h2.2M19.8 12H22M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <div class="case-band" aria-hidden="true"></div>
+  <main class="case wrap">
+    <p class="case-back"><a href="../index.html#work">← All projects</a></p>
+    <p class="eyebrow">Investing · India</p>
+    <h1>Active vs. index: do Indian large-cap funds beat a Nifty 50 index fund?</h1>
+    <dl class="impact-box">
+      <div class="ib-wide ib-question"><dt>Business question</dt><dd>Do active large-cap mutual funds in India beat a cheap Nifty 50 index fund?</dd></div>
+      <div class="ib-half"><dt>Key finding</dt><dd>Over 2013–2026, 19 of the 20 surviving active funds did: 12.7% a year for the median fund vs 11.05% for the index fund. But it comes in cycles: from 2019 to 2021 only about 30% were ahead.</dd></div>
+      <div class="ib-half"><dt>Recommendation</dt><dd>Treat the index fund as the default: it costs least and needs no fund picking. The active edge is real but overstated: 9 large-cap funds closed or merged and aren&#x27;t in the comparison, and an investor still has to pick the winners in advance.</dd></div>
+      <div class="ib-wide ib-impact"><dt>Estimated impact</dt><dd><strong>19 of 20</strong><span>Surviving active large-cap funds beat the Nifty 50 index fund from 2013 to 2026. 9 other funds closed or merged along the way, so the real win rate is lower.</span></dd></div>
+    </dl>
+    <dl class="case-facts">
+      <div><dt>Data</dt><dd>Daily NAVs for 43 large-cap funds (direct plans) from AMFI via mfapi.in</dd></div>
+      <div><dt>Period</dt><dd>January 2013 to October 2026, 13.7 years</dd></div>
+      <div><dt>Tools</dt><dd>Python, pandas, matplotlib</dd></div>
+      <div><dt>Code</dt><dd><a href="https://github.com/BoredMongoose/index-vs-active-funds">github.com/BoredMongoose/index-vs-active-funds ↗</a></dd></div>
+    </dl>
+
+    <h2 class="section-title">Results</h2>
+    <figure class="case-figure">
+      <img src="../assets/projects/index-vs-active-funds/growth_of_1_lakh.webp" width="1350" height="750" loading="lazy" alt="Most active funds ended ahead of the index fund. ₹1 lakh invested in January 2013. Grey lines are the 20 active funds; the median active fund ended around ₹5.2 lakh and the index fund around ₹4.2 lakh.">
+      <figcaption><strong>Most active funds ended ahead of the index fund.</strong> ₹1 lakh invested in January 2013. Grey lines are the 20 active funds; the median active fund ended around ₹5.2 lakh and the index fund around ₹4.2 lakh.</figcaption>
+    </figure>
+    <figure class="case-figure">
+      <img src="../assets/projects/index-vs-active-funds/share_ahead_over_time.webp" width="1350" height="675" loading="lazy" alt="But the lead comes and goes. Share of active funds ahead of the index over the previous 3 years. Almost all of them were ahead until 2018; from 2019 to 2021 most were behind; since 2024 most are ahead again.">
+      <figcaption><strong>But the lead comes and goes.</strong> Share of active funds ahead of the index over the previous 3 years. Almost all of them were ahead until 2018; from 2019 to 2021 most were behind; since 2024 most are ahead again.</figcaption>
+    </figure>
+    <figure class="case-figure">
+      <img src="../assets/projects/index-vs-active-funds/rolling_win_rate.webp" width="1500" height="975" loading="lazy" alt="16 of 20 funds were ahead in most 3-year windows. The share of rolling 3-year windows each fund beat the index fund. Four funds were behind more often than ahead.">
+      <figcaption><strong>16 of 20 funds were ahead in most 3-year windows.</strong> The share of rolling 3-year windows each fund beat the index fund. Four funds were behind more often than ahead.</figcaption>
+    </figure>
+
+    <h2 class="section-title">How I did it</h2>
+    <ol class="case-method">
+      <li>Downloaded daily NAVs for every large-cap fund&#x27;s direct growth plan, plus the UTI Nifty 50 Index Fund as the benchmark (a real index fund pays fees, like an investor would).</li>
+      <li>Ran data checks on every fund: missing prices, zero prices, duplicate dates, daily moves over 15%, and whether the fund still exists. One zero price was an error and was removed.</li>
+      <li>Kept the 20 active funds that existed for the whole period, so every fund is compared over the same years.</li>
+      <li>Worked out each fund&#x27;s yearly return (CAGR), Sharpe ratio and worst fall, then compared every rolling 3-year window against the index fund.</li>
+    </ol>
+
+    <h2 class="section-title">What could make this wrong</h2>
+    <ul class="case-caveats">
+      <li>Survivorship bias: 9 funds that closed or merged aren&#x27;t in the comparison, so active funds look better than they really were.</li>
+      <li>Only direct plans: regular plans charge about 0.5–1% a year more and would beat the index less often.</li>
+      <li>No taxes or exit loads, and the 6.5% risk-free rate in the Sharpe ratio is an approximation.</li>
+    </ul>
+
+    <div class="case-two">
+      <div>
+        <h2 class="section-title">What I learned</h2>
+        <ul class="case-list">
+          <li>Check the data first: one fund&#x27;s price was 0.0 on a Sunday, which made it look like it lost 100%.</li>
+          <li>Look at who is missing: funds that closed drop out of the data and make the survivors look better.</li>
+          <li>One number over 13 years hides the story: the answer flips depending on which 3 years you look at.</li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="section-title">What I'd do next</h2>
+        <ol class="case-list">
+          <li>Add the closed funds back up to the day they closed, to measure how much survivorship bias matters.</li>
+          <li>Compare direct and regular plans, to show what the extra fees cost over 20 years.</li>
+          <li>Use the Nifty 50 Total Return Index as a second benchmark.</li>
+        </ol>
+      </div>
+    </div>
+
+    <p class="case-next"><a class="btn btn-primary" href="https://github.com/BoredMongoose/index-vs-active-funds">See the code on GitHub</a>
+      <a class="btn" href="../index.html#work">Back to all projects</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">© 2026 Milind Saxena</div>
+  </footer>
+  <script src="../script.js"></script>
+</body>
+</html>

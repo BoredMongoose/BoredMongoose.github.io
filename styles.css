@@ -232,6 +232,12 @@ section { scroll-margin-top: 80px; }
 .flag-meta .num { font-family: var(--serif); color: var(--accent); font-weight: 600; margin-right: 10px; }
 .flag h3 { font-size: clamp(1.7rem, 2.8vw, 2.25rem); }
 .flag h3 a { text-decoration: none; }
+/* the whole flagship card opens the case study; the image and the small links stay clickable on top */
+.flag { position: relative; }
+.flag-link::after { content: ""; position: absolute; inset: 0; z-index: 1; }
+.flag-figure, .flag .links a { position: relative; z-index: 2; }
+.flag:hover .flag-link { color: var(--accent); }
+.flag:hover .flag-figure { transform: translateY(-3px); }
 .flag-label {
   display: block; margin-bottom: 4px; font-family: var(--sans); font-size: 11.5px; font-weight: 600;
   letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent);
@@ -273,14 +279,20 @@ section { scroll-margin-top: 80px; }
 }
 .mcard-title { font-family: var(--serif); font-size: 18px; font-weight: 600; line-height: 1.2; }
 .mcard-tools { font-size: 12px; opacity: 0.85; }
+/* the whole card is a link to the project's page; the small links in the overlay sit above it */
+.mcard-cover { position: absolute; inset: 0; z-index: 1; border-radius: inherit; }
+.mcard-cover:focus-visible { outline: 2px solid var(--accent); outline-offset: -3px; }
 .mcard-info {
-  position: absolute; inset: 0; display: flex; flex-direction: column; gap: 8px;
+  position: absolute; inset: 0; z-index: 2; display: flex; flex-direction: column; gap: 8px;
   justify-content: flex-start; justify-content: safe center;    /* if the text ever overflows, scroll from the top */
-  padding: 14px 16px; overflow-y: auto; opacity: 0; transform: translateY(10px); pointer-events: none;
+  padding: 14px 16px; overflow-y: auto; opacity: 0; transform: translateY(10px);
+  pointer-events: none;                                         /* clicks on the text fall through to the card link */
   background: color-mix(in srgb, var(--surface) 96%, transparent); backdrop-filter: blur(6px);
   transition: opacity 0.25s ease, transform 0.25s ease;
 }
-.mcard:hover .mcard-info, .mcard:focus-within .mcard-info { opacity: 1; transform: none; pointer-events: auto; }
+.mcard-info a { pointer-events: none; }                         /* hidden links can't be clicked by accident */
+.mcard:hover .mcard-info, .mcard:focus-within .mcard-info { opacity: 1; transform: none; }
+.mcard:hover .mcard-info a, .mcard:focus-within .mcard-info a { pointer-events: auto; }
 .mcard-info p { margin: 0; }
 .mcard-info p > span:first-child {
   display: block; margin-bottom: 2px; font-size: 10.5px; font-weight: 600; letter-spacing: 0.07em;
@@ -297,8 +309,8 @@ section { scroll-margin-top: 80px; }
 }
 
 @media (hover: none) {               /* touch screens: no hover, so the answer sits under the chart */
-  .mcard { cursor: default; }
-  .mcard-info { position: static; opacity: 1; transform: none; pointer-events: auto; background: var(--surface); backdrop-filter: none; }
+  .mcard-info { position: relative; opacity: 1; transform: none; background: var(--surface); backdrop-filter: none; }
+  .mcard-info a { pointer-events: auto; }
 }
 
 /* ---------- SQL ---------- */

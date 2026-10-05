@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Global terrorism, 1970–2017: where attacks happen, and how · Milind Saxena</title>
+  <meta name="description" content="Mostly in Iraq, Pakistan and Afghanistan, which had 46% of all attacks in 2012–2017. And mostly bombings: 49% of the 181,691 attacks from 1970 to 2017.">
+  <meta property="og:title" content="Global terrorism, 1970–2017: where attacks happen, and how · Milind Saxena">
+  <meta property="og:description" content="Mostly in Iraq, Pakistan and Afghanistan, which had 46% of all attacks in 2012–2017. And mostly bombings: 49% of the 181,691 attacks from 1970 to 2017.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://boredmongoose.github.io/projects/terrorism.html">
+  <meta property="og:image" content="https://boredmongoose.github.io/assets/social-preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script>
+    document.documentElement.classList.add("js");
+    try { var t = localStorage.getItem("site-theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8"/><path d="M8 23v-5M13.5 23v-9M19 23v-12M24.5 23V8"/></svg><span class="brand-name">Milind Saxena<span class="brand-dot" aria-hidden="true">.</span></span></a>
+      <nav aria-label="Main">
+        <a href="../index.html#work">All projects</a>
+        <a href="../index.html#contact">Contact</a>
+        <button class="theme-toggle" type="button" aria-label="Switch between light and dark theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.2M12 19.8V22M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2 12h2.2M19.8 12H22M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="case wrap">
+    <p class="case-back"><a href="../index.html#work">← All projects</a></p>
+    <p class="eyebrow">Exploratory analysis · World</p>
+    <h1>Global terrorism, 1970–2017: where attacks happen, and how</h1>
+    <dl class="impact-box">
+      <div class="ib-wide ib-question"><dt>Business question</dt><dd>Where do terrorist attacks happen most, and what kind of attacks are they?</dd></div>
+      <div class="ib-half"><dt>Key finding</dt><dd>Mostly in Iraq, Pakistan and Afghanistan, which had 46% of all attacks in 2012–2017. And mostly bombings: 49% of the 181,691 attacks from 1970 to 2017.</dd></div>
+      <div class="ib-half"><dt>Recommendation</dt><dd>Put prevention effort where the attacks are: those three countries, and bombings first. In Central America and Sub-Saharan Africa, plan for armed assaults too, which are as common as bombings there.</dd></div>
+      <div class="ib-wide ib-impact"><dt>Estimated impact</dt><dd><strong>46%</strong><span>Of attacks in 2012–2017 happened in just three countries: Iraq, Pakistan and Afghanistan.</span></dd></div>
+    </dl>
+    <dl class="case-facts">
+      <div><dt>Data</dt><dd>Global Terrorism Database (START, University of Maryland): 181,691 attacks</dd></div>
+      <div><dt>Period</dt><dd>1970–2017 (1993 is missing)</dd></div>
+      <div><dt>Tools</dt><dd>Python, pandas, matplotlib</dd></div>
+      <div><dt>Code</dt><dd><a href="https://github.com/BoredMongoose/Terrorism_analysis">github.com/BoredMongoose/Terrorism_analysis ↗</a></dd></div>
+    </dl>
+
+    <h2 class="section-title">Results</h2>
+    <figure class="case-figure">
+      <img src="../assets/projects/Terrorism_analysis/attack_density.webp" width="1560" height="780" loading="lazy" alt="Where the attacks happened. Each cell counts the attacks at that spot from 1970 to 2017. The darkest area is Iraq; Pakistan, Afghanistan, northern India, the Andes and Central America follow.">
+      <figcaption><strong>Where the attacks happened.</strong> Each cell counts the attacks at that spot from 1970 to 2017. The darkest area is Iraq; Pakistan, Afghanistan, northern India, the Andes and Central America follow.</figcaption>
+    </figure>
+    <figure class="case-figure">
+      <img src="../assets/projects/Terrorism_analysis/attacks_per_year.webp" width="1430" height="585" loading="lazy" alt="Attacks rose, fell, then shot up after 2011. The 2014 peak (16,903 attacks) came mostly from Iraq, Pakistan and Afghanistan. The bar for 1993 is missing because those records were lost.">
+      <figcaption><strong>Attacks rose, fell, then shot up after 2011.</strong> The 2014 peak (16,903 attacks) came mostly from Iraq, Pakistan and Afghanistan. The bar for 1993 is missing because those records were lost.</figcaption>
+    </figure>
+    <figure class="case-figure">
+      <img src="../assets/projects/Terrorism_analysis/attack_methods.webp" width="1170" height="585" loading="lazy" alt="Bombings are almost half of all attacks. Bombing or explosion 49%, armed assault 23% and assassination 11%: together about 83% of attacks.">
+      <figcaption><strong>Bombings are almost half of all attacks.</strong> Bombing or explosion 49%, armed assault 23% and assassination 11%: together about 83% of attacks.</figcaption>
+    </figure>
+
+    <h2 class="section-title">How I did it</h2>
+    <ol class="case-method">
+      <li>Loaded the 181,691-row file with pandas and kept the dozen columns I needed.</li>
+      <li>Counted attacks by year, country, region and attack type with groupby and value_counts.</li>
+      <li>Checked the data: 1993 is missing, 45.6% of attacks have no known group, some casualty numbers are blank, and one longitude was impossible (−86,185,896), which I fixed by putting the decimal point back.</li>
+      <li>Drew every attack&#x27;s location as a density map, so the busiest places stand out.</li>
+    </ol>
+
+    <h2 class="section-title">What could make this wrong</h2>
+    <ul class="case-caveats">
+      <li>Different teams collected the data over the years, so some changes may come from how attacks were counted.</li>
+      <li>Blank killed and wounded numbers are counted as 0, so casualties are a little too low.</li>
+      <li>Two 2001 US rows look like one event recorded twice.</li>
+    </ul>
+
+    <div class="case-two">
+      <div>
+        <h2 class="section-title">What I learned</h2>
+        <ul class="case-list">
+          <li>Check the data before trusting a chart: one longitude of −86,185,896 squashed my first map into a line.</li>
+          <li>A total hides the story: the 2014 peak came mostly from three countries, and the earlier rise from three different ones (Peru, El Salvador and Colombia).</li>
+          <li>Say what&#x27;s missing: 45.6% of attacks have no known group, and 1993 isn&#x27;t in the data at all.</li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="section-title">What I'd do next</h2>
+        <ol class="case-list">
+          <li>Check the two 2001 US rows that look like one event recorded twice.</li>
+          <li>Look at attacks per million people, not just counts, so big countries don&#x27;t dominate.</li>
+          <li>Add 2018 onwards when a newer version of the database is available.</li>
+        </ol>
+      </div>
+    </div>
+
+    <p class="case-next"><a class="btn btn-primary" href="https://github.com/BoredMongoose/Terrorism_analysis">See the code on GitHub</a>
+      <a class="btn" href="../index.html#work">Back to all projects</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">© 2026 Milind Saxena</div>
+  </footer>
+  <script src="../script.js"></script>
+</body>
+</html>

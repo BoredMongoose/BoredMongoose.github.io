@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Workforce diversity: which US industries are the least diverse? · Milind Saxena</title>
+  <meta name="description" content="Construction, agriculture and mining. They are 88–92% white, and construction is 89% men. White workers are the majority in every sector (71–92%).">
+  <meta property="og:title" content="Workforce diversity: which US industries are the least diverse? · Milind Saxena">
+  <meta property="og:description" content="Construction, agriculture and mining. They are 88–92% white, and construction is 89% men. White workers are the majority in every sector (71–92%).">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://boredmongoose.github.io/projects/workforce.html">
+  <meta property="og:image" content="https://boredmongoose.github.io/assets/social-preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script>
+    document.documentElement.classList.add("js");
+    try { var t = localStorage.getItem("site-theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8"/><path d="M8 23v-5M13.5 23v-9M19 23v-12M24.5 23V8"/></svg><span class="brand-name">Milind Saxena<span class="brand-dot" aria-hidden="true">.</span></span></a>
+      <nav aria-label="Main">
+        <a href="../index.html#work">All projects</a>
+        <a href="../index.html#contact">Contact</a>
+        <button class="theme-toggle" type="button" aria-label="Switch between light and dark theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.2M12 19.8V22M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2 12h2.2M19.8 12H22M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="case wrap">
+    <p class="case-back"><a href="../index.html#work">← All projects</a></p>
+    <p class="eyebrow">Segmentation · US workforce</p>
+    <h1>Workforce diversity: which US industries are the least diverse?</h1>
+    <dl class="impact-box">
+      <div class="ib-wide ib-question"><dt>Business question</dt><dd>Which US industries most need diversity hiring?</dd></div>
+      <div class="ib-half"><dt>Key finding</dt><dd>Construction, agriculture and mining. They are 88–92% white, and construction is 89% men. White workers are the majority in every sector (71–92%).</dd></div>
+      <div class="ib-half"><dt>Recommendation</dt><dd>Start diversity hiring in construction, agriculture and mining, and focus on hiring women in construction, mining and transportation. Track the same numbers every year: mining&#x27;s Hispanic/Latino share rose 5 points in two years, so they can move.</dd></div>
+      <div class="ib-wide ib-impact"><dt>Estimated impact</dt><dd><strong>89%</strong><span>Of construction workers are men, the most male-dominated sector (mining is 85%).</span></dd></div>
+    </dl>
+    <dl class="case-facts">
+      <div><dt>Data</dt><dd>US labour force statistics by sector and industry, 2020–2023</dd></div>
+      <div><dt>Coverage</dt><dd>13 sectors, 110 industries</dd></div>
+      <div><dt>Tools</dt><dd>Python, pandas, scikit-learn, seaborn</dd></div>
+      <div><dt>Code</dt><dd><a href="https://github.com/BoredMongoose/strata-clustering">github.com/BoredMongoose/strata-clustering ↗</a></dd></div>
+    </dl>
+
+    <h2 class="section-title">Results</h2>
+    <figure class="case-figure">
+      <img src="../assets/projects/strata-clustering/01_gender_balance.webp" width="1600" height="829" loading="lazy" alt="Construction is 89% men; education and health is 75% women. Average share of women in each sector, 2020–2023. Only education and health is above 50/50.">
+      <figcaption><strong>Construction is 89% men; education and health is 75% women.</strong> Average share of women in each sector, 2020–2023. Only education and health is above 50/50.</figcaption>
+    </figure>
+    <figure class="case-figure">
+      <img src="../assets/projects/strata-clustering/02_ethnic_mix.webp" width="1600" height="739" loading="lazy" alt="White workers are the majority in every sector. From 71% in transportation and utilities to 92% in agriculture. Hispanic/Latino overlaps with the other groups, so the bars don&#x27;t add up to 100%.">
+      <figcaption><strong>White workers are the majority in every sector.</strong> From 71% in transportation and utilities to 92% in agriculture. Hispanic/Latino overlaps with the other groups, so the bars don&#x27;t add up to 100%.</figcaption>
+    </figure>
+    <figure class="case-figure">
+      <img src="../assets/projects/strata-clustering/03_sector_groups.webp" width="1497" height="948" loading="lazy" alt="Three groups of sectors. K-Means put construction, agriculture and mining in a group of their own: mostly white, mostly men. Most other sectors are about half women.">
+      <figcaption><strong>Three groups of sectors.</strong> K-Means put construction, agriculture and mining in a group of their own: mostly white, mostly men. Most other sectors are about half women.</figcaption>
+    </figure>
+    <figure class="case-figure">
+      <img src="../assets/projects/strata-clustering/05_industry_groups.webp" width="1272" height="948" loading="lazy" alt="110 industries, four groups. 70 mostly white industries, 21 with more Black workers, 14 with more Hispanic/Latino workers (restaurants, landscaping) and 5 with many more Asian workers (electronics, nail salons).">
+      <figcaption><strong>110 industries, four groups.</strong> 70 mostly white industries, 21 with more Black workers, 14 with more Hispanic/Latino workers (restaurants, landscaping) and 5 with many more Asian workers (electronics, nail salons).</figcaption>
+    </figure>
+    <figure class="case-figure">
+      <img src="../assets/projects/strata-clustering/04_diversity_vs_size.webp" width="1600" height="1015" loading="lazy" alt="Bigger sectors are only a little more diverse. Each dot is a sector. The correlation between diversity and size is 0.42, a weak link with 13 sectors.">
+      <figcaption><strong>Bigger sectors are only a little more diverse.</strong> Each dot is a sector. The correlation between diversity and size is 0.42, a weak link with 13 sectors.</figcaption>
+    </figure>
+
+    <h2 class="section-title">How I did it</h2>
+    <ol class="case-method">
+      <li>Cleaned the data: removed blank and total rows, fixed percentages typed as whole numbers (87.5 instead of 0.875), and dropped one impossible value.</li>
+      <li>Answered six questions with pandas groupby: gender balance, ethnic mix, change from 2021 to 2023, and size against diversity.</li>
+      <li>Grouped sectors and industries with K-Means after standardising the columns, picked the number of groups with the elbow method, and drew them with PCA.</li>
+      <li>Scored diversity with Shannon entropy: higher means workers are spread more evenly across the groups.</li>
+    </ol>
+
+    <h2 class="section-title">What could make this wrong</h2>
+    <ul class="case-caveats">
+      <li>Only four years of data.</li>
+      <li>The percentages are survey estimates, so small industries jump around from year to year.</li>
+      <li>K-Means always finds groups, even weak ones: the groups describe the data, they don&#x27;t prove anything.</li>
+    </ul>
+
+    <div class="case-two">
+      <div>
+        <h2 class="section-title">What I learned</h2>
+        <ul class="case-list">
+          <li>Clean first: some percentages were typed as 87.5 instead of 0.875, and one Asian share was above 100%.</li>
+          <li>Standardise the columns before K-Means, otherwise the biggest numbers decide the groups.</li>
+          <li>Check written findings against the output: my first write-up had the industry groups mixed up.</li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="section-title">What I'd do next</h2>
+        <ol class="case-list">
+          <li>Add pay data, to see whether the least diverse industries also pay differently.</li>
+          <li>Use more years, to tell real changes from survey noise.</li>
+          <li>Look at job level (entry level vs management), not just the industry.</li>
+        </ol>
+      </div>
+    </div>
+
+    <p class="case-next"><a class="btn btn-primary" href="https://github.com/BoredMongoose/strata-clustering">See the code on GitHub</a>
+      <a class="btn" href="../index.html#work">Back to all projects</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">© 2026 Milind Saxena</div>
+  </footer>
+  <script src="../script.js"></script>
+</body>
+</html>

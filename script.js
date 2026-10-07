@@ -106,16 +106,21 @@ const RESULTS = [
 const viz = document.querySelector(".hero-viz");
 const results = [...document.querySelectorAll(".results .result")];
 if (viz && results.length === 4) {
-  viz.addEventListener("scenechange", (e) => {
-    const [href, rows] = RESULTS[e.detail] || RESULTS[0];
-    results.forEach((el, k) => {
+  let shown = 0;
+  const show = (k) => {
+    if (k === shown || !RESULTS[k]) return;
+    shown = k;
+    const [href, rows] = RESULTS[k];
+    results.forEach((el, n) => {
       el.classList.add("swap");
       setTimeout(() => {
         el.href = href;
-        el.querySelector("b").textContent = rows[k][0];
-        el.querySelector("span").textContent = rows[k][1];
+        el.querySelector("b").textContent = rows[n][0];
+        el.querySelector("span").textContent = rows[n][1];
         el.classList.remove("swap");
-      }, 180 + k * 60);
+      }, 150 + n * 50);
     });
-  });
+  };
+  viz.addEventListener("scenechange", (e) => show(e.detail));                     // the chart moved on by itself
+  viz.querySelectorAll(".viz-tab").forEach((tab, k) => tab.addEventListener("click", () => show(k)));   // or a tab was clicked
 }

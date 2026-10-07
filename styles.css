@@ -126,7 +126,7 @@ section { margin-top: 130px; }   /* margin, not padding: .wrap sets the side pad
 .board-stage { position: relative; z-index: 4; margin-top: -150px; perspective: 1700px; }
 .board {
   display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr); border-radius: 28px; overflow: hidden;
-  transform: rotateX(11deg) scale(0.985); transform-origin: 50% 0; transition: transform 1s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transform: rotateX(11deg) scale(0.985); transform-origin: 50% 0; transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
   box-shadow: 0 50px 110px rgba(0, 0, 0, 0.55), 0 -10px 60px rgba(168, 85, 247, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.14);
 }
 .board:hover, .board:focus-within { transform: none; }
@@ -156,6 +156,8 @@ section { margin-top: 130px; }   /* margin, not padding: .wrap sets the side pad
 .result { display: flex; flex-direction: column; justify-content: center; padding: 20px 26px; border-bottom: 1px solid var(--line); text-decoration: none; transition: background-color 0.2s ease; }
 .result:last-child { border-bottom: 0; }
 .result:hover { background: rgba(255, 255, 255, 0.04); }
+.result b, .result span { transition: opacity 0.18s ease, transform 0.18s ease; }
+.result.swap b, .result.swap span { opacity: 0; transform: translateY(6px); }
 .result b { font-size: 42px; font-weight: 600; letter-spacing: -0.04em; line-height: 1; color: #fff; }
 .result span { margin-top: 6px; font-size: 13px; color: var(--ink-3); }
 
@@ -194,7 +196,7 @@ section { margin-top: 130px; }   /* margin, not padding: .wrap sets the side pad
 .js .cc-track { display: block; position: relative; height: 100%; transform-style: preserve-3d; }
 .js .cc-card {
   position: absolute; left: 50%; top: 24px; width: 560px; opacity: 0; pointer-events: none;
-  transform: translateX(-50%) translateZ(-500px); transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1), opacity 0.6s ease;
+  transform: translateX(-50%) translateZ(-500px); transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1), opacity 0.4s ease;
 }
 .js .cc:not(.ready) .cc-card { transition: none; }
 .js .cc-card[data-pos="0"] { transform: translateX(-50%) translateZ(0); opacity: 1; z-index: 5; pointer-events: auto; }

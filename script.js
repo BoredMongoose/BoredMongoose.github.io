@@ -53,13 +53,30 @@ document.querySelectorAll(".cc").forEach((root) => {
   root.querySelector(".cc-next").addEventListener("click", () => go(active + 1));
   dots.forEach((dot, i) => dot.addEventListener("click", () => go(i)));
 
-  // a side card brings itself to the centre instead of opening
-  cards.forEach((card, i) => card.addEventListener("click", (e) => {
-    if (i !== active) { e.preventDefault(); go(i); }
+  // clicking any card (centre or side) opens that project; a swipe never counts as a click
+  let swiped = false;
+  cards.forEach((card) => card.addEventListener("click", (e) => {
+    if (swiped) { e.preventDefault(); swiped = false; return; }
+    const link = card.querySelector("h3 a");
+    if (!e.target.closest("a") && link) window.location.href = link.href;
   }));
 
-  root.addEventListener("keydown", (e) => {
+  // clicking empty space moves the carousel in that direction
+  root.addEventListener("click", (e) => {
+    if (e.target.closest(".cc-card, button, a")) return;
+    const box = root.getBoundingClientRect();
+    go(active + (e.clientX < box.left + box.width / 2 ? -1 : 1));
+  });
+
+  // left/right arrow keys work whenever the carousel is on screen
+  const onScreen = () => {
+    const r = root.getBoundingClientRect();
+    return r.top < window.innerHeight * 0.75 && r.bottom > window.innerHeight * 0.25;
+  };
+  document.addEventListener("keydown", (e) => {
     if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+    if (!onScreen() && !root.contains(document.activeElement)) return;
+    if (e.target.closest("input, textarea, select, [contenteditable]")) return;
     e.preventDefault();
     go(active + (e.key === "ArrowRight" ? 1 : -1));
   });
@@ -70,9 +87,35 @@ document.querySelectorAll(".cc").forEach((root) => {
     if (startX === null) return;
     const dx = e.clientX - startX;
     startX = null;
-    if (Math.abs(dx) > 50) go(active + (dx < 0 ? 1 : -1));
+    if (Math.abs(dx) > 50) { swiped = true; go(active + (dx < 0 ? 1 : -1)); setTimeout(() => { swiped = false; }, 0); }
   });
 
   render();
   requestAnimationFrame(() => requestAnimationFrame(() => root.classList.add("ready")));   // no slide-in on page load
 });
+
+// The four results next to the hero chart change with it (IPL, subway delays, churn)
+const RESULTS = [
+  ["projects/ipl.html", [["10%", "of IPL performance explained by auction price"], ["₹1,180cr", "spent at auction on 226 players"],
+    ["36%", "of budget buys never played"], ["290k+", "ball-by-ball records analysed"]]],
+  ["projects/ttc.html", [["+85%", "more subway delay minutes than in 2014–16"], ["76%", "of the rise comes from passengers, not trains"],
+    ["−12%", "train breakdowns actually fell"], ["47%", "fewer signal delays on Line 1 after its upgrade"]]],
+  ["projects/churn.html", [["+$92k", "profit from one targeted campaign"], ["−$122k", "if you offer it to everyone instead"],
+    ["29%", "of customers are worth an offer"], ["30 / 30", "cost scenarios where targeting wins"]]],
+];
+const viz = document.querySelector(".hero-viz");
+const results = [...document.querySelectorAll(".results .result")];
+if (viz && results.length === 4) {
+  viz.addEventListener("scenechange", (e) => {
+    const [href, rows] = RESULTS[e.detail] || RESULTS[0];
+    results.forEach((el, k) => {
+      el.classList.add("swap");
+      setTimeout(() => {
+        el.href = href;
+        el.querySelector("b").textContent = rows[k][0];
+        el.querySelector("span").textContent = rows[k][1];
+        el.classList.remove("swap");
+      }, 180 + k * 60);
+    });
+  });
+}

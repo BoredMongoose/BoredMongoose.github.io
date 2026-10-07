@@ -30,7 +30,7 @@
   let active = 0, moveStart = 0, moving = false, labelAlpha = 0, auto = !reduceMotion, hovered = false;
   let settled = false;                            // false until the dots have formed their first chart
   let visible = true, frame = 0;
-  const MOVE = 1500, STAGGER = 700, HOLD = 7000;
+  const MOVE = 900, STAGGER = 400, HOLD = 5000;
 
   // ---- colours follow the site theme -------------------------------------------------------
   function readColours() {
@@ -100,6 +100,7 @@
     settled = true;
     labelAlpha = animate ? 0 : 1;
     tabs.forEach((b, k) => b.setAttribute("aria-pressed", k === i ? "true" : "false"));
+    root.dispatchEvent(new CustomEvent("scenechange", { detail: i }));   // the results next to the chart follow along
     text.q.textContent = scene.q;
     text.a.textContent = scene.a;
     text.hi.textContent = scene.hi;

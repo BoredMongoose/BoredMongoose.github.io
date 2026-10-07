@@ -16,35 +16,26 @@
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#05030c">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
-  <style>.case-page { --case-accent: #a8321c; }</style>
-  <script>
-    document.documentElement.classList.add("js");
-    try { var t = localStorage.getItem("site-theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
-  </script>
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body class="case-page">
+  <a class="skip-link" href="#main">Skip to the case study</a>
   <header class="site-header">
-    <div class="wrap header-inner">
-      <a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8"/><path d="M8 23v-5M13.5 23v-9M19 23v-12M24.5 23V8"/></svg><span class="brand-name">Milind Saxena<span class="brand-dot" aria-hidden="true">.</span></span></a>
-      <nav aria-label="Main">
-        <a href="../index.html#work">All projects</a>
-        <a href="../index.html#contact">Contact</a>
-        <button class="theme-toggle" type="button" aria-label="Switch between light and dark theme">
-          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
-          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.2M12 19.8V22M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2 12h2.2M19.8 12H22M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg>
-        </button>
-      </nav>
+    <div class="pill">
+      <a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="12" width="4" height="9" rx="1" fill="currentColor"/><rect x="10" y="7" width="4" height="14" rx="1" fill="currentColor"/><rect x="17" y="3" width="4" height="18" rx="1" fill="currentColor"/></svg><span>Milind Saxena</span></a>
+      <nav aria-label="Main"><a href="../index.html#work">All projects</a><a href="../index.html#about">About</a></nav>
+      <a class="hire" href="../index.html#contact">Hire me</a>
     </div>
   </header>
 
-  <div class="case-band" aria-hidden="true"></div>
-  <main class="case wrap">
+  <main class="case wrap" id="main">
     <p class="case-back"><a href="../index.html#work">← All projects</a></p>
     <p class="eyebrow">Exploratory analysis · World</p>
     <h1>Global terrorism, 1970–2017: where attacks happen, and how</h1>
-    <dl class="impact-box">
+    <dl class="impact-box glass">
       <div class="ib-wide ib-question"><dt>Business question</dt><dd>Where do terrorist attacks happen most, and what kind of attacks are they?</dd></div>
       <div class="ib-half"><dt>Key finding</dt><dd>Mostly in Iraq, Pakistan and Afghanistan, which had 46% of all attacks in 2012–2017. And mostly bombings: 49% of the 181,691 attacks from 1970 to 2017.</dd></div>
       <div class="ib-half"><dt>Recommendation</dt><dd>Put prevention effort where the attacks are: those three countries, and bombings first. In Central America and Sub-Saharan Africa, plan for armed assaults too, which are as common as bombings there.</dd></div>
@@ -58,15 +49,15 @@
     </dl>
 
     <h2 class="section-title">Results</h2>
-    <figure class="case-figure">
+    <figure class="case-figure glass">
       <img src="../assets/projects/Terrorism_analysis/attack_density.webp" width="1560" height="780" loading="lazy" alt="Where the attacks happened. Each cell counts the attacks at that spot from 1970 to 2017. The darkest area is Iraq; Pakistan, Afghanistan, northern India, the Andes and Central America follow.">
       <figcaption><strong>Where the attacks happened.</strong> Each cell counts the attacks at that spot from 1970 to 2017. The darkest area is Iraq; Pakistan, Afghanistan, northern India, the Andes and Central America follow.</figcaption>
     </figure>
-    <figure class="case-figure">
+    <figure class="case-figure glass">
       <img src="../assets/projects/Terrorism_analysis/attacks_per_year.webp" width="1430" height="585" loading="lazy" alt="Attacks rose, fell, then shot up after 2011. The 2014 peak (16,903 attacks) came mostly from Iraq, Pakistan and Afghanistan. The bar for 1993 is missing because those records were lost.">
       <figcaption><strong>Attacks rose, fell, then shot up after 2011.</strong> The 2014 peak (16,903 attacks) came mostly from Iraq, Pakistan and Afghanistan. The bar for 1993 is missing because those records were lost.</figcaption>
     </figure>
-    <figure class="case-figure">
+    <figure class="case-figure glass">
       <img src="../assets/projects/Terrorism_analysis/attack_methods.webp" width="1170" height="585" loading="lazy" alt="Bombings are almost half of all attacks. Bombing or explosion 49%, armed assault 23% and assassination 11%: together about 83% of attacks.">
       <figcaption><strong>Bombings are almost half of all attacks.</strong> Bombing or explosion 49%, armed assault 23% and assassination 11%: together about 83% of attacks.</figcaption>
     </figure>

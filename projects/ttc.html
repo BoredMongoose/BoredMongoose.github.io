@@ -16,35 +16,26 @@
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#05030c">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
-  <style>.case-page { --case-accent: #c4211a; }</style>
-  <script>
-    document.documentElement.classList.add("js");
-    try { var t = localStorage.getItem("site-theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
-  </script>
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body class="case-page">
+  <a class="skip-link" href="#main">Skip to the case study</a>
   <header class="site-header">
-    <div class="wrap header-inner">
-      <a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8"/><path d="M8 23v-5M13.5 23v-9M19 23v-12M24.5 23V8"/></svg><span class="brand-name">Milind Saxena<span class="brand-dot" aria-hidden="true">.</span></span></a>
-      <nav aria-label="Main">
-        <a href="../index.html#work">All projects</a>
-        <a href="../index.html#contact">Contact</a>
-        <button class="theme-toggle" type="button" aria-label="Switch between light and dark theme">
-          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
-          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.2M12 19.8V22M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2 12h2.2M19.8 12H22M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg>
-        </button>
-      </nav>
+    <div class="pill">
+      <a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="12" width="4" height="9" rx="1" fill="currentColor"/><rect x="10" y="7" width="4" height="14" rx="1" fill="currentColor"/><rect x="17" y="3" width="4" height="18" rx="1" fill="currentColor"/></svg><span>Milind Saxena</span></a>
+      <nav aria-label="Main"><a href="../index.html#work">All projects</a><a href="../index.html#about">About</a></nav>
+      <a class="hire" href="../index.html#contact">Hire me</a>
     </div>
   </header>
 
-  <div class="case-band" aria-hidden="true"></div>
-  <main class="case wrap">
+  <main class="case wrap" id="main">
     <p class="case-back"><a href="../index.html#work">← All projects</a></p>
     <p class="eyebrow">Transit operations · Toronto</p>
     <h1>Toronto&#x27;s subway delays nearly doubled. What&#x27;s behind them?</h1>
-    <dl class="impact-box">
+    <dl class="impact-box glass">
       <div class="ib-wide ib-question"><dt>Business question</dt><dd>Where should the TTC focus to cut subway delays?</dd></div>
       <div class="ib-half"><dt>Key finding</dt><dd>On passenger and public incidents, not the trains. Delay minutes rose 85% since 2014 and these incidents caused three-quarters of the increase, while train breakdowns fell 12%. Line 1&#x27;s new signal system also halved its signal delays.</dd></div>
       <div class="ib-half"><dt>Recommendation</dt><dd>Spend where the minutes went: faster response to passenger, security and track-level incidents (57% of delay minutes) and Line 1&#x27;s door cameras. Line 1&#x27;s results support upgrading Line 2&#x27;s signals.</dd></div>
@@ -58,27 +49,27 @@
     </dl>
 
     <h2 class="section-title">Results</h2>
-    <figure class="case-figure">
+    <figure class="case-figure glass">
       <img src="../assets/projects/ttc-subway-delays/01_delays_trend.webp" width="1600" height="935" loading="lazy" alt="Delays nearly doubled. Minutes of delay in the previous 12 months. There are more delays (+57%) and they last longer (6.7 to 8.0 minutes); delays of 30+ minutes went from 92 to 223 a year.">
       <figcaption><strong>Delays nearly doubled.</strong> Minutes of delay in the previous 12 months. There are more delays (+57%) and they last longer (6.7 to 8.0 minutes); delays of 30+ minutes went from 92 to 223 a year.</figcaption>
     </figure>
-    <figure class="case-figure">
+    <figure class="case-figure glass">
       <img src="../assets/projects/ttc-subway-delays/02_what_changed.webp" width="1600" height="1023" loading="lazy" alt="It&#x27;s mostly not the trains. Change in delay minutes per year by cause. Disorderly behaviour alone rose 12,300 minutes; train equipment fell 800.">
       <figcaption><strong>It&#x27;s mostly not the trains.</strong> Change in delay minutes per year by cause. Disorderly behaviour alone rose 12,300 minutes; train equipment fell 800.</figcaption>
     </figure>
-    <figure class="case-figure">
+    <figure class="case-figure glass">
       <img src="../assets/projects/ttc-subway-delays/05_atc_signals.webp" width="1600" height="902" loading="lazy" alt="Line 1&#x27;s new signals halved its signal delays. Line 1 switched to automatic train control in 2017–2022; Line 2 kept the old signals. After the switch, Line 1 had 47% fewer signal delays than Line 2&#x27;s trend predicts (95% interval 27–61%).">
       <figcaption><strong>Line 1&#x27;s new signals halved its signal delays.</strong> Line 1 switched to automatic train control in 2017–2022; Line 2 kept the old signals. After the switch, Line 1 had 47% fewer signal delays than Line 2&#x27;s trend predicts (95% interval 27–61%).</figcaption>
     </figure>
-    <figure class="case-figure">
+    <figure class="case-figure glass">
       <img src="../assets/projects/ttc-subway-delays/07_door_cameras.webp" width="1600" height="905" loading="lazy" alt="One-person trains brought a new kind of delay. Since Line 1 dropped its second crew member in 2021–22, problems with the door-monitoring cameras have cost it about 3,600 minutes a year.">
       <figcaption><strong>One-person trains brought a new kind of delay.</strong> Since Line 1 dropped its second crew member in 2021–22, problems with the door-monitoring cameras have cost it about 3,600 minutes a year.</figcaption>
     </figure>
-    <figure class="case-figure">
+    <figure class="case-figure glass">
       <img src="../assets/projects/ttc-subway-delays/08_when.webp" width="1600" height="728" loading="lazy" alt="Delays peak when service starts and in the afternoon rush. In the first hour of service, 77% of delay comes from trains, track, crews and overnight work that isn&#x27;t finished on time; for the rest of the day, passengers cause most of it.">
       <figcaption><strong>Delays peak when service starts and in the afternoon rush.</strong> In the first hour of service, 77% of delay comes from trains, track, crews and overnight work that isn&#x27;t finished on time; for the rest of the day, passengers cause most of it.</figcaption>
     </figure>
-    <figure class="case-figure">
+    <figure class="case-figure glass">
       <img src="../assets/projects/ttc-subway-delays/09_stations.webp" width="1600" height="1080" loading="lazy" alt="The interchanges and the ends of the lines lose the most time. Bloor-Yonge tops the list. Disorderly behaviour is the leading cause at 12 of the 15 worst stations.">
       <figcaption><strong>The interchanges and the ends of the lines lose the most time.</strong> Bloor-Yonge tops the list. Disorderly behaviour is the leading cause at 12 of the 15 worst stations.</figcaption>
     </figure>

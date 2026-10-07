@@ -16,35 +16,26 @@
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#05030c">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
-  <style>.case-page { --case-accent: #1d5c43; }</style>
-  <script>
-    document.documentElement.classList.add("js");
-    try { var t = localStorage.getItem("site-theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
-  </script>
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body class="case-page">
+  <a class="skip-link" href="#main">Skip to the case study</a>
   <header class="site-header">
-    <div class="wrap header-inner">
-      <a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8"/><path d="M8 23v-5M13.5 23v-9M19 23v-12M24.5 23V8"/></svg><span class="brand-name">Milind Saxena<span class="brand-dot" aria-hidden="true">.</span></span></a>
-      <nav aria-label="Main">
-        <a href="../index.html#work">All projects</a>
-        <a href="../index.html#contact">Contact</a>
-        <button class="theme-toggle" type="button" aria-label="Switch between light and dark theme">
-          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
-          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.2M12 19.8V22M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2 12h2.2M19.8 12H22M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg>
-        </button>
-      </nav>
+    <div class="pill">
+      <a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="12" width="4" height="9" rx="1" fill="currentColor"/><rect x="10" y="7" width="4" height="14" rx="1" fill="currentColor"/><rect x="17" y="3" width="4" height="18" rx="1" fill="currentColor"/></svg><span>Milind Saxena</span></a>
+      <nav aria-label="Main"><a href="../index.html#work">All projects</a><a href="../index.html#about">About</a></nav>
+      <a class="hire" href="../index.html#contact">Hire me</a>
     </div>
   </header>
 
-  <div class="case-band" aria-hidden="true"></div>
-  <main class="case wrap">
+  <main class="case wrap" id="main">
     <p class="case-back"><a href="../index.html#work">← All projects</a></p>
     <p class="eyebrow">Sports analytics · IPL 2025</p>
     <h1>Moneyball IPL: which ₹&#8209;crore buys were busts, and which were steals?</h1>
-    <dl class="impact-box">
+    <dl class="impact-box glass">
       <div class="ib-wide ib-question"><dt>Business question</dt><dd>Are IPL teams getting value for their auction money?</dd></div>
       <div class="ib-half"><dt>Key finding</dt><dd>Mostly not. Auction price explained only about 10% of what players delivered. 36% of budget buys never played, mid-priced players were the weakest band, and last season&#x27;s stars fell back the next year.</dd></div>
       <div class="ib-half"><dt>Recommendation</dt><dd>Don&#x27;t pay for one hot season. Spend on proven, consistent performers (elite bowling was the best value), and don&#x27;t fill the squad with budget buys who never play.</dd></div>
@@ -58,23 +49,23 @@
     </dl>
 
     <h2 class="section-title">Results</h2>
-    <figure class="case-figure">
+    <figure class="case-figure glass">
       <img src="../assets/projects/ipl-moneyball/02_steals_and_busts.webp" width="1600" height="1359" loading="lazy" alt="The 10 best and worst buys of IPL 2025. Blue players delivered more than their price predicted; red players delivered less.">
       <figcaption><strong>The 10 best and worst buys of IPL 2025.</strong> Blue players delivered more than their price predicted; red players delivered less.</figcaption>
     </figure>
-    <figure class="case-figure">
+    <figure class="case-figure glass">
       <img src="../assets/projects/ipl-moneyball/01_price_vs_impact.webp" width="1600" height="984" loading="lazy" alt="Price barely predicts performance. Each dot is a player. The dashed fair-price line is almost flat: paying more bought only a little more impact on average.">
       <figcaption><strong>Price barely predicts performance.</strong> Each dot is a player. The dashed fair-price line is almost flat: paying more bought only a little more impact on average.</figcaption>
     </figure>
-    <figure class="case-figure">
+    <figure class="case-figure glass">
       <img src="../assets/projects/ipl-moneyball/03_price_bands.webp" width="1600" height="846" loading="lazy" alt="Cheap buys are lottery tickets. 36% of players bought for under ₹3 crore never got a game. Marquee players beat an average player more often (58%).">
       <figcaption><strong>Cheap buys are lottery tickets.</strong> 36% of players bought for under ₹3 crore never got a game. Marquee players beat an average player more often (58%).</figcaption>
     </figure>
-    <figure class="case-figure">
+    <figure class="case-figure glass">
       <img src="../assets/projects/ipl-moneyball/04_metric_validation.webp" width="1600" height="1168" loading="lazy" alt="Checking the metric means something. Teams whose players added more runs won more often (correlation 0.73 across 106 team-seasons).">
       <figcaption><strong>Checking the metric means something.</strong> Teams whose players added more runs won more often (correlation 0.73 across 106 team-seasons).</figcaption>
     </figure>
-    <figure class="case-figure">
+    <figure class="case-figure glass">
       <img src="../assets/projects/ipl-moneyball/05_regression_to_mean.webp" width="1600" height="977" loading="lazy" alt="Last season&#x27;s heroes come back to earth. The top 20% of 2025 performers added far less in 2026. One great season is mostly luck, so paying for it is risky.">
       <figcaption><strong>Last season&#x27;s heroes come back to earth.</strong> The top 20% of 2025 performers added far less in 2026. One great season is mostly luck, so paying for it is risky.</figcaption>
     </figure>

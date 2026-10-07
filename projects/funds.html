@@ -16,35 +16,26 @@
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#05030c">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
-  <style>.case-page { --case-accent: #2f6f4f; }</style>
-  <script>
-    document.documentElement.classList.add("js");
-    try { var t = localStorage.getItem("site-theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
-  </script>
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body class="case-page">
+  <a class="skip-link" href="#main">Skip to the case study</a>
   <header class="site-header">
-    <div class="wrap header-inner">
-      <a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8"/><path d="M8 23v-5M13.5 23v-9M19 23v-12M24.5 23V8"/></svg><span class="brand-name">Milind Saxena<span class="brand-dot" aria-hidden="true">.</span></span></a>
-      <nav aria-label="Main">
-        <a href="../index.html#work">All projects</a>
-        <a href="../index.html#contact">Contact</a>
-        <button class="theme-toggle" type="button" aria-label="Switch between light and dark theme">
-          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
-          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.2M12 19.8V22M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2 12h2.2M19.8 12H22M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg>
-        </button>
-      </nav>
+    <div class="pill">
+      <a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="12" width="4" height="9" rx="1" fill="currentColor"/><rect x="10" y="7" width="4" height="14" rx="1" fill="currentColor"/><rect x="17" y="3" width="4" height="18" rx="1" fill="currentColor"/></svg><span>Milind Saxena</span></a>
+      <nav aria-label="Main"><a href="../index.html#work">All projects</a><a href="../index.html#about">About</a></nav>
+      <a class="hire" href="../index.html#contact">Hire me</a>
     </div>
   </header>
 
-  <div class="case-band" aria-hidden="true"></div>
-  <main class="case wrap">
+  <main class="case wrap" id="main">
     <p class="case-back"><a href="../index.html#work">← All projects</a></p>
     <p class="eyebrow">Investing · India</p>
     <h1>Active vs. index: do Indian large-cap funds beat a Nifty 50 index fund?</h1>
-    <dl class="impact-box">
+    <dl class="impact-box glass">
       <div class="ib-wide ib-question"><dt>Business question</dt><dd>Do active large-cap mutual funds in India beat a cheap Nifty 50 index fund?</dd></div>
       <div class="ib-half"><dt>Key finding</dt><dd>Over 2013–2026, 19 of the 20 surviving active funds did: 12.7% a year for the median fund vs 11.05% for the index fund. But it comes in cycles: from 2019 to 2021 only about 30% were ahead.</dd></div>
       <div class="ib-half"><dt>Recommendation</dt><dd>Treat the index fund as the default: it costs least and needs no fund picking. The active edge is real but overstated: 9 large-cap funds closed or merged and aren&#x27;t in the comparison, and an investor still has to pick the winners in advance.</dd></div>
@@ -58,15 +49,15 @@
     </dl>
 
     <h2 class="section-title">Results</h2>
-    <figure class="case-figure">
+    <figure class="case-figure glass">
       <img src="../assets/projects/index-vs-active-funds/growth_of_1_lakh.webp" width="1350" height="750" loading="lazy" alt="Most active funds ended ahead of the index fund. ₹1 lakh invested in January 2013. Grey lines are the 20 active funds; the median active fund ended around ₹5.2 lakh and the index fund around ₹4.2 lakh.">
       <figcaption><strong>Most active funds ended ahead of the index fund.</strong> ₹1 lakh invested in January 2013. Grey lines are the 20 active funds; the median active fund ended around ₹5.2 lakh and the index fund around ₹4.2 lakh.</figcaption>
     </figure>
-    <figure class="case-figure">
+    <figure class="case-figure glass">
       <img src="../assets/projects/index-vs-active-funds/share_ahead_over_time.webp" width="1350" height="675" loading="lazy" alt="But the lead comes and goes. Share of active funds ahead of the index over the previous 3 years. Almost all of them were ahead until 2018; from 2019 to 2021 most were behind; since 2024 most are ahead again.">
       <figcaption><strong>But the lead comes and goes.</strong> Share of active funds ahead of the index over the previous 3 years. Almost all of them were ahead until 2018; from 2019 to 2021 most were behind; since 2024 most are ahead again.</figcaption>
     </figure>
-    <figure class="case-figure">
+    <figure class="case-figure glass">
       <img src="../assets/projects/index-vs-active-funds/rolling_win_rate.webp" width="1500" height="975" loading="lazy" alt="16 of 20 funds were ahead in most 3-year windows. The share of rolling 3-year windows each fund beat the index fund. Four funds were behind more often than ahead.">
       <figcaption><strong>16 of 20 funds were ahead in most 3-year windows.</strong> The share of rolling 3-year windows each fund beat the index fund. Four funds were behind more often than ahead.</figcaption>
     </figure>

@@ -16,41 +16,32 @@
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#05030c">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
-  <style>.case-page { --case-accent: #1f3a5f; }</style>
-  <script>
-    document.documentElement.classList.add("js");
-    try { var t = localStorage.getItem("site-theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
-  </script>
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body class="case-page">
+  <a class="skip-link" href="#main">Skip to the case study</a>
   <header class="site-header">
-    <div class="wrap header-inner">
-      <a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8"/><path d="M8 23v-5M13.5 23v-9M19 23v-12M24.5 23V8"/></svg><span class="brand-name">Milind Saxena<span class="brand-dot" aria-hidden="true">.</span></span></a>
-      <nav aria-label="Main">
-        <a href="../index.html#work">All projects</a>
-        <a href="../index.html#contact">Contact</a>
-        <button class="theme-toggle" type="button" aria-label="Switch between light and dark theme">
-          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
-          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.2M12 19.8V22M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2 12h2.2M19.8 12H22M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg>
-        </button>
-      </nav>
+    <div class="pill">
+      <a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="12" width="4" height="9" rx="1" fill="currentColor"/><rect x="10" y="7" width="4" height="14" rx="1" fill="currentColor"/><rect x="17" y="3" width="4" height="18" rx="1" fill="currentColor"/></svg><span>Milind Saxena</span></a>
+      <nav aria-label="Main"><a href="../index.html#work">All projects</a><a href="../index.html#about">About</a></nav>
+      <a class="hire" href="../index.html#contact">Hire me</a>
     </div>
   </header>
 
-  <div class="case-band" aria-hidden="true"></div>
-  <main class="case wrap">
+  <main class="case wrap" id="main">
     <p class="case-back"><a href="../index.html#work">← All projects</a></p>
     <p class="eyebrow">Customer analytics · Telecom</p>
     <h1>Who will cancel, and who&#x27;s worth saving?</h1>
-    <dl class="impact-box">
+    <dl class="impact-box glass">
       <div class="ib-wide ib-question"><dt>Business question</dt><dd>Which customers should get a retention offer?</dd></div>
       <div class="ib-half"><dt>Key finding</dt><dd>Only the 29% where the offer pays for itself (churn risk × the customer&#x27;s bill). That beat the usual &#x27;risk above 50%&#x27; rule in all 30 cost scenarios tested, and offering it to everyone loses money.</dd></div>
       <div class="ib-half"><dt>Recommendation</dt><dd>Send the offer to the 29% of customers whose expected profit is positive: almost all are on month-to-month fibre plans paying $70+ a month, and 57% of them did leave (against 26.5% overall).</dd></div>
       <div class="ib-wide ib-impact"><dt>Estimated impact</dt><dd><strong>+$92k</strong><span>Profit from one targeted campaign, against −$122k for offering it to everyone (simulated: $60 offer that keeps 30% of would-be leavers).</span></dd></div>
     </dl>
-    <div class="case-dashboard">
+    <div class="case-dashboard glass">
       <p><strong>Try it:</strong> change the offer's cost and success rate, filter the customers, and download who to contact.</p>
       <a class="btn btn-primary" href="retention-dashboard.html">Open the live dashboard</a>
     </div>
@@ -62,23 +53,23 @@
     </dl>
 
     <h2 class="section-title">Results</h2>
-    <figure class="case-figure">
+    <figure class="case-figure glass">
       <img src="../assets/projects/telco-churn-profit/01_who_leaves.webp" width="1600" height="941" loading="lazy" alt="New month-to-month customers are the risk. 55% of month-to-month customers in their first 6 months had left, against 3% of two-year customers. Month-to-month customers account for 87% of the monthly revenue lost to churn.">
       <figcaption><strong>New month-to-month customers are the risk.</strong> 55% of month-to-month customers in their first 6 months had left, against 3% of two-year customers. Month-to-month customers account for 87% of the monthly revenue lost to churn.</figcaption>
     </figure>
-    <figure class="case-figure">
+    <figure class="case-figure glass">
       <img src="../assets/projects/telco-churn-profit/02_models.webp" width="1600" height="701" loading="lazy" alt="Three models, the same accuracy. Logistic regression (AUC 0.843) matches a random forest and gradient boosting, and its probabilities are well calibrated, which matters when they get multiplied by money.">
       <figcaption><strong>Three models, the same accuracy.</strong> Logistic regression (AUC 0.843) matches a random forest and gradient boosting, and its probabilities are well calibrated, which matters when they get multiplied by money.</figcaption>
     </figure>
-    <figure class="case-figure">
+    <figure class="case-figure glass">
       <img src="../assets/projects/telco-churn-profit/04_who_to_target.webp" width="1600" height="999" loading="lazy" alt="Who&#x27;s worth an offer depends on their bill, not just their risk. Customers above the break-even curve are worth contacting. For a $100-a-month customer that&#x27;s a 28% risk; for a $30 customer, 93%.">
       <figcaption><strong>Who&#x27;s worth an offer depends on their bill, not just their risk.</strong> Customers above the break-even curve are worth contacting. For a $100-a-month customer that&#x27;s a 28% risk; for a $30 customer, 93%.</figcaption>
     </figure>
-    <figure class="case-figure">
+    <figure class="case-figure glass">
       <img src="../assets/projects/telco-churn-profit/05_rules.webp" width="1600" height="778" loading="lazy" alt="Deciding by expected profit beats the default 50% cut-off. Profit from each targeting rule, scored on out-of-fold predictions for all 7,043 customers: $7,200 more than the 50% rule (95% bootstrap interval $2,600–$11,800).">
       <figcaption><strong>Deciding by expected profit beats the default 50% cut-off.</strong> Profit from each targeting rule, scored on out-of-fold predictions for all 7,043 customers: $7,200 more than the 50% rule (95% bootstrap interval $2,600–$11,800).</figcaption>
     </figure>
-    <figure class="case-figure">
+    <figure class="case-figure glass">
       <img src="../assets/projects/telco-churn-profit/06_sensitivity.webp" width="1600" height="1004" loading="lazy" alt="It wins in every scenario. Extra profit over the 50% rule for 30 combinations of offer cost and success rate. When the offer is expensive and rarely works, the 50% rule loses money, and the profit rule targets almost nobody.">
       <figcaption><strong>It wins in every scenario.</strong> Extra profit over the 50% rule for 30 combinations of offer cost and success rate. When the offer is expensive and rarely works, the 50% rule loses money, and the profit rule targets almost nobody.</figcaption>
     </figure>

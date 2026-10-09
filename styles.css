@@ -377,3 +377,36 @@ section { margin-top: 130px; }   /* margin, not padding: .wrap sets the side pad
   .js .cc-card, .cc-dot, .btn, .js .reveal { transition: none; }
   .js .reveal { opacity: 1; transform: none; }
 }
+
+/* ---------- All-projects table (under the carousel) ---------- */
+.ptable { margin-top: 56px; padding: 24px; border-radius: var(--radius); }
+.pt-title { margin: 0 0 16px; font-size: 18px; letter-spacing: -0.01em; }
+.pt-scroll { overflow-x: auto; }
+.ptable table { width: 100%; border-collapse: collapse; font-size: 14.5px; line-height: 1.45; }
+.ptable th, .ptable td { padding: 12px 14px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+.ptable thead th { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
+.ptable tbody tr:last-child th, .ptable tbody tr:last-child td { border-bottom: 0; }
+.ptable tbody tr:hover { background: rgba(255, 255, 255, 0.03); }
+.ptable tbody th { font-weight: 600; white-space: nowrap; }
+.ptable tbody th a { color: var(--ink); text-decoration: none; }
+.ptable tbody th a:hover, .ptable tbody th a:focus-visible { color: var(--accent); }
+.ptable td { color: var(--ink-2); }
+.pt-result b { color: var(--accent); font-weight: 700; }
+.pt-tools { color: var(--ink-3); font-size: 13.5px; }
+.pt-links { white-space: nowrap; }
+.pt-links a { color: var(--accent); }
+
+/* three SQL cards: the last one spans the full row instead of sitting alone */
+.sql-grid > .sql-card:last-child:nth-child(odd) { grid-column: 1 / -1; }
+
+@media (max-width: 900px) {
+  .ptable { padding: 16px 12px; }
+  .ptable .pt-tools { display: none; }
+}
+@media (max-width: 600px) {
+  .ptable table, .ptable tbody, .ptable tr, .ptable th, .ptable td { display: block; width: 100%; }
+  .ptable thead { display: none; }
+  .ptable tbody tr { padding: 14px 4px; border-bottom: 1px solid var(--line); }
+  .ptable tbody tr:last-child { border-bottom: 0; }
+  .ptable th, .ptable td { padding: 3px 4px; border: 0; white-space: normal; }
+}

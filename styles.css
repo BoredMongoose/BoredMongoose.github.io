@@ -30,14 +30,13 @@ body {
   margin: 0; min-height: 100vh; overflow-x: hidden; color: var(--ink); font-family: var(--sans);
   font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
 }
-/* slow-moving aurora light and a few stars, behind everything */
+/* soft aurora light and a few stars, behind everything (static: a moving blurred layer made scrolling janky) */
 body::before {
-  content: ""; position: fixed; inset: -20%; z-index: -2; pointer-events: none; opacity: 0.4; filter: blur(70px);
+  content: ""; position: fixed; inset: -20%; z-index: -2; pointer-events: none; opacity: 0.4;
   background:
-    radial-gradient(34% 30% at 22% 14%, #6d28d9, transparent 70%),
-    radial-gradient(30% 28% at 84% 22%, #4c1d95, transparent 70%),
-    radial-gradient(30% 26% at 50% 70%, #a21caf, transparent 72%);
-  animation: aurora 24s ease-in-out infinite alternate;
+    radial-gradient(40% 36% at 22% 14%, #6d28d9, transparent 80%),
+    radial-gradient(36% 34% at 84% 22%, #4c1d95, transparent 80%),
+    radial-gradient(36% 32% at 50% 70%, #a21caf, transparent 82%);
 }
 body::after {
   content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: 0.5;
@@ -47,7 +46,6 @@ body::after {
     radial-gradient(1px 1px at 22% 84%, #fff, transparent), radial-gradient(1.5px 1.5px at 58% 34%, #fff, transparent),
     radial-gradient(1px 1px at 6% 52%, #fff, transparent), radial-gradient(1px 1px at 94% 44%, #fff, transparent);
 }
-@keyframes aurora { to { transform: translate(5%, 4%) scale(1.12); } }
 
 h1, h2, h3, h4 { margin: 0; font-weight: 600; letter-spacing: -0.02em; line-height: 1.15; }
 p { margin: 0 0 1em; }
@@ -62,9 +60,8 @@ img { max-width: 100%; height: auto; display: block; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
 .glass {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.085), rgba(255, 255, 255, 0.035));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.04)), rgba(12, 7, 26, 0.55);
   border: 1px solid var(--line);
-  -webkit-backdrop-filter: blur(20px) saturate(140%); backdrop-filter: blur(20px) saturate(140%);
 }
 .grad-text { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
 
@@ -167,8 +164,8 @@ section { margin-top: 130px; }   /* margin, not padding: .wrap sets the side pad
 .cc-card { position: relative; }
 .gcard {
   position: relative; height: 100%; border-radius: 28px; padding: 14px;
-  background: linear-gradient(180deg, rgba(46, 24, 92, 0.72), rgba(16, 8, 36, 0.84));
-  -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); box-shadow: 0 40px 90px rgba(0, 0, 0, 0.45);
+  background: linear-gradient(180deg, #2a1656, #100824);
+  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.45);
 }
 .gcard::before {
   content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.2px; background: var(--line); pointer-events: none;
@@ -196,14 +193,14 @@ section { margin-top: 130px; }   /* margin, not padding: .wrap sets the side pad
 .js .cc-track { display: block; position: relative; height: 100%; transform-style: preserve-3d; }
 .js .cc-card {
   position: absolute; left: 50%; top: 24px; width: 560px; opacity: 0; pointer-events: none;
-  transform: translateX(-50%) translateZ(-500px); transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1), opacity 0.4s ease;
+  transform: translateX(-50%) translateZ(-500px); transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1), opacity 0.4s ease, filter 0.4s ease;
 }
 .js .cc:not(.ready) .cc-card { transition: none; }
 .js .cc-card[data-pos="0"] { transform: translateX(-50%) translateZ(0); opacity: 1; z-index: 5; pointer-events: auto; }
-.js .cc-card[data-pos="1"] { transform: translateX(calc(-50% + 70%)) translateZ(-260px) rotateY(-34deg); opacity: 0.7; z-index: 4; pointer-events: auto; }
-.js .cc-card[data-pos="-1"] { transform: translateX(calc(-50% - 70%)) translateZ(-260px) rotateY(34deg); opacity: 0.7; z-index: 4; pointer-events: auto; }
-.js .cc-card[data-pos="2"] { transform: translateX(calc(-50% + 118%)) translateZ(-520px) rotateY(-46deg); opacity: 0.25; z-index: 3; }
-.js .cc-card[data-pos="-2"] { transform: translateX(calc(-50% - 118%)) translateZ(-520px) rotateY(46deg); opacity: 0.25; z-index: 3; }
+.js .cc-card[data-pos="1"] { transform: translateX(calc(-50% + 70%)) translateZ(-260px) rotateY(-34deg); opacity: 1; filter: brightness(0.5); z-index: 4; pointer-events: auto; }
+.js .cc-card[data-pos="-1"] { transform: translateX(calc(-50% - 70%)) translateZ(-260px) rotateY(34deg); opacity: 1; filter: brightness(0.5); z-index: 4; pointer-events: auto; }
+.js .cc-card[data-pos="2"] { transform: translateX(calc(-50% + 118%)) translateZ(-520px) rotateY(-46deg); opacity: 1; filter: brightness(0.22); z-index: 3; }
+.js .cc-card[data-pos="-2"] { transform: translateX(calc(-50% - 118%)) translateZ(-520px) rotateY(46deg); opacity: 1; filter: brightness(0.22); z-index: 3; }
 .js .cc-card:not([data-pos="0"]) { cursor: pointer; }
 .js .cc-prev, .js .cc-next {
   display: grid; place-items: center; position: absolute; top: 250px; z-index: 8; width: 62px; height: 62px; border-radius: 50%;
@@ -362,9 +359,6 @@ section { margin-top: 130px; }   /* margin, not padding: .wrap sets the side pad
   .impact-box { grid-template-columns: 1fr; }
   .impact-box .ib-half:nth-of-type(3) { border-left: 0; }
   .impact-box .ib-impact dd { flex-direction: column; align-items: flex-start; gap: 8px; }
-  /* lighter effects on phones */
-  body::before { animation: none; filter: blur(50px); }
-  .glass, .gcard { -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
 }
 @media (max-width: 420px) {
   .case-facts { grid-template-columns: 1fr; }
@@ -372,7 +366,6 @@ section { margin-top: 130px; }   /* margin, not padding: .wrap sets the side pad
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  body::before { animation: none; }
   .board { transform: none; transition: none; }
   .js .cc-card, .cc-dot, .btn, .js .reveal { transition: none; }
   .js .reveal { opacity: 1; transform: none; }

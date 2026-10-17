@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Cookie Cats: the broken split behind a famous A/B test · Milind Saxena</title>
   <meta name="description" content="The test&#x27;s random split was broken: one group got 823 extra players who barely played. Corrected, the later gate lowers 7-day retention by about 1 point…">
   <meta property="og:title" content="Cookie Cats: the broken split behind a famous A/B test · Milind Saxena">
@@ -13,105 +13,123 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="628">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#070608">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <meta name="theme-color" content="#05030c">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=5">
-  <script>document.documentElement.classList.add("js");</script>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../signal.css?v=1">
 </head>
-<body class="case-page">
+<body>
   <a class="skip-link" href="#main">Skip to the case study</a>
-  <header class="site-header">
-    <div class="pill">
-      <a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="12" width="4" height="9" rx="1" fill="currentColor"/><rect x="10" y="7" width="4" height="14" rx="1" fill="currentColor"/><rect x="17" y="3" width="4" height="18" rx="1" fill="currentColor"/></svg><span>Milind Saxena</span></a>
-      <nav aria-label="Main"><a href="../index.html#work">All projects</a><a href="../index.html#about">About</a></nav>
-      <a class="hire" href="../index.html#contact">Hire me</a>
-    </div>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="mark" viewBox="0 0 36 24"><path d="M2 21 L9 4 L16 21 L23 4 L30 21" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linejoin="round" stroke-linecap="round"/><circle cx="33" cy="5" r="2.6" fill="currentColor"/></symbol></svg>
+  <header class="nav">
+    <a class="logo" href="../index.html"><svg aria-hidden="true"><use href="#mark"/></svg>MILIND SAXENA</a>
+    <nav aria-label="Main"><a href="../index.html#board">Board</a><a href="../index.html#work">All projects</a><a href="../index.html#about">About</a></nav>
+    <a class="btn sm" href="../index.html#contact">Hire me</a>
   </header>
 
-  <main class="case wrap" id="main">
-    <p class="case-back"><a href="../index.html#work">← All projects</a></p>
-    <p class="eyebrow">Experimentation · Mobile game</p>
-    <h1>Cookie Cats: the broken split behind a famous A/B test</h1>
-    <dl class="impact-box glass">
-      <div class="ib-wide ib-question"><dt>Business question</dt><dd>Should we move the game&#x27;s first gate from level 30 to level 40?</dd></div>
-      <div class="ib-half"><dt>Key finding</dt><dd>The test&#x27;s random split was broken: one group got 823 extra players who barely played. Corrected, the later gate lowers 7-day retention by about 1 point among players who reach it, but the result isn&#x27;t statistically clear.</dd></div>
-      <div class="ib-half"><dt>Recommendation</dt><dd>Keep the gate at level 30, fix the assignment problem, and re-run with about 217,000 installs before making the change.</dd></div>
-      <div class="ib-wide ib-impact"><dt>Estimated impact</dt><dd><strong>2.3×</strong><span>Overstatement of the harm to 7-day retention in the usual analysis (−0.82 vs −0.36 points), caused by the broken split.</span></dd></div>
-    </dl>
-    <dl class="case-facts">
-      <div><dt>Data</dt><dd>90,189 players of Cookie Cats, randomly assigned to two versions</dd></div>
-      <div><dt>Methods</dt><dd>Sample-ratio check, A/A segment, z-tests, Bayesian analysis, power analysis</dd></div>
-      <div><dt>Tools</dt><dd>Python: scipy, statsmodels; SQL (DuckDB); unit tests</dd></div>
-      <div><dt>Code</dt><dd><a href="https://github.com/BoredMongoose/ab-test-cookie-cats">github.com/BoredMongoose/ab-test-cookie-cats ↗</a></dd></div>
-    </dl>
-
-    <h2 class="section-title">Results</h2>
-    <figure class="case-figure glass">
-      <img src="../assets/projects/ab-test-cookie-cats/01_two_answers.webp" width="1600" height="626" loading="lazy" alt="Two answers to the same question. Grey: the usual analysis of all players. Blue: only players who reached the gates, where the two groups are comparable. The 7-day drop is −0.97 points with an interval that crosses zero.">
-      <figcaption><strong>Two answers to the same question.</strong> Grey: the usual analysis of all players. Blue: only players who reached the gates, where the two groups are comparable. The 7-day drop is −0.97 points with an interval that crosses zero.</figcaption>
-    </figure>
-    <figure class="case-figure glass">
-      <img src="../assets/projects/ab-test-cookie-cats/02_where_the_imbalance_is.webp" width="1600" height="964" loading="lazy" alt="The extra gate-40 players barely played. Players with fewer than 29 rounds never reached a gate, so the two versions were identical for them, and the groups should be the same size. They aren&#x27;t (p = 0.0005), while players who reached the gates split almost exactly evenly.">
-      <figcaption><strong>The extra gate-40 players barely played.</strong> Players with fewer than 29 rounds never reached a gate, so the two versions were identical for them, and the groups should be the same size. They aren&#x27;t (p = 0.0005), while players who reached the gates split almost exactly evenly.</figcaption>
-    </figure>
-    <figure class="case-figure glass">
-      <img src="../assets/projects/ab-test-cookie-cats/03_why_it_matters.webp" width="1600" height="1037" loading="lazy" alt="Why the imbalance changes the answer. The extra players return 4% of the time, against 43% for players who reached the gates, so they drag gate 40&#x27;s average down.">
-      <figcaption><strong>Why the imbalance changes the answer.</strong> The extra players return 4% of the time, against 43% for players who reached the gates, so they drag gate 40&#x27;s average down.</figcaption>
-    </figure>
-    <figure class="case-figure glass">
-      <img src="../assets/projects/ab-test-cookie-cats/04_how_sure.webp" width="1589" height="985" loading="lazy" alt="Gate 30 is still probably the better choice. A Bayesian view: a 96% chance gate 30 is better for 7-day retention, down from 99.9% in the usual analysis.">
-      <figcaption><strong>Gate 30 is still probably the better choice.</strong> A Bayesian view: a 96% chance gate 30 is better for 7-day retention, down from 99.9% in the usual analysis.</figcaption>
-    </figure>
-    <figure class="case-figure glass">
-      <img src="../assets/projects/ab-test-cookie-cats/05_power.webp" width="1600" height="918" loading="lazy" alt="The test was too small to settle a 1-point effect. It had 44% power for the effect it found; settling it needs about 2.4 times as many players.">
-      <figcaption><strong>The test was too small to settle a 1-point effect.</strong> It had 44% power for the effect it found; settling it needs about 2.4 times as many players.</figcaption>
-    </figure>
-
-    <h2 class="section-title">How I did it</h2>
-    <ol class="case-method">
-      <li>Checked the experiment before the results: a sample-ratio test showed the groups were too uneven for chance (p = 0.009).</li>
-      <li>Found where the extra players were by splitting players by whether they could have seen a gate (at least 29 rounds played). That split is decided before any gate, so it&#x27;s a fair A/A test inside the A/B test.</li>
-      <li>Re-estimated the effect only among players who reached the gates, where the split is clean, then scaled it to all players.</li>
-      <li>Wrote a small statistics toolkit (sample-ratio test, z-test, Bayesian comparison, power, Holm correction) with 13 unit tests against scipy and statsmodels. The tests caught a missing factor of 2 in my first sample-size formula.</li>
-    </ol>
-
-    <h2 class="section-title">What could make this wrong</h2>
-    <ul class="case-caveats">
-      <li>There&#x27;s no revenue data: gate 40 might earn more from players who pay to skip it.</li>
-      <li>The cause of the broken split is unknown. The fix assumes it only affected players who never reached a gate, which the even split above level 30 supports.</li>
-      <li>One game at one point in time.</li>
-    </ul>
-
-    <div class="case-two">
-      <div>
-        <h2 class="section-title">What I learned</h2>
-        <ul class="case-list">
-          <li>Check the experiment before the results. A sample-ratio test takes seconds, and here it changed the answer.</li>
-          <li>Splitting by something the treatment can&#x27;t affect (players who never reached a gate) is a clean way to find where a test went wrong.</li>
-          <li>A p-value of 0.07 isn&#x27;t &#x27;no effect&#x27;. For a product decision, the probability that one option is better (96% here) and the cost of being wrong are more useful.</li>
-        </ul>
+  <main class="wrap" id="main">
+    <section class="case-top">
+      <p class="crumb mono"><a href="../index.html#work">Work</a>/<b>PRJ-05</b>/<span>Experimentation · Mobile game</span></p>
+      <h1 class="metal">Cookie Cats: the broken split behind a famous A/B <span class="it">test</span></h1>
+      <div class="case-lede">
+        <p>Keep it at 30, but the famous result is weaker than it looks. The usual analysis of this test finds that the later gate cuts 7-day retention by 0.8 points. But the random split was broken: the gate-40 group got about 800 extra players who barely played. Comparing only players who reached the gates, the effect is less than half as big across all players and no longer statistically clear.</p>
+        <dl class="spec">
+          <dt>Data</dt><dd>90,189 players of Cookie Cats, randomly assigned to two versions</dd>
+          <dt>Methods</dt><dd>Sample-ratio check, A/A segment, z-tests, Bayesian analysis, power analysis</dd>
+          <dt>Tools</dt><dd>Python: scipy, statsmodels; SQL (DuckDB); unit tests</dd>
+          <dt>Code</dt><dd><a href="https://github.com/BoredMongoose/ab-test-cookie-cats">github.com/BoredMongoose/ab-test-cookie-cats ↗</a></dd>
+        </dl>
       </div>
+    </section>
+
+    <div class="impact">
+      <div><span class="mono">Business question</span><p>Should we move the game&#x27;s first gate from level 30 to level 40?</p></div>
+      <div><span class="mono">Recommendation</span><p>Keep the gate at level 30, fix the assignment problem, and re-run with about 217,000 installs before making the change.</p></div>
+      <div><span class="mono">Estimated impact</span><strong>2.3×</strong><p>Overstatement of the harm to 7-day retention in the usual analysis (−0.82 vs −0.36 points), caused by the broken split.</p></div>
+    </div>
+
+    <div class="case-doc">
+      <nav class="toc" aria-label="On this page"><a href="#results" class="on">Results</a><a href="#how">How I did it</a><a href="#limits">What could be wrong</a><a href="#learned">What I learned</a></nav>
       <div>
-        <h2 class="section-title">What I'd do next</h2>
-        <ol class="case-list">
-          <li>Trace the extra players through install source, device, app version and the assignment logs.</li>
-          <li>Add an automatic sample-ratio alert to the experiment dashboard, so a broken split is caught on day one.</li>
-          <li>Re-run with about 41,000 players per group who reach level 30, with in-app revenue as a guardrail metric.</li>
-          <li>Check whether the effect differs for players who reach the gate quickly or slowly.</li>
-        </ol>
+        <section id="results"><p class="kick mono"><b>01</b><i></i>Results</p>
+          <h2>Two answers to the same question.</h2>
+          <figure class="case-fig">
+            <div class="imgbox"><img src="../assets/projects/ab-test-cookie-cats/01_two_answers.webp" width="1600" height="626" loading="lazy" decoding="async" alt="Two answers to the same question. Grey: the usual analysis of all players. Blue: only players who reached the gates, where the two groups are comparable. The 7-day drop is −0.97 points with an interval that crosses zero."></div>
+            <figcaption><span class="mono">Fig. 1</span><strong>Two answers to the same question.</strong> Grey: the usual analysis of all players. Blue: only players who reached the gates, where the two groups are comparable. The 7-day drop is −0.97 points with an interval that crosses zero.</figcaption>
+          </figure>
+          <figure class="case-fig">
+            <div class="imgbox"><img src="../assets/projects/ab-test-cookie-cats/02_where_the_imbalance_is.webp" width="1600" height="964" loading="lazy" decoding="async" alt="The extra gate-40 players barely played. Players with fewer than 29 rounds never reached a gate, so the two versions were identical for them, and the groups should be the same size. They aren&#x27;t (p = 0.0005), while players who reached the gates split almost exactly evenly."></div>
+            <figcaption><span class="mono">Fig. 2</span><strong>The extra gate-40 players barely played.</strong> Players with fewer than 29 rounds never reached a gate, so the two versions were identical for them, and the groups should be the same size. They aren&#x27;t (p = 0.0005), while players who reached the gates split almost exactly evenly.</figcaption>
+          </figure>
+          <figure class="case-fig">
+            <div class="imgbox"><img src="../assets/projects/ab-test-cookie-cats/03_why_it_matters.webp" width="1600" height="1037" loading="lazy" decoding="async" alt="Why the imbalance changes the answer. The extra players return 4% of the time, against 43% for players who reached the gates, so they drag gate 40&#x27;s average down."></div>
+            <figcaption><span class="mono">Fig. 3</span><strong>Why the imbalance changes the answer.</strong> The extra players return 4% of the time, against 43% for players who reached the gates, so they drag gate 40&#x27;s average down.</figcaption>
+          </figure>
+          <figure class="case-fig">
+            <div class="imgbox"><img src="../assets/projects/ab-test-cookie-cats/04_how_sure.webp" width="1589" height="985" loading="lazy" decoding="async" alt="Gate 30 is still probably the better choice. A Bayesian view: a 96% chance gate 30 is better for 7-day retention, down from 99.9% in the usual analysis."></div>
+            <figcaption><span class="mono">Fig. 4</span><strong>Gate 30 is still probably the better choice.</strong> A Bayesian view: a 96% chance gate 30 is better for 7-day retention, down from 99.9% in the usual analysis.</figcaption>
+          </figure>
+          <figure class="case-fig">
+            <div class="imgbox"><img src="../assets/projects/ab-test-cookie-cats/05_power.webp" width="1600" height="918" loading="lazy" decoding="async" alt="The test was too small to settle a 1-point effect. It had 44% power for the effect it found; settling it needs about 2.4 times as many players."></div>
+            <figcaption><span class="mono">Fig. 5</span><strong>The test was too small to settle a 1-point effect.</strong> It had 44% power for the effect it found; settling it needs about 2.4 times as many players.</figcaption>
+          </figure>
+        </section>
+
+        <section id="how"><p class="kick mono"><b>02</b><i></i>How I did it</p>
+          <h2>From raw data to a <span class="it">decision.</span></h2>
+          <ol class="method">
+            <li>Checked the experiment before the results: a sample-ratio test showed the groups were too uneven for chance (p = 0.009).</li>
+            <li>Found where the extra players were by splitting players by whether they could have seen a gate (at least 29 rounds played). That split is decided before any gate, so it&#x27;s a fair A/A test inside the A/B test.</li>
+            <li>Re-estimated the effect only among players who reached the gates, where the split is clean, then scaled it to all players.</li>
+            <li>Wrote a small statistics toolkit (sample-ratio test, z-test, Bayesian comparison, power, Holm correction) with 13 unit tests against scipy and statsmodels. The tests caught a missing factor of 2 in my first sample-size formula.</li>
+          </ol>
+        </section>
+
+        <section id="limits"><p class="kick mono"><b>03</b><i></i>What could make this wrong</p>
+          <h2>The limits, said out loud.</h2>
+          <ul class="notes">
+            <li><span>01</span>There&#x27;s no revenue data: gate 40 might earn more from players who pay to skip it.</li>
+            <li><span>02</span>The cause of the broken split is unknown. The fix assumes it only affected players who never reached a gate, which the even split above level 30 supports.</li>
+            <li><span>03</span>One game at one point in time.</li>
+          </ul>
+        </section>
+
+        <section id="learned" class="case-two">
+          <div><p class="kick mono"><b>04</b><i></i>What I learned</p>
+            <ul class="notes">
+            <li><span>01</span>Check the experiment before the results. A sample-ratio test takes seconds, and here it changed the answer.</li>
+            <li><span>02</span>Splitting by something the treatment can&#x27;t affect (players who never reached a gate) is a clean way to find where a test went wrong.</li>
+            <li><span>03</span>A p-value of 0.07 isn&#x27;t &#x27;no effect&#x27;. For a product decision, the probability that one option is better (96% here) and the cost of being wrong are more useful.</li>
+            </ul>
+          </div>
+          <div><p class="kick mono"><b>05</b><i></i>What I'd do next</p>
+            <ul class="notes">
+            <li><span>01</span>Trace the extra players through install source, device, app version and the assignment logs.</li>
+            <li><span>02</span>Add an automatic sample-ratio alert to the experiment dashboard, so a broken split is caught on day one.</li>
+            <li><span>03</span>Re-run with about 41,000 players per group who reach level 30, with in-app revenue as a guardrail metric.</li>
+            <li><span>04</span>Check whether the effect differs for players who reach the gate quickly or slowly.</li>
+            </ul>
+          </div>
+        </section>
+
+        <div class="code-cta"><a class="btn red" href="https://github.com/BoredMongoose/ab-test-cookie-cats">See the code on GitHub ↗</a><a class="btn" href="../index.html#work">All projects</a></div>
       </div>
     </div>
 
-    <p class="case-next"><a class="btn btn-primary" href="https://github.com/BoredMongoose/ab-test-cookie-cats">See the code on GitHub</a>
-      <a class="btn" href="../index.html#work">Back to all projects</a></p>
+    <nav class="pager" aria-label="More projects">
+      <a href="ttc.html"><span class="mono">← Previous · PRJ-04</span><b>TTC subway delays</b></a>
+      <a href="delhi.html"><span class="mono">Next · PRJ-06 →</span><b>Delhi smog</b></a>
+    </nav>
   </main>
 
-  <footer class="site-footer">
-    <div class="wrap">© 2026 Milind Saxena</div>
-  </footer>
-  <script src="../script.js?v=3"></script>
+  <footer class="foot mono"><div class="wrap"><span>© 2026 Milind Saxena</span><span>Ghaziabad · Delhi NCR</span><span class="links"><a href="mailto:milind.sax01@gmail.com">Email</a><a href="https://www.linkedin.com/in/milind-saxena-54399722a">LinkedIn</a><a href="https://github.com/BoredMongoose">GitHub</a></span></div></footer>
+  <script>
+    // highlight the section you're reading in the side menu
+    const toc = [...document.querySelectorAll(".toc a")], parts = toc.map((a) => document.querySelector(a.getAttribute("href")));
+    const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) toc.forEach((a, i) => a.classList.toggle("on", parts[i] === e.target)); }), { rootMargin: "-35% 0px -60% 0px" });
+    parts.forEach((p) => io.observe(p));
+  </script>
 </body>
 </html>

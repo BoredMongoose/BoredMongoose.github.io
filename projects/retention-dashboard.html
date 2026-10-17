@@ -14,25 +14,23 @@
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <meta name="theme-color" content="#05030c">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=5">
-  <link rel="stylesheet" href="../assets/dashboard.css?v=3">
-  <script>document.documentElement.classList.add("js");</script>
+  <meta name="theme-color" content="#070608">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../signal.css?v=1">
+  <link rel="stylesheet" href="../assets/dashboard.css?v=4">
 </head>
 <body>
-  <header class="site-header">
-    <div class="pill">
-      <a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="12" width="4" height="9" rx="1" fill="currentColor"/><rect x="10" y="7" width="4" height="14" rx="1" fill="currentColor"/><rect x="17" y="3" width="4" height="18" rx="1" fill="currentColor"/></svg><span>Milind Saxena</span></a>
-      <nav aria-label="Main"><a href="../index.html#work">All projects</a><a href="churn.html">Churn case study</a></nav>
-      <a class="hire" href="../index.html#contact">Hire me</a>
-    </div>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="mark" viewBox="0 0 36 24"><path d="M2 21 L9 4 L16 21 L23 4 L30 21" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linejoin="round" stroke-linecap="round"/><circle cx="33" cy="5" r="2.6" fill="currentColor"/></symbol></svg>
+  <header class="nav">
+    <a class="logo" href="../index.html"><svg aria-hidden="true"><use href="#mark"/></svg>MILIND SAXENA</a>
+    <nav aria-label="Main"><a href="../index.html#work">All projects</a><a href="churn.html">Churn case study</a></nav>
+    <a class="btn sm" href="../index.html#contact">Hire me</a>
   </header>
 
   <main class="dash wrap">
     <p class="case-back"><a href="../index.html#work">← All projects</a></p>
     <p class="eyebrow">Customer analytics · Live dashboard</p>
-    <h1>Retention dashboard: who should we contact first?</h1>
+    <h1 class="metal">Retention dashboard: who should we contact <span class="it">first?</span></h1>
     <p class="dash-intro">Churn risk for 7,043 customers, from my <a href="churn.html">churn project</a>. Set what the
       retention offer costs and how often it works, filter the customers, and the dashboard works out who is worth
       contacting and what the campaign should earn.</p>
@@ -115,10 +113,7 @@
     </div>
   </main>
 
-  <footer class="site-footer">
-    <div class="wrap">© 2026 Milind Saxena</div>
-  </footer>
-  <script src="../script.js?v=3"></script>
+  <footer class="foot mono"><div class="wrap"><span>© 2026 Milind Saxena</span><span class="links"><a href="mailto:milind.sax01@gmail.com">Email</a><a href="https://www.linkedin.com/in/milind-saxena-54399722a">LinkedIn</a><a href="https://github.com/BoredMongoose">GitHub</a></span></div></footer>
   <script src="../assets/dashboard.js"></script>
 </body>
 </html>

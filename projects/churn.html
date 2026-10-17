@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Who will cancel, and who&#x27;s worth saving? · Milind Saxena</title>
   <meta name="description" content="Only the 29% where the offer pays for itself (churn risk × the customer&#x27;s bill). That beat the usual &#x27;risk above 50%&#x27; rule in all 30 cost scenarios…">
   <meta property="og:title" content="Who will cancel, and who&#x27;s worth saving? · Milind Saxena">
@@ -13,109 +13,127 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="628">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#070608">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <meta name="theme-color" content="#05030c">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=5">
-  <script>document.documentElement.classList.add("js");</script>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../signal.css?v=1">
 </head>
-<body class="case-page">
+<body>
   <a class="skip-link" href="#main">Skip to the case study</a>
-  <header class="site-header">
-    <div class="pill">
-      <a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="12" width="4" height="9" rx="1" fill="currentColor"/><rect x="10" y="7" width="4" height="14" rx="1" fill="currentColor"/><rect x="17" y="3" width="4" height="18" rx="1" fill="currentColor"/></svg><span>Milind Saxena</span></a>
-      <nav aria-label="Main"><a href="../index.html#work">All projects</a><a href="../index.html#about">About</a></nav>
-      <a class="hire" href="../index.html#contact">Hire me</a>
-    </div>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="mark" viewBox="0 0 36 24"><path d="M2 21 L9 4 L16 21 L23 4 L30 21" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linejoin="round" stroke-linecap="round"/><circle cx="33" cy="5" r="2.6" fill="currentColor"/></symbol></svg>
+  <header class="nav">
+    <a class="logo" href="../index.html"><svg aria-hidden="true"><use href="#mark"/></svg>MILIND SAXENA</a>
+    <nav aria-label="Main"><a href="../index.html#board">Board</a><a href="../index.html#work">All projects</a><a href="../index.html#about">About</a></nav>
+    <a class="btn sm" href="../index.html#contact">Hire me</a>
   </header>
 
-  <main class="case wrap" id="main">
-    <p class="case-back"><a href="../index.html#work">← All projects</a></p>
-    <p class="eyebrow">Customer analytics · Telecom</p>
-    <h1>Who will cancel, and who&#x27;s worth saving?</h1>
-    <dl class="impact-box glass">
-      <div class="ib-wide ib-question"><dt>Business question</dt><dd>Which customers should get a retention offer?</dd></div>
-      <div class="ib-half"><dt>Key finding</dt><dd>Only the 29% where the offer pays for itself (churn risk × the customer&#x27;s bill). That beat the usual &#x27;risk above 50%&#x27; rule in all 30 cost scenarios tested, and offering it to everyone loses money.</dd></div>
-      <div class="ib-half"><dt>Recommendation</dt><dd>Send the offer to the 29% of customers whose expected profit is positive: almost all are on month-to-month fibre plans paying $70+ a month, and 57% of them did leave (against 26.5% overall).</dd></div>
-      <div class="ib-wide ib-impact"><dt>Estimated impact</dt><dd><strong>+$92k</strong><span>Profit from one targeted campaign, against −$122k for offering it to everyone (simulated: $60 offer that keeps 30% of would-be leavers).</span></dd></div>
-    </dl>
-    <div class="case-dashboard glass">
-      <p><strong>Try it:</strong> change the offer's cost and success rate, filter the customers, and download who to contact.</p>
-      <a class="btn btn-primary" href="retention-dashboard.html">Open the live dashboard</a>
+  <main class="wrap" id="main">
+    <section class="case-top">
+      <p class="crumb mono"><a href="../index.html#work">Work</a>/<b>PRJ-02</b>/<span>Customer analytics · Telecom</span></p>
+      <h1 class="metal">Who will cancel, and who&#x27;s worth <span class="it">saving?</span></h1>
+      <div class="case-lede">
+        <p>Don&#x27;t send the retention offer to everyone the model flags. With a $60 offer that keeps 30% of would-be leavers, offering it to everyone loses $122,000, and the usual &#x27;risk above 50%&#x27; rule earns $85,000. Targeting only customers whose expected profit is positive (risk × chance the offer works × value of their bill) earns $92,000, and that rule wins across all 30 cost and success scenarios tested.</p>
+        <dl class="spec">
+          <dt>Data</dt><dd>IBM&#x27;s sample data for a fictional telecom company, 7,043 customers</dd>
+          <dt>Methods</dt><dd>Classification, calibration, permutation importance, profit-based decisions</dd>
+          <dt>Tools</dt><dd>Python: scikit-learn, pandas; SQL (DuckDB); unit tests</dd>
+          <dt>Code</dt><dd><a href="https://github.com/BoredMongoose/telco-churn-profit">github.com/BoredMongoose/telco-churn-profit ↗</a></dd>
+        </dl>
+      </div>
+    </section>
+
+    <div class="impact">
+      <div><span class="mono">Business question</span><p>Which customers should get a retention offer?</p></div>
+      <div><span class="mono">Recommendation</span><p>Send the offer to the 29% of customers whose expected profit is positive: almost all are on month-to-month fibre plans paying $70+ a month, and 57% of them did leave (against 26.5% overall).</p></div>
+      <div><span class="mono">Estimated impact</span><strong>+$92k</strong><p>Profit from one targeted campaign, against −$122k for offering it to everyone (simulated: $60 offer that keeps 30% of would-be leavers).</p></div>
     </div>
-    <dl class="case-facts">
-      <div><dt>Data</dt><dd>IBM&#x27;s sample data for a fictional telecom company, 7,043 customers</dd></div>
-      <div><dt>Methods</dt><dd>Classification, calibration, permutation importance, profit-based decisions</dd></div>
-      <div><dt>Tools</dt><dd>Python: scikit-learn, pandas; SQL (DuckDB); unit tests</dd></div>
-      <div><dt>Code</dt><dd><a href="https://github.com/BoredMongoose/telco-churn-profit">github.com/BoredMongoose/telco-churn-profit ↗</a></dd></div>
-    </dl>
-
-    <h2 class="section-title">Results</h2>
-    <figure class="case-figure glass">
-      <img src="../assets/projects/telco-churn-profit/01_who_leaves.webp" width="1600" height="941" loading="lazy" alt="New month-to-month customers are the risk. 55% of month-to-month customers in their first 6 months had left, against 3% of two-year customers. Month-to-month customers account for 87% of the monthly revenue lost to churn.">
-      <figcaption><strong>New month-to-month customers are the risk.</strong> 55% of month-to-month customers in their first 6 months had left, against 3% of two-year customers. Month-to-month customers account for 87% of the monthly revenue lost to churn.</figcaption>
-    </figure>
-    <figure class="case-figure glass">
-      <img src="../assets/projects/telco-churn-profit/02_models.webp" width="1600" height="701" loading="lazy" alt="Three models, the same accuracy. Logistic regression (AUC 0.843) matches a random forest and gradient boosting, and its probabilities are well calibrated, which matters when they get multiplied by money.">
-      <figcaption><strong>Three models, the same accuracy.</strong> Logistic regression (AUC 0.843) matches a random forest and gradient boosting, and its probabilities are well calibrated, which matters when they get multiplied by money.</figcaption>
-    </figure>
-    <figure class="case-figure glass">
-      <img src="../assets/projects/telco-churn-profit/04_who_to_target.webp" width="1600" height="999" loading="lazy" alt="Who&#x27;s worth an offer depends on their bill, not just their risk. Customers above the break-even curve are worth contacting. For a $100-a-month customer that&#x27;s a 28% risk; for a $30 customer, 93%.">
-      <figcaption><strong>Who&#x27;s worth an offer depends on their bill, not just their risk.</strong> Customers above the break-even curve are worth contacting. For a $100-a-month customer that&#x27;s a 28% risk; for a $30 customer, 93%.</figcaption>
-    </figure>
-    <figure class="case-figure glass">
-      <img src="../assets/projects/telco-churn-profit/05_rules.webp" width="1600" height="778" loading="lazy" alt="Deciding by expected profit beats the default 50% cut-off. Profit from each targeting rule, scored on out-of-fold predictions for all 7,043 customers: $7,200 more than the 50% rule (95% bootstrap interval $2,600–$11,800).">
-      <figcaption><strong>Deciding by expected profit beats the default 50% cut-off.</strong> Profit from each targeting rule, scored on out-of-fold predictions for all 7,043 customers: $7,200 more than the 50% rule (95% bootstrap interval $2,600–$11,800).</figcaption>
-    </figure>
-    <figure class="case-figure glass">
-      <img src="../assets/projects/telco-churn-profit/06_sensitivity.webp" width="1600" height="1004" loading="lazy" alt="It wins in every scenario. Extra profit over the 50% rule for 30 combinations of offer cost and success rate. When the offer is expensive and rarely works, the 50% rule loses money, and the profit rule targets almost nobody.">
-      <figcaption><strong>It wins in every scenario.</strong> Extra profit over the 50% rule for 30 combinations of offer cost and success rate. When the offer is expensive and rarely works, the 50% rule loses money, and the profit rule targets almost nobody.</figcaption>
-    </figure>
-
-    <h2 class="section-title">How I did it</h2>
-    <ol class="case-method">
-      <li>Explored churn by segment in SQL (contract × tenure with ROLLUP subtotals, revenue at risk) after 7 data checks.</li>
-      <li>Compared logistic regression, random forest and gradient boosting on out-of-fold predictions (5-fold cross-validation), then kept the simplest, best-calibrated model. I dropped total billed, which is mostly tenure × bill and only blurred the explanations.</li>
-      <li>Turned probabilities into decisions with explicit economics: offer cost, success rate, months kept and margin, all in one place, with unit tests on the profit maths.</li>
-      <li>Delivered a ranked list for the retention team with each customer&#x27;s risk, the expected profit of contacting them, and the two main reasons the model flags them.</li>
-    </ol>
-
-    <h2 class="section-title">What could make this wrong</h2>
-    <ul class="case-caveats">
-      <li>It&#x27;s sample data for a fictional company: realistic patterns, not a real business.</li>
-      <li>The offer&#x27;s cost and success rate are assumptions. A real campaign should measure them with a holdout group first.</li>
-      <li>The data is a snapshot, so it can&#x27;t say when a customer will leave.</li>
-    </ul>
-
-    <div class="case-two">
-      <div>
-        <h2 class="section-title">What I learned</h2>
-        <ul class="case-list">
-          <li>A good AUC doesn&#x27;t make a good decision. The cut-off has to come from the economics of the offer, not from 50%.</li>
-          <li>Calibration matters as soon as probabilities get multiplied by money, which is why I kept the logistic regression over a slightly higher-scoring random forest.</li>
-          <li>Simple models are easier to defend in a meeting: every prediction comes with two plain-English reasons.</li>
-        </ul>
-      </div>
-      <div>
-        <h2 class="section-title">What I'd do next</h2>
-        <ol class="case-list">
-          <li>Run the offer as an A/B test with a holdout group, to measure the real success rate before scaling it up.</li>
-          <li>Score active customers every month and check that the risk ranking holds on new data.</li>
-          <li>Model when customers leave (survival analysis), so the offer arrives before they decide.</li>
-          <li>Replace the flat 12-month value with each customer&#x27;s lifetime value.</li>
-        </ol>
-      </div>
+    <div class="panel dash-cta">
+      <p><b style="color:var(--ink)">Try it:</b> change the offer's cost and success rate, filter the customers, and download who to contact.</p>
+      <a class="btn red" href="retention-dashboard.html">Open the live dashboard →</a>
     </div>
 
-    <p class="case-next"><a class="btn btn-primary" href="https://github.com/BoredMongoose/telco-churn-profit">See the code on GitHub</a>
-      <a class="btn" href="../index.html#work">Back to all projects</a></p>
+    <div class="case-doc">
+      <nav class="toc" aria-label="On this page"><a href="#results" class="on">Results</a><a href="#how">How I did it</a><a href="#limits">What could be wrong</a><a href="#learned">What I learned</a></nav>
+      <div>
+        <section id="results"><p class="kick mono"><b>01</b><i></i>Results</p>
+          <h2>New month-to-month customers are the risk.</h2>
+          <figure class="case-fig">
+            <div class="imgbox"><img src="../assets/projects/telco-churn-profit/01_who_leaves.webp" width="1600" height="941" loading="lazy" decoding="async" alt="New month-to-month customers are the risk. 55% of month-to-month customers in their first 6 months had left, against 3% of two-year customers. Month-to-month customers account for 87% of the monthly revenue lost to churn."></div>
+            <figcaption><span class="mono">Fig. 1</span><strong>New month-to-month customers are the risk.</strong> 55% of month-to-month customers in their first 6 months had left, against 3% of two-year customers. Month-to-month customers account for 87% of the monthly revenue lost to churn.</figcaption>
+          </figure>
+          <figure class="case-fig">
+            <div class="imgbox"><img src="../assets/projects/telco-churn-profit/02_models.webp" width="1600" height="701" loading="lazy" decoding="async" alt="Three models, the same accuracy. Logistic regression (AUC 0.843) matches a random forest and gradient boosting, and its probabilities are well calibrated, which matters when they get multiplied by money."></div>
+            <figcaption><span class="mono">Fig. 2</span><strong>Three models, the same accuracy.</strong> Logistic regression (AUC 0.843) matches a random forest and gradient boosting, and its probabilities are well calibrated, which matters when they get multiplied by money.</figcaption>
+          </figure>
+          <figure class="case-fig">
+            <div class="imgbox"><img src="../assets/projects/telco-churn-profit/04_who_to_target.webp" width="1600" height="999" loading="lazy" decoding="async" alt="Who&#x27;s worth an offer depends on their bill, not just their risk. Customers above the break-even curve are worth contacting. For a $100-a-month customer that&#x27;s a 28% risk; for a $30 customer, 93%."></div>
+            <figcaption><span class="mono">Fig. 3</span><strong>Who&#x27;s worth an offer depends on their bill, not just their risk.</strong> Customers above the break-even curve are worth contacting. For a $100-a-month customer that&#x27;s a 28% risk; for a $30 customer, 93%.</figcaption>
+          </figure>
+          <figure class="case-fig">
+            <div class="imgbox"><img src="../assets/projects/telco-churn-profit/05_rules.webp" width="1600" height="778" loading="lazy" decoding="async" alt="Deciding by expected profit beats the default 50% cut-off. Profit from each targeting rule, scored on out-of-fold predictions for all 7,043 customers: $7,200 more than the 50% rule (95% bootstrap interval $2,600–$11,800)."></div>
+            <figcaption><span class="mono">Fig. 4</span><strong>Deciding by expected profit beats the default 50% cut-off.</strong> Profit from each targeting rule, scored on out-of-fold predictions for all 7,043 customers: $7,200 more than the 50% rule (95% bootstrap interval $2,600–$11,800).</figcaption>
+          </figure>
+          <figure class="case-fig">
+            <div class="imgbox"><img src="../assets/projects/telco-churn-profit/06_sensitivity.webp" width="1600" height="1004" loading="lazy" decoding="async" alt="It wins in every scenario. Extra profit over the 50% rule for 30 combinations of offer cost and success rate. When the offer is expensive and rarely works, the 50% rule loses money, and the profit rule targets almost nobody."></div>
+            <figcaption><span class="mono">Fig. 5</span><strong>It wins in every scenario.</strong> Extra profit over the 50% rule for 30 combinations of offer cost and success rate. When the offer is expensive and rarely works, the 50% rule loses money, and the profit rule targets almost nobody.</figcaption>
+          </figure>
+        </section>
+
+        <section id="how"><p class="kick mono"><b>02</b><i></i>How I did it</p>
+          <h2>From raw data to a <span class="it">decision.</span></h2>
+          <ol class="method">
+            <li>Explored churn by segment in SQL (contract × tenure with ROLLUP subtotals, revenue at risk) after 7 data checks.</li>
+            <li>Compared logistic regression, random forest and gradient boosting on out-of-fold predictions (5-fold cross-validation), then kept the simplest, best-calibrated model. I dropped total billed, which is mostly tenure × bill and only blurred the explanations.</li>
+            <li>Turned probabilities into decisions with explicit economics: offer cost, success rate, months kept and margin, all in one place, with unit tests on the profit maths.</li>
+            <li>Delivered a ranked list for the retention team with each customer&#x27;s risk, the expected profit of contacting them, and the two main reasons the model flags them.</li>
+          </ol>
+        </section>
+
+        <section id="limits"><p class="kick mono"><b>03</b><i></i>What could make this wrong</p>
+          <h2>The limits, said out loud.</h2>
+          <ul class="notes">
+            <li><span>01</span>It&#x27;s sample data for a fictional company: realistic patterns, not a real business.</li>
+            <li><span>02</span>The offer&#x27;s cost and success rate are assumptions. A real campaign should measure them with a holdout group first.</li>
+            <li><span>03</span>The data is a snapshot, so it can&#x27;t say when a customer will leave.</li>
+          </ul>
+        </section>
+
+        <section id="learned" class="case-two">
+          <div><p class="kick mono"><b>04</b><i></i>What I learned</p>
+            <ul class="notes">
+            <li><span>01</span>A good AUC doesn&#x27;t make a good decision. The cut-off has to come from the economics of the offer, not from 50%.</li>
+            <li><span>02</span>Calibration matters as soon as probabilities get multiplied by money, which is why I kept the logistic regression over a slightly higher-scoring random forest.</li>
+            <li><span>03</span>Simple models are easier to defend in a meeting: every prediction comes with two plain-English reasons.</li>
+            </ul>
+          </div>
+          <div><p class="kick mono"><b>05</b><i></i>What I'd do next</p>
+            <ul class="notes">
+            <li><span>01</span>Run the offer as an A/B test with a holdout group, to measure the real success rate before scaling it up.</li>
+            <li><span>02</span>Score active customers every month and check that the risk ranking holds on new data.</li>
+            <li><span>03</span>Model when customers leave (survival analysis), so the offer arrives before they decide.</li>
+            <li><span>04</span>Replace the flat 12-month value with each customer&#x27;s lifetime value.</li>
+            </ul>
+          </div>
+        </section>
+
+        <div class="code-cta"><a class="btn red" href="https://github.com/BoredMongoose/telco-churn-profit">See the code on GitHub ↗</a><a class="btn" href="../index.html#work">All projects</a></div>
+      </div>
+    </div>
+
+    <nav class="pager" aria-label="More projects">
+      <a href="ipl.html"><span class="mono">← Previous · PRJ-01</span><b>Moneyball IPL</b></a>
+      <a href="ttc.html"><span class="mono">Next · PRJ-04 →</span><b>TTC subway delays</b></a>
+    </nav>
   </main>
 
-  <footer class="site-footer">
-    <div class="wrap">© 2026 Milind Saxena</div>
-  </footer>
-  <script src="../script.js?v=3"></script>
+  <footer class="foot mono"><div class="wrap"><span>© 2026 Milind Saxena</span><span>Ghaziabad · Delhi NCR</span><span class="links"><a href="mailto:milind.sax01@gmail.com">Email</a><a href="https://www.linkedin.com/in/milind-saxena-54399722a">LinkedIn</a><a href="https://github.com/BoredMongoose">GitHub</a></span></div></footer>
+  <script>
+    // highlight the section you're reading in the side menu
+    const toc = [...document.querySelectorAll(".toc a")], parts = toc.map((a) => document.querySelector(a.getAttribute("href")));
+    const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) toc.forEach((a, i) => a.classList.toggle("on", parts[i] === e.target)); }), { rootMargin: "-35% 0px -60% 0px" });
+    parts.forEach((p) => io.observe(p));
+  </script>
 </body>
 </html>

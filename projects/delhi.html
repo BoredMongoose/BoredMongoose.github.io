@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Who&#x27;s really choking Delhi: Diwali crackers or Punjab&#x27;s stubble fires? · Milind Saxena</title>
   <meta name="description" content="Crop fires. They drive about 60% of early-November PM2.5, while Diwali adds about 2% of the season&#x27;s extra pollution. Over the whole winter, 84% of the…">
   <meta property="og:title" content="Who&#x27;s really choking Delhi: Diwali crackers or Punjab&#x27;s stubble fires? · Milind Saxena">
@@ -13,108 +13,126 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="628">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#070608">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <meta name="theme-color" content="#05030c">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=5">
-  <script>document.documentElement.classList.add("js");</script>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../signal.css?v=1">
 </head>
-<body class="case-page">
+<body>
   <a class="skip-link" href="#main">Skip to the case study</a>
-  <header class="site-header">
-    <div class="pill">
-      <a class="brand" href="../index.html"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="12" width="4" height="9" rx="1" fill="currentColor"/><rect x="10" y="7" width="4" height="14" rx="1" fill="currentColor"/><rect x="17" y="3" width="4" height="18" rx="1" fill="currentColor"/></svg><span>Milind Saxena</span></a>
-      <nav aria-label="Main"><a href="../index.html#work">All projects</a><a href="../index.html#about">About</a></nav>
-      <a class="hire" href="../index.html#contact">Hire me</a>
-    </div>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="mark" viewBox="0 0 36 24"><path d="M2 21 L9 4 L16 21 L23 4 L30 21" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linejoin="round" stroke-linecap="round"/><circle cx="33" cy="5" r="2.6" fill="currentColor"/></symbol></svg>
+  <header class="nav">
+    <a class="logo" href="../index.html"><svg aria-hidden="true"><use href="#mark"/></svg>MILIND SAXENA</a>
+    <nav aria-label="Main"><a href="../index.html#board">Board</a><a href="../index.html#work">All projects</a><a href="../index.html#about">About</a></nav>
+    <a class="btn sm" href="../index.html#contact">Hire me</a>
   </header>
 
-  <main class="case wrap" id="main">
-    <p class="case-back"><a href="../index.html#work">← All projects</a></p>
-    <p class="eyebrow">Environment &amp; health · Delhi</p>
-    <h1>Who&#x27;s really choking Delhi: Diwali crackers or Punjab&#x27;s stubble fires?</h1>
-    <dl class="impact-box glass">
-      <div class="ib-wide ib-question"><dt>Business question</dt><dd>To cut November smog, should Delhi tackle Diwali firecrackers or crop fires?</dd></div>
-      <div class="ib-half"><dt>Key finding</dt><dd>Crop fires. They drive about 60% of early-November PM2.5, while Diwali adds about 2% of the season&#x27;s extra pollution. Over the whole winter, 84% of the pollution is Delhi&#x27;s own, trapped by the weather.</dd></div>
-      <div class="ib-half"><dt>Recommendation</dt><dd>Fund crop-residue alternatives for October–November, and year-round controls on Delhi&#x27;s own sources (traffic, industry, dust) for the winter. A firecracker ban addresses one night.</dd></div>
-      <div class="ib-wide ib-impact"><dt>Estimated impact</dt><dd><strong>~60%</strong><span>Of early-November PM2.5 from crop-fire smoke; Diwali adds about 2% of the season&#x27;s extra pollution.</span></dd></div>
-    </dl>
-    <dl class="case-facts">
-      <div><dt>Data</dt><dd>Delhi air quality 2015–2020 (CPCB), 600,000+ NASA satellite fire detections, hourly weather</dd></div>
-      <div><dt>Period</dt><dd>Five winters, 2015–2019</dd></div>
-      <div><dt>Tools</dt><dd>Python: pandas, statsmodels, scikit-learn</dd></div>
-      <div><dt>Code</dt><dd><a href="https://github.com/BoredMongoose/delhi-smog">github.com/BoredMongoose/delhi-smog ↗</a></dd></div>
-    </dl>
-
-    <h2 class="section-title">Results</h2>
-    <figure class="case-figure glass">
-      <img src="../assets/projects/delhi-smog/02_fire_map.webp" width="1521" height="1718" loading="lazy" alt="Where the fires are. Every satellite fire detection in Punjab and Haryana over five burning seasons. North-westerly winds carry the smoke about 300 km to Delhi.">
-      <figcaption><strong>Where the fires are.</strong> Every satellite fire detection in Punjab and Haryana over five burning seasons. North-westerly winds carry the smoke about 300 km to Delhi.</figcaption>
-    </figure>
-    <figure class="case-figure glass">
-      <img src="../assets/projects/delhi-smog/03_weather_normalised.webp" width="1600" height="1230" loading="lazy" alt="The smoke arrives with the fires, and leaves with them. Actual PM2.5 against what the weather alone predicts. The gap opens when burning starts and closes when it stops.">
-      <figcaption><strong>The smoke arrives with the fires, and leaves with them.</strong> Actual PM2.5 against what the weather alone predicts. The gap opens when burning starts and closes when it stops.</figcaption>
-    </figure>
-    <figure class="case-figure glass">
-      <img src="../assets/projects/delhi-smog/04_wind_fingerprint.webp" width="1600" height="1032" loading="lazy" alt="The wind test. At peak burning, pollution is much higher when the wind blows from Punjab. In December, with no fires, the same wind adds nothing.">
-      <figcaption><strong>The wind test.</strong> At peak burning, pollution is much higher when the wind blows from Punjab. In December, with no fires, the same wind adds nothing.</figcaption>
-    </figure>
-    <figure class="case-figure glass">
-      <img src="../assets/projects/delhi-smog/05_diwali_hourly.webp" width="1600" height="902" loading="lazy" alt="Diwali: one terrible night. Hourly PM2.5 around Diwali peaks at 500–800 µg/m³ overnight, then drops back by midday.">
-      <figcaption><strong>Diwali: one terrible night.</strong> Hourly PM2.5 around Diwali peaks at 500–800 µg/m³ overnight, then drops back by midday.</figcaption>
-    </figure>
-    <figure class="case-figure glass">
-      <img src="../assets/projects/delhi-smog/06_pollution_budget.webp" width="1600" height="776" loading="lazy" alt="Where the winter&#x27;s pollution comes from. Stubble smoke dominates early November; Delhi&#x27;s own pollution dominates the winter as a whole.">
-      <figcaption><strong>Where the winter&#x27;s pollution comes from.</strong> Stubble smoke dominates early November; Delhi&#x27;s own pollution dominates the winter as a whole.</figcaption>
-    </figure>
-    <figure class="case-figure glass">
-      <img src="../assets/projects/delhi-smog/01_fires_by_year.webp" width="1600" height="876" loading="lazy" alt="Fires have dropped sharply since 2021. Satellite-detected fires fell 94% from 2021 to 2025, though some of the drop may be farmers burning after the satellite passes.">
-      <figcaption><strong>Fires have dropped sharply since 2021.</strong> Satellite-detected fires fell 94% from 2021 to 2025, though some of the drop may be farmers burning after the satellite passes.</figcaption>
-    </figure>
-
-    <h2 class="section-title">How I did it</h2>
-    <ol class="case-method">
-      <li>Started with the obvious approach: regress daily pollution on the number of fires. It gave a big, &quot;significant&quot; effect.</li>
-      <li>Tested it with a placebo: I fed the model the wrong year&#x27;s fires. The fake fires &quot;explained&quot; pollution just as well, which meant the model was picking up the season, not the smoke. So I dropped that approach.</li>
-      <li>Switched to weather normalisation: learn how weather drives Delhi&#x27;s pollution in months with almost no fires (mid-December to March), predict October–November from the weather alone, and treat the gap as autumn&#x27;s extra pollution.</li>
-      <li>Checked it: the gap is close to zero before burning starts and after it ends, it&#x27;s larger when the wind comes from Punjab, and five different model versions all put it at 40–46% of PM2.5 from mid-October to the end of November.</li>
-    </ol>
-
-    <h2 class="section-title">What could make this wrong</h2>
-    <ul class="case-caveats">
-      <li>The &quot;extra&quot; pollution is autumn-only pollution. Its timing and wind pattern point to the fires, but other autumn sources are mixed in.</li>
-      <li>The measured air-quality data ends in mid-2020, so it can&#x27;t show whether Delhi&#x27;s air improved as fires fell after 2021.</li>
-      <li>Five winters is a small sample.</li>
-    </ul>
-
-    <div class="case-two">
-      <div>
-        <h2 class="section-title">What I learned</h2>
-        <ul class="case-list">
-          <li>A &#x27;significant&#x27; regression can be measuring the season, not the cause. A placebo test exposed it.</li>
-          <li>Weather normalisation separates what&#x27;s emitted from what the weather traps.</li>
-          <li>Testing the model on days it never saw (before and after burning) is what made the result believable.</li>
-        </ul>
+  <main class="wrap" id="main">
+    <section class="case-top">
+      <p class="crumb mono"><a href="../index.html#work">Work</a>/<b>PRJ-06</b>/<span>Environment &amp; health · Delhi</span></p>
+      <h1 class="metal">Who&#x27;s really choking Delhi: Diwali crackers or Punjab&#x27;s stubble <span class="it">fires?</span></h1>
+      <div class="case-lede">
+        <p>Both, but not equally. Stubble smoke drives about 60% of Delhi&#x27;s PM2.5 in the first ten days of November. Diwali night is one of the five worst nights of every year, but it&#x27;s short: over a season it adds about 2% as much pollution as the stubble-burning period. Over the whole winter, about 84% is Delhi&#x27;s own pollution, trapped by the weather.</p>
+        <dl class="spec">
+          <dt>Data</dt><dd>Delhi air quality 2015–2020 (CPCB), 600,000+ NASA satellite fire detections, hourly weather</dd>
+          <dt>Period</dt><dd>Five winters, 2015–2019</dd>
+          <dt>Tools</dt><dd>Python: pandas, statsmodels, scikit-learn</dd>
+          <dt>Code</dt><dd><a href="https://github.com/BoredMongoose/delhi-smog">github.com/BoredMongoose/delhi-smog ↗</a></dd>
+        </dl>
       </div>
+    </section>
+
+    <div class="impact">
+      <div><span class="mono">Business question</span><p>To cut November smog, should Delhi tackle Diwali firecrackers or crop fires?</p></div>
+      <div><span class="mono">Recommendation</span><p>Fund crop-residue alternatives for October–November, and year-round controls on Delhi&#x27;s own sources (traffic, industry, dust) for the winter. A firecracker ban addresses one night.</p></div>
+      <div><span class="mono">Estimated impact</span><strong>~60%</strong><p>Of early-November PM2.5 from crop-fire smoke; Diwali adds about 2% of the season&#x27;s extra pollution.</p></div>
+    </div>
+
+    <div class="case-doc">
+      <nav class="toc" aria-label="On this page"><a href="#results" class="on">Results</a><a href="#how">How I did it</a><a href="#limits">What could be wrong</a><a href="#learned">What I learned</a></nav>
       <div>
-        <h2 class="section-title">What I'd do next</h2>
-        <ol class="case-list">
-          <li>Extend the PM2.5 data past 2020 to test whether the air improved as fires fell 94%.</li>
-          <li>Use more weather grid points and station-level models.</li>
-          <li>Estimate the health cost of the smoke weeks (hospital visits, lost workdays).</li>
-        </ol>
+        <section id="results"><p class="kick mono"><b>01</b><i></i>Results</p>
+          <h2>Where the fires are.</h2>
+          <figure class="case-fig">
+            <div class="imgbox"><img src="../assets/projects/delhi-smog/02_fire_map.webp" width="1521" height="1718" loading="lazy" decoding="async" alt="Where the fires are. Every satellite fire detection in Punjab and Haryana over five burning seasons. North-westerly winds carry the smoke about 300 km to Delhi."></div>
+            <figcaption><span class="mono">Fig. 1</span><strong>Where the fires are.</strong> Every satellite fire detection in Punjab and Haryana over five burning seasons. North-westerly winds carry the smoke about 300 km to Delhi.</figcaption>
+          </figure>
+          <figure class="case-fig">
+            <div class="imgbox"><img src="../assets/projects/delhi-smog/03_weather_normalised.webp" width="1600" height="1230" loading="lazy" decoding="async" alt="The smoke arrives with the fires, and leaves with them. Actual PM2.5 against what the weather alone predicts. The gap opens when burning starts and closes when it stops."></div>
+            <figcaption><span class="mono">Fig. 2</span><strong>The smoke arrives with the fires, and leaves with them.</strong> Actual PM2.5 against what the weather alone predicts. The gap opens when burning starts and closes when it stops.</figcaption>
+          </figure>
+          <figure class="case-fig">
+            <div class="imgbox"><img src="../assets/projects/delhi-smog/04_wind_fingerprint.webp" width="1600" height="1032" loading="lazy" decoding="async" alt="The wind test. At peak burning, pollution is much higher when the wind blows from Punjab. In December, with no fires, the same wind adds nothing."></div>
+            <figcaption><span class="mono">Fig. 3</span><strong>The wind test.</strong> At peak burning, pollution is much higher when the wind blows from Punjab. In December, with no fires, the same wind adds nothing.</figcaption>
+          </figure>
+          <figure class="case-fig">
+            <div class="imgbox"><img src="../assets/projects/delhi-smog/05_diwali_hourly.webp" width="1600" height="902" loading="lazy" decoding="async" alt="Diwali: one terrible night. Hourly PM2.5 around Diwali peaks at 500–800 µg/m³ overnight, then drops back by midday."></div>
+            <figcaption><span class="mono">Fig. 4</span><strong>Diwali: one terrible night.</strong> Hourly PM2.5 around Diwali peaks at 500–800 µg/m³ overnight, then drops back by midday.</figcaption>
+          </figure>
+          <figure class="case-fig">
+            <div class="imgbox"><img src="../assets/projects/delhi-smog/06_pollution_budget.webp" width="1600" height="776" loading="lazy" decoding="async" alt="Where the winter&#x27;s pollution comes from. Stubble smoke dominates early November; Delhi&#x27;s own pollution dominates the winter as a whole."></div>
+            <figcaption><span class="mono">Fig. 5</span><strong>Where the winter&#x27;s pollution comes from.</strong> Stubble smoke dominates early November; Delhi&#x27;s own pollution dominates the winter as a whole.</figcaption>
+          </figure>
+          <figure class="case-fig">
+            <div class="imgbox"><img src="../assets/projects/delhi-smog/01_fires_by_year.webp" width="1600" height="876" loading="lazy" decoding="async" alt="Fires have dropped sharply since 2021. Satellite-detected fires fell 94% from 2021 to 2025, though some of the drop may be farmers burning after the satellite passes."></div>
+            <figcaption><span class="mono">Fig. 6</span><strong>Fires have dropped sharply since 2021.</strong> Satellite-detected fires fell 94% from 2021 to 2025, though some of the drop may be farmers burning after the satellite passes.</figcaption>
+          </figure>
+        </section>
+
+        <section id="how"><p class="kick mono"><b>02</b><i></i>How I did it</p>
+          <h2>From raw data to a <span class="it">decision.</span></h2>
+          <ol class="method">
+            <li>Started with the obvious approach: regress daily pollution on the number of fires. It gave a big, &quot;significant&quot; effect.</li>
+            <li>Tested it with a placebo: I fed the model the wrong year&#x27;s fires. The fake fires &quot;explained&quot; pollution just as well, which meant the model was picking up the season, not the smoke. So I dropped that approach.</li>
+            <li>Switched to weather normalisation: learn how weather drives Delhi&#x27;s pollution in months with almost no fires (mid-December to March), predict October–November from the weather alone, and treat the gap as autumn&#x27;s extra pollution.</li>
+            <li>Checked it: the gap is close to zero before burning starts and after it ends, it&#x27;s larger when the wind comes from Punjab, and five different model versions all put it at 40–46% of PM2.5 from mid-October to the end of November.</li>
+          </ol>
+        </section>
+
+        <section id="limits"><p class="kick mono"><b>03</b><i></i>What could make this wrong</p>
+          <h2>The limits, said out loud.</h2>
+          <ul class="notes">
+            <li><span>01</span>The &quot;extra&quot; pollution is autumn-only pollution. Its timing and wind pattern point to the fires, but other autumn sources are mixed in.</li>
+            <li><span>02</span>The measured air-quality data ends in mid-2020, so it can&#x27;t show whether Delhi&#x27;s air improved as fires fell after 2021.</li>
+            <li><span>03</span>Five winters is a small sample.</li>
+          </ul>
+        </section>
+
+        <section id="learned" class="case-two">
+          <div><p class="kick mono"><b>04</b><i></i>What I learned</p>
+            <ul class="notes">
+            <li><span>01</span>A &#x27;significant&#x27; regression can be measuring the season, not the cause. A placebo test exposed it.</li>
+            <li><span>02</span>Weather normalisation separates what&#x27;s emitted from what the weather traps.</li>
+            <li><span>03</span>Testing the model on days it never saw (before and after burning) is what made the result believable.</li>
+            </ul>
+          </div>
+          <div><p class="kick mono"><b>05</b><i></i>What I'd do next</p>
+            <ul class="notes">
+            <li><span>01</span>Extend the PM2.5 data past 2020 to test whether the air improved as fires fell 94%.</li>
+            <li><span>02</span>Use more weather grid points and station-level models.</li>
+            <li><span>03</span>Estimate the health cost of the smoke weeks (hospital visits, lost workdays).</li>
+            </ul>
+          </div>
+        </section>
+
+        <div class="code-cta"><a class="btn red" href="https://github.com/BoredMongoose/delhi-smog">See the code on GitHub ↗</a><a class="btn" href="../index.html#work">All projects</a></div>
       </div>
     </div>
 
-    <p class="case-next"><a class="btn btn-primary" href="https://github.com/BoredMongoose/delhi-smog">See the code on GitHub</a>
-      <a class="btn" href="../index.html#work">Back to all projects</a></p>
+    <nav class="pager" aria-label="More projects">
+      <a href="ab-test.html"><span class="mono">← Previous · PRJ-05</span><b>Cookie Cats A/B test</b></a>
+      <a href="upi.html"><span class="mono">Next · PRJ-07 →</span><b>UPI vs. cash</b></a>
+    </nav>
   </main>
 
-  <footer class="site-footer">
-    <div class="wrap">© 2026 Milind Saxena</div>
-  </footer>
-  <script src="../script.js?v=3"></script>
+  <footer class="foot mono"><div class="wrap"><span>© 2026 Milind Saxena</span><span>Ghaziabad · Delhi NCR</span><span class="links"><a href="mailto:milind.sax01@gmail.com">Email</a><a href="https://www.linkedin.com/in/milind-saxena-54399722a">LinkedIn</a><a href="https://github.com/BoredMongoose">GitHub</a></span></div></footer>
+  <script>
+    // highlight the section you're reading in the side menu
+    const toc = [...document.querySelectorAll(".toc a")], parts = toc.map((a) => document.querySelector(a.getAttribute("href")));
+    const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) toc.forEach((a, i) => a.classList.toggle("on", parts[i] === e.target)); }), { rootMargin: "-35% 0px -60% 0px" });
+    parts.forEach((p) => io.observe(p));
+  </script>
 </body>
 </html>

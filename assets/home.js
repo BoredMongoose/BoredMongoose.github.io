@@ -106,16 +106,18 @@
       if (flat()) { label.textContent = `Swipe · ${n} projects`; cards.forEach((c) => { c.tabIndex = 0; c.classList.remove("front"); }); }
       else render();
     }
+    // on phones: the card closest to the middle of the row, and how to centre any card
+    const centred = () => {
+      const mid = wrap.scrollLeft + wrap.clientWidth / 2, dist = (c) => Math.abs(c.offsetLeft + c.offsetWidth / 2 - mid);
+      return cards.reduce((best, c, i) => (dist(c) < dist(cards[best]) ? i : best), 0);
+    };
+    const centre = (i) => {   // if smooth scrolling is unavailable, jump there instead
+      const c = cards[(i + n) % n], left = c.offsetLeft - (wrap.clientWidth - c.offsetWidth) / 2, from = wrap.scrollLeft;
+      wrap.scrollTo({ left, behavior: "smooth" });
+      setTimeout(() => { if (wrap.scrollLeft === from) wrap.scrollTo({ left, behavior: "instant" }); }, 350);
+    };
     const go = (d) => {
-      if (flat()) {
-        // centre the next card; if smooth scrolling is unavailable, jump there instead
-        const mid = wrap.scrollLeft + wrap.clientWidth / 2;
-        const now = cards.reduce((best, c, i) => Math.abs(c.offsetLeft + c.offsetWidth / 2 - mid) < Math.abs(cards[best].offsetLeft + cards[best].offsetWidth / 2 - mid) ? i : best, 0);
-        const c = cards[(now + d + n) % n], left = c.offsetLeft - (wrap.clientWidth - c.offsetWidth) / 2, from = wrap.scrollLeft;
-        wrap.scrollTo({ left, behavior: "smooth" });
-        setTimeout(() => { if (wrap.scrollLeft === from) wrap.scrollTo({ left, behavior: "instant" }); }, 350);
-        return;
-      }
+      if (flat()) { centre(centred() + d); return; }
       vel = 0; target = Math.round(target / step) * step - d * step;
     };
     prev.addEventListener("click", () => go(-1)); next.addEventListener("click", () => go(1));
@@ -123,7 +125,21 @@
     wrap.addEventListener("pointerdown", (e) => { if (flat()) return; drag = true; moved = 0; lastX = e.clientX; vel = 0; });
     addEventListener("pointermove", (e) => { if (!drag) return; const dx = e.clientX - lastX; lastX = e.clientX; moved += Math.abs(dx); angle += dx * .22; target = angle; vel = dx * .22; });
     addEventListener("pointerup", () => { drag = false; });
-    wrap.addEventListener("click", (e) => { if (moved > 6) { e.preventDefault(); moved = 0; } }, true);
+    // A click only opens the card in front. Clicking a side card (or the empty space beside the ring)
+    // turns the ring that way instead.
+    wrap.addEventListener("click", (e) => {
+      if (moved > 6) { e.preventDefault(); moved = 0; return; }
+      const card = e.target.closest(".card"), i = cards.indexOf(card);
+      if (flat()) {
+        if (card && i !== centred()) { e.preventDefault(); centre(i); }
+        return;
+      }
+      const f = front();
+      if (card && i === f) return;                          // the front card: follow its link
+      e.preventDefault();
+      if (card) { const d = ((i - f + n + Math.floor(n / 2)) % n) - Math.floor(n / 2); go(d); }   // shortest way round
+      else { const r = wrap.getBoundingClientRect(); go(e.clientX < r.left + r.width / 2 ? -1 : 1); }
+    }, true);
     wrap.addEventListener("dragstart", (e) => e.preventDefault());
     addEventListener("resize", mode); mode();
     whileVisible(wrap, () => { if (!flat()) frame(); });

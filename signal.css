@@ -111,11 +111,13 @@ img { max-width: 100%; height: auto; }
 .card .ch { display: flex; justify-content: space-between; } .card .ch b { color: var(--accent); font-weight: 500; } .card .ch span { color: var(--ink-3); }
 .card .img { position: relative; height: 140px; margin-top: 12px; border-radius: 6px; overflow: hidden; border: 1px solid var(--line); background: #000; }
 .card .img img { display: block; width: 100%; height: 100%; object-fit: cover; }
-.card h3 { font-weight: 500; font-size: 19px; line-height: 1.15; letter-spacing: -.02em; margin: 14px 0 12px; min-height: 44px; }
-.card dl { display: grid; grid-template-columns: 70px 1fr; gap: 6px 8px; padding-top: 12px; border-top: 1px solid var(--line); }
+.card h3 { font-weight: 500; font-size: 18px; line-height: 1.18; letter-spacing: -.02em; margin: 14px 0 12px; min-height: 42px; }
+.card dl { display: grid; grid-template-columns: 62px 1fr; gap: 8px 8px; align-items: baseline; padding-top: 12px; border-top: 1px solid var(--line); }
 .card dt { font-family: var(--mono); font-size: 10.5px; letter-spacing: .1em; color: var(--ink-3); text-transform: uppercase; padding-top: 2px; }
 .card dd { font-family: var(--mono); font-size: 12px; }
-.card dd.big { font-family: var(--sans); font-size: 22px; font-weight: 500; letter-spacing: -.03em; color: var(--accent); line-height: 1; }
+.card dd.ans { font-family: var(--sans); font-size: 17px; font-weight: 500; letter-spacing: -.02em; color: var(--accent); line-height: 1.15; }
+.card dd.proof { font-family: var(--sans); font-size: 13px; color: var(--ink-2); line-height: 1.3; }
+.card dd.proof b { font-weight: 600; color: var(--ink); }
 .ringctl { display: flex; justify-content: center; align-items: center; gap: 22px; color: var(--ink-3); }
 .ringctl button { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line2); background: transparent; color: var(--ink); font-size: 16px; cursor: pointer; }
 .ringctl button:hover { border-color: var(--accent); color: var(--accent); }
@@ -133,7 +135,8 @@ img { max-width: 100%; height: auto; }
 .ptable thead th { font: 500 10.5px var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); border-bottom-color: var(--line2); }
 .ptable tbody th { font-weight: 500; white-space: nowrap; } .ptable tbody th a:hover { color: var(--accent); }
 .ptable td { color: var(--ink-2); }
-.ptable td.v { color: var(--accent); font-weight: 500; white-space: nowrap; font-size: 17px; letter-spacing: -.02em; }
+.ptable td.v { color: var(--accent); font-weight: 500; font-size: 15.5px; letter-spacing: -.01em; min-width: 190px; }
+.ptable td.v span { display: block; margin-top: 3px; font-weight: 400; font-size: 13px; color: var(--ink-3); letter-spacing: 0; }
 .ptable td.t { font-family: var(--mono); font-size: 11.5px; color: var(--ink-3); }
 .ptable td.l { white-space: nowrap; } .ptable td.l a { color: var(--ink); } .ptable td.l a:hover { color: var(--accent); }
 
@@ -287,7 +290,7 @@ ul.notes li span { font-family: var(--mono); font-size: 11px; color: var(--accen
   .nav { padding-left: 14px; }
   .ptable thead { display: none; } .ptable, .ptable tbody, .ptable tr, .ptable th, .ptable td { display: block; }
   .ptable tr { padding: 14px 0; border-bottom: 1px solid var(--line); }
-  .ptable th, .ptable td { border: 0; padding: 2px 0; } .ptable td.v { font-size: 22px; margin-top: 4px; }
+  .ptable th, .ptable td { border: 0; padding: 2px 0; } .ptable td.v { font-size: 17px; margin-top: 6px; }
   .b { padding: 20px; } .b h3 { font-size: 22px; }
   .b.light .pin:nth-of-type(3) { display: none; } .b.light .pin:nth-of-type(2) { left: 30% !important; top: 22% !important; }
   .b.light canvas { height: 52%; }

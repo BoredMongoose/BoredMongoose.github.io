@@ -14,292 +14,68 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Milind Saxena, data analyst: I turn messy data into business decisions.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="theme-color" content="#070608">
+  <meta name="theme-color" content="#f3efe5">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="signal.css?v=2">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="signal.css?v=3">
 </head>
 <body>
-  <a class="skip-link" href="#board">Skip to the work</a>
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="mark" viewBox="0 0 36 24"><path d="M2 21 L9 4 L16 21 L23 4 L30 21" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linejoin="round" stroke-linecap="round"/><circle cx="33" cy="5" r="2.6" fill="currentColor"/></symbol></svg>
-
-  <header class="nav">
-    <a class="logo" href="#top" aria-label="Milind Saxena, back to top"><svg aria-hidden="true"><use href="#mark"/></svg>MILIND SAXENA</a>
-    <nav aria-label="Main"><a href="#board">Board</a><a href="#work">Work</a><a href="#skills">Toolkit</a><a href="#about">About</a></nav>
-    <span class="clock mono">Ghaziabad, IN <b id="clock">--:--</b> IST</span>
-    <a class="btn sm" href="#contact">Hire me</a>
-  </header>
-
-  <main id="top">
-    <section class="hero">
-      <canvas id="field" aria-hidden="true"></canvas>
-      <div class="wrap">
-        <p class="kick mono"><b></b>Open to work · Data analyst · Delhi NCR or remote</p>
-        <h1 class="metal">Build the future<br>with <span class="it">data.</span></h1>
-        <div class="hero-row">
-          <p>I'm Milind. I turn <b>messy public data</b> into decisions a business can act on, and I check every number before it gets there.</p>
-          <div class="acts"><a class="btn red" href="#work">Explore the work →</a><a class="btn" href="assets/Milind_Saxena_Resume.pdf">Résumé</a></div>
-        </div>
+  <a class="skip-link" href="#work">Skip to the work</a>
+  <div class="wall-wrap">
+    <header class="top">
+      <div>
+        <h1>Build the future with data.</h1>
+        <p>Milind Saxena, data analyst in Delhi NCR. Eleven findings at a glance. Tap one to explore it.</p>
       </div>
-      <div class="telemetry mono" aria-hidden="true"><div class="wrap">
-        <span>Fig. 01 — Live data field</span><span class="hide-sm">Move your cursor. That's a data point.</span>
-        <span class="hide-sm">X <b id="tx">0.000</b> Y <b id="ty">0.000</b></span><span class="hide-sm">Rows <b id="trows">000000</b></span>
-        <span class="hide-sm">Checked <b class="r" id="tchk">0</b></span><span class="push">(Scroll)</span>
-      </div></div>
+      <nav aria-label="Main">
+        <a href="projects/retention-dashboard.html">Live dashboard</a>
+        <a href="assets/Milind_Saxena_Resume.pdf">Résumé</a>
+        <a href="https://www.linkedin.com/in/milind-saxena-54399722a">LinkedIn</a>
+        <a href="https://github.com/BoredMongoose">GitHub</a>
+      </nav>
+    </header>
+
+    <main class="wall" id="work" aria-label="Project findings"></main>
+
+    <section class="about" id="about" aria-labelledby="about-title">
+      <picture><source srcset="assets/milind.webp" type="image/webp"><img src="assets/milind.png" width="656" height="836" loading="lazy" decoding="async" alt="Milind Saxena"></picture>
+      <div>
+        <h2 id="about-title">Hi, I'm Milind.</h2>
+        <p>Computer Science and Economics graduate (Honours B.A., McMaster University, 2023, Dean's Honour List). I work in SQL, Python, Power BI and Excel, and I try to prove my own answers wrong before I trust them.</p>
+        <p>Looking for a data analyst or junior data scientist role, in Delhi NCR or remote. Available immediately.</p>
+      </div>
+      <nav aria-label="All projects">
+        <h2>All projects</h2>
+        <ul>
+        <li><a href="projects/ipl.html">Moneyball IPL</a></li>
+        <li><a href="projects/churn.html">Telco churn</a></li>
+        <li><a href="projects/retention-dashboard.html">Retention dashboard</a></li>
+        <li><a href="projects/ttc.html">TTC subway delays</a></li>
+        <li><a href="projects/ab-test.html">Cookie Cats A/B test</a></li>
+        <li><a href="projects/delhi.html">Delhi smog</a></li>
+        <li><a href="projects/upi.html">UPI vs. cash</a></li>
+        <li><a href="projects/express-entry.html">Express Entry draws</a></li>
+        <li><a href="projects/funds.html">Active vs. index funds</a></li>
+        <li><a href="projects/terrorism.html">Global terrorism trends</a></li>
+        <li><a href="projects/workforce.html">Workforce diversity</a></li>
+        </ul>
+      </nav>
     </section>
+  </div>
 
-    <div class="marq" aria-hidden="true"><div><span>Cricket auctions <svg aria-hidden="true"><use href="#mark"/></svg></span><span>Telecom churn <svg aria-hidden="true"><use href="#mark"/></svg></span><span>Subway delays <svg aria-hidden="true"><use href="#mark"/></svg></span><span>Delhi air <svg aria-hidden="true"><use href="#mark"/></svg></span><span>UPI payments <svg aria-hidden="true"><use href="#mark"/></svg></span><span>Canada PR draws <svg aria-hidden="true"><use href="#mark"/></svg></span><span>Mobile games <svg aria-hidden="true"><use href="#mark"/></svg></span><span>Mutual funds <svg aria-hidden="true"><use href="#mark"/></svg></span><span>Workforce <svg aria-hidden="true"><use href="#mark"/></svg></span><span>Cricket auctions <svg aria-hidden="true"><use href="#mark"/></svg></span><span>Telecom churn <svg aria-hidden="true"><use href="#mark"/></svg></span><span>Subway delays <svg aria-hidden="true"><use href="#mark"/></svg></span><span>Delhi air <svg aria-hidden="true"><use href="#mark"/></svg></span><span>UPI payments <svg aria-hidden="true"><use href="#mark"/></svg></span><span>Canada PR draws <svg aria-hidden="true"><use href="#mark"/></svg></span><span>Mobile games <svg aria-hidden="true"><use href="#mark"/></svg></span><span>Mutual funds <svg aria-hidden="true"><use href="#mark"/></svg></span><span>Workforce <svg aria-hidden="true"><use href="#mark"/></svg></span></div></div>
+  <dialog id="detail" aria-labelledby="detail-title">
+    <div class="d-head"><div><small id="detail-tag"></small><h2 id="detail-title"></h2></div><button type="button" id="detail-close" aria-label="Close">×</button></div>
+    <div id="detail-chart"></div>
+    <div class="d-foot"><span id="detail-note"></span><a id="detail-link">Full study →</a></div>
+  </dialog>
 
-    <section class="sec wrap" id="board" aria-labelledby="board-title">
-      <p class="kick mono"><b>01</b><i></i>The board</p>
-      <div class="sec-head"><h2 class="metal" id="board-title">Same dots. Three <span class="it">answers.</span></h2>
-        <p>The dots start as messy data and settle into a chart from one of my projects. Switch projects, hover any dot, or tap the chart to replay it.</p></div>
-      <div class="board panel">
-        <div class="board-top mono"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="mid">Fig. 02 — Messy data in, clear decisions out</span><span>Live</span></div>
-        <figure class="hero-viz" aria-label="Animated charts from three of my projects">
-          <div class="viz-tabs" role="group" aria-label="Choose a project">
-            <button type="button" class="viz-tab" aria-pressed="true">IPL auction</button>
-            <button type="button" class="viz-tab" aria-pressed="false">Subway delays</button>
-            <button type="button" class="viz-tab" aria-pressed="false">Customer churn</button>
-          </div>
-          <div class="viz-stage">
-            <canvas role="img" aria-label="Scatter plot of 226 IPL 2025 players by auction price and runs added."></canvas>
-            <div class="viz-tip" hidden></div>
-          </div>
-          <figcaption>
-            <p class="viz-q">Are IPL teams getting value for their auction money?</p>
-            <p class="viz-a">Mostly not: price explains only 10% of performance. Ringed: the biggest steals and busts.</p>
-            <p class="viz-legend">
-              <span class="viz-item"><span class="key key-hi" aria-hidden="true"></span><span class="viz-hi">Beat their price</span></span>
-              <span class="viz-item"><span class="key key-lo" aria-hidden="true"></span><span class="viz-lo">Fell short</span></span>
-              <span class="viz-note">226 players, IPL 2025</span>
-            </p>
-            <a class="viz-link" href="projects/ipl.html">See the analysis →</a>
-          </figcaption>
-        </figure>
-        <div class="results" aria-live="polite">
-          <a class="result" href="projects/ipl.html"><b>10%</b><span>of IPL performance explained by auction price</span></a>
-          <a class="result" href="projects/ipl.html"><b>₹1,180cr</b><span>spent at auction on 226 players</span></a>
-          <a class="result" href="projects/ipl.html"><b>36%</b><span>of budget buys never played</span></a>
-          <a class="result" href="projects/ipl.html"><b>290k+</b><span>ball-by-ball records analysed</span></a>
-        </div>
-      </div>
-    </section>
+  <footer class="foot mono"><div class="wrap"><span>© 2026 Milind Saxena</span><span class="links"><a href="mailto:milind.sax01@gmail.com">Email</a><a href="https://www.linkedin.com/in/milind-saxena-54399722a">LinkedIn</a><a href="https://github.com/BoredMongoose">GitHub</a></span></div></footer>
 
-    <section class="sec" id="work" aria-labelledby="work-title">
-      <div class="wrap">
-        <p class="kick mono"><b>02</b><i></i>Work</p>
-        <div class="sec-head"><h2 class="metal" id="work-title">What's on the <span class="it">shelf.</span></h2>
-          <p>Eleven projects, each a real business question answered end to end. Drag the ring (or swipe), and open any card for the full case study.</p></div>
-      </div>
-      <div class="ringwrap" id="ringwrap" tabindex="0" aria-roledescription="carousel" aria-label="Projects">
-        <div class="ring">
-      <a class="card" href="projects/ipl.html" aria-label="Moneyball IPL: Are IPL teams paying for wins?">
-        <div class="ch mono"><b>Sports</b><span>PRJ-01</span></div>
-        <div class="img"><img src="assets/cards-signal/ipl.webp" width="640" height="400" loading="lazy" decoding="async" alt="" draggable="false"></div>
-        <h3>Are IPL teams paying for wins?</h3>
-        <dl><dt>Answer</dt><dd class="ans">Mostly not</dd><dt>Proof</dt><dd class="proof"><b>10%</b> of performance explained by price</dd><dt>Stack</dt><dd>SQL · Python</dd></dl>
-      </a>
-      <a class="card" href="projects/churn.html" aria-label="Telco churn: Who should get the retention offer?">
-        <div class="ch mono"><b>Telecom</b><span>PRJ-02</span></div>
-        <div class="img"><img src="assets/cards-signal/churn.webp" width="640" height="400" loading="lazy" decoding="async" alt="" draggable="false"></div>
-        <h3>Who should get the retention offer?</h3>
-        <dl><dt>Answer</dt><dd class="ans">Only the top 29%</dd><dt>Proof</dt><dd class="proof"><b>+$92k</b> vs −$122k offering everyone</dd><dt>Stack</dt><dd>SQL · Python</dd></dl>
-      </a>
-      <a class="card" href="projects/retention-dashboard.html" aria-label="Retention dashboard: Who should the team call first?">
-        <div class="ch mono"><b>Tool</b><span>PRJ-03</span></div>
-        <div class="img"><img src="assets/cards-signal/dashboard.webp" width="640" height="400" loading="lazy" decoding="async" alt="" draggable="false"></div>
-        <h3>Who should the team call first?</h3>
-        <dl><dt>Answer</dt><dd class="ans">2,023 customers, ranked</dd><dt>Proof</dt><dd class="proof"><b>~$98k</b> expected profit, live tool</dd><dt>Stack</dt><dd>JavaScript · Data visualization</dd></dl>
-      </a>
-      <a class="card" href="projects/ttc.html" aria-label="TTC subway delays: What is slowing Toronto&#x27;s subway?">
-        <div class="ch mono"><b>Transit</b><span>PRJ-04</span></div>
-        <div class="img"><img src="assets/cards-signal/ttc.webp" width="640" height="400" loading="lazy" decoding="async" alt="" draggable="false"></div>
-        <h3>What is slowing Toronto&#x27;s subway?</h3>
-        <dl><dt>Answer</dt><dd class="ans">Passengers, not trains</dd><dt>Proof</dt><dd class="proof"><b>76%</b> of the rise in delays</dd><dt>Stack</dt><dd>SQL · Python</dd></dl>
-      </a>
-      <a class="card" href="projects/ab-test.html" aria-label="Cookie Cats A/B test: Move the first gate to level 40?">
-        <div class="ch mono"><b>Gaming</b><span>PRJ-05</span></div>
-        <div class="img"><img src="assets/cards-signal/ab-test.webp" width="640" height="400" loading="lazy" decoding="async" alt="" draggable="false"></div>
-        <h3>Move the first gate to level 40?</h3>
-        <dl><dt>Answer</dt><dd class="ans">No, keep it at 30</dd><dt>Proof</dt><dd class="proof"><b>823</b> extra players broke the test</dd><dt>Stack</dt><dd>A/B testing · Python</dd></dl>
-      </a>
-      <a class="card" href="projects/delhi.html" aria-label="Delhi smog: Diwali or crop fires: what causes smog?">
-        <div class="ch mono"><b>Air quality</b><span>PRJ-06</span></div>
-        <div class="img"><img src="assets/cards-signal/delhi.webp" width="640" height="400" loading="lazy" decoding="async" alt="" draggable="false"></div>
-        <h3>Diwali or crop fires: what causes smog?</h3>
-        <dl><dt>Answer</dt><dd class="ans">Crop fires</dd><dt>Proof</dt><dd class="proof"><b>~60%</b> of early-November smog</dd><dt>Stack</dt><dd>Python · statsmodels</dd></dl>
-      </a>
-      <a class="card" href="projects/upi.html" aria-label="UPI vs. cash: UPI won. Should banks plan for less cash?">
-        <div class="ch mono"><b>Payments</b><span>PRJ-07</span></div>
-        <div class="img"><img src="assets/cards-signal/upi.webp" width="640" height="400" loading="lazy" decoding="async" alt="" draggable="false"></div>
-        <h3>UPI won. Should banks plan for less cash?</h3>
-        <dl><dt>Answer</dt><dd class="ans">No, cash still matters</dd><dt>Proof</dt><dd class="proof"><b>~12%</b> of GDP, same as before UPI</dd><dt>Stack</dt><dd>SQL · Python</dd></dl>
-      </a>
-      <a class="card" href="projects/express-entry.html" aria-label="Express Entry draws: What CRS score gets Canadian PR?">
-        <div class="ch mono"><b>Immigration</b><span>PRJ-08</span></div>
-        <div class="img"><img src="assets/cards-signal/express-entry.webp" width="640" height="400" loading="lazy" decoding="async" alt="" draggable="false"></div>
-        <h3>What CRS score gets Canadian PR?</h3>
-        <dl><dt>Answer</dt><dd class="ans">Depends on the stream</dd><dt>Proof</dt><dd class="proof"><b>169–523</b> CRS: 2026 cutoffs by stream</dd><dt>Stack</dt><dd>SQL · Python</dd></dl>
-      </a>
-      <a class="card" href="projects/funds.html" aria-label="Active vs. index funds: Do active funds beat the index?">
-        <div class="ch mono"><b>Investing</b><span>PRJ-09</span></div>
-        <div class="img"><img src="assets/cards-signal/funds.webp" width="640" height="400" loading="lazy" decoding="async" alt="" draggable="false"></div>
-        <h3>Do active funds beat the index?</h3>
-        <dl><dt>Answer</dt><dd class="ans">Mostly, in cycles</dd><dt>Proof</dt><dd class="proof"><b>19 of 20</b> surviving funds ahead</dd><dt>Stack</dt><dd>Python · pandas</dd></dl>
-      </a>
-      <a class="card" href="projects/terrorism.html" aria-label="Global terrorism trends: Where do attacks happen most?">
-        <div class="ch mono"><b>Security</b><span>PRJ-10</span></div>
-        <div class="img"><img src="assets/cards-signal/terrorism.webp" width="640" height="400" loading="lazy" decoding="async" alt="" draggable="false"></div>
-        <h3>Where do attacks happen most?</h3>
-        <dl><dt>Answer</dt><dd class="ans">Iraq, Pakistan, Afghanistan</dd><dt>Proof</dt><dd class="proof"><b>46%</b> of 2012–17 attacks</dd><dt>Stack</dt><dd>Python · pandas</dd></dl>
-      </a>
-      <a class="card" href="projects/workforce.html" aria-label="Workforce diversity: Which industries need diversity hiring?">
-        <div class="ch mono"><b>Workforce</b><span>PRJ-11</span></div>
-        <div class="img"><img src="assets/cards-signal/workforce.webp" width="640" height="400" loading="lazy" decoding="async" alt="" draggable="false"></div>
-        <h3>Which industries need diversity hiring?</h3>
-        <dl><dt>Answer</dt><dd class="ans">Construction, farming, mining</dd><dt>Proof</dt><dd class="proof"><b>89%</b> of construction workers are men</dd><dt>Stack</dt><dd>Python · scikit-learn</dd></dl>
-      </a>
-        </div>
-      </div>
-      <div class="ringctl mono"><button type="button" id="prev" aria-label="Previous project">←</button><span id="ringlabel">Drag to explore · 01 / 11</span><button type="button" id="next" aria-label="Next project">→</button></div>
-      <div class="wrap ptable-wrap">
-        <table class="ptable">
-          <caption class="mono">All projects at a glance</caption>
-          <thead><tr><th scope="col">Project</th><th scope="col">Question</th><th scope="col">Answer</th><th scope="col">Tools</th><th scope="col">Links</th></tr></thead>
-          <tbody>
-          <tr><th scope="row"><a href="projects/ipl.html">Moneyball IPL</a></th><td>Are IPL teams getting value for their auction money?</td>
-            <td class="v">Mostly not<span>10% of performance explained by price</span></td><td class="t">SQL, Python, pandas, KPI design</td><td class="l"><a href="projects/ipl.html">Case study</a> · <a href="https://github.com/BoredMongoose/ipl-moneyball">Code ↗</a></td></tr>
-          <tr><th scope="row"><a href="projects/churn.html">Telco churn</a></th><td>Which customers should get a retention offer?</td>
-            <td class="v">Only the top 29%<span>+$92k vs −$122k offering everyone</span></td><td class="t">SQL, Python, scikit-learn, Statistics</td><td class="l"><a href="projects/churn.html">Case study</a> · <a href="https://github.com/BoredMongoose/telco-churn-profit">Code ↗</a></td></tr>
-          <tr><th scope="row"><a href="projects/retention-dashboard.html">Retention dashboard</a></th><td>Who should the retention team contact first, and is it worth it?</td>
-            <td class="v">2,023 customers, ranked<span>~$98k expected profit, live tool</span></td><td class="t">JavaScript, Data visualization</td><td class="l"><a href="projects/retention-dashboard.html">Dashboard</a> · <a href="https://github.com/BoredMongoose/BoredMongoose.github.io/blob/main/assets/dashboard.js">Code ↗</a></td></tr>
-          <tr><th scope="row"><a href="projects/ttc.html">TTC subway delays</a></th><td>Where should the TTC focus to cut subway delays?</td>
-            <td class="v">Passengers, not trains<span>76% of the rise in delays</span></td><td class="t">SQL, Python, Statistics, Data cleaning</td><td class="l"><a href="projects/ttc.html">Case study</a> · <a href="https://github.com/BoredMongoose/ttc-subway-delays">Code ↗</a></td></tr>
-          <tr><th scope="row"><a href="projects/ab-test.html">Cookie Cats A/B test</a></th><td>Should we move the game&#x27;s first gate from level 30 to level 40?</td>
-            <td class="v">No, keep it at 30<span>823 extra players broke the test</span></td><td class="t">A/B testing, Python, SQL, Statistics</td><td class="l"><a href="projects/ab-test.html">Case study</a> · <a href="https://github.com/BoredMongoose/ab-test-cookie-cats">Code ↗</a></td></tr>
-          <tr><th scope="row"><a href="projects/delhi.html">Delhi smog</a></th><td>To cut November smog, should Delhi tackle Diwali firecrackers or crop fires?</td>
-            <td class="v">Crop fires<span>~60% of early-November smog</span></td><td class="t">Python, statsmodels, scikit-learn, APIs</td><td class="l"><a href="projects/delhi.html">Case study</a> · <a href="https://github.com/BoredMongoose/delhi-smog">Code ↗</a></td></tr>
-          <tr><th scope="row"><a href="projects/upi.html">UPI vs. cash</a></th><td>UPI won. Should banks plan for less cash?</td>
-            <td class="v">No, cash still matters<span>~12% of GDP, same as before UPI</span></td><td class="t">SQL, Python, Forecasting</td><td class="l"><a href="projects/upi.html">Case study</a> · <a href="https://github.com/BoredMongoose/upi-cash-paradox">Code ↗</a></td></tr>
-          <tr><th scope="row"><a href="projects/express-entry.html">Express Entry draws</a></th><td>What CRS score does a candidate need for Canadian PR in 2026?</td>
-            <td class="v">Depends on the stream<span>169–523 CRS: 2026 cutoffs by stream</span></td><td class="t">SQL, Python, Forecasting</td><td class="l"><a href="projects/express-entry.html">Case study</a> · <a href="https://github.com/BoredMongoose/express-entry-draws">Code ↗</a></td></tr>
-          <tr><th scope="row"><a href="projects/funds.html">Active vs. index funds</a></th><td>Do active large-cap mutual funds in India beat a cheap Nifty 50 index fund?</td>
-            <td class="v">Mostly, in cycles<span>19 of 20 surviving funds ahead</span></td><td class="t">Python, pandas, Finance, Backtesting</td><td class="l"><a href="projects/funds.html">Case study</a> · <a href="https://github.com/BoredMongoose/index-vs-active-funds">Code ↗</a></td></tr>
-          <tr><th scope="row"><a href="projects/terrorism.html">Global terrorism trends</a></th><td>Where do terrorist attacks happen most, and what kind of attacks are they?</td>
-            <td class="v">Iraq, Pakistan, Afghanistan<span>46% of 2012–17 attacks</span></td><td class="t">Python, pandas, matplotlib, EDA</td><td class="l"><a href="projects/terrorism.html">Case study</a> · <a href="https://github.com/BoredMongoose/Terrorism_analysis">Code ↗</a></td></tr>
-          <tr><th scope="row"><a href="projects/workforce.html">Workforce diversity</a></th><td>Which US industries most need diversity hiring?</td>
-            <td class="v">Construction, farming, mining<span>89% of construction workers are men</span></td><td class="t">Python, scikit-learn, K-Means, PCA</td><td class="l"><a href="projects/workforce.html">Case study</a> · <a href="https://github.com/BoredMongoose/strata-clustering">Code ↗</a></td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section class="sec wrap" id="skills" aria-labelledby="skills-title">
-      <p class="kick mono"><b>03</b><i></i>Toolkit</p>
-      <div class="sec-head"><h2 class="metal" id="skills-title">Four ways I turn rows into <span class="it">decisions.</span></h2>
-        <p>The same toolkit runs through every project: SQL to shape it, Python to model it, statistics to trust it, and a dashboard so someone else can use it.</p></div>
-      <div class="bento">
-        <div class="b light">
-          <canvas id="halftone" aria-hidden="true"></canvas>
-          <span class="pin" style="left:12%;top:16%" aria-hidden="true">ipl.duckdb · 290k balls</span>
-          <span class="pin" style="left:50%;top:28%" aria-hidden="true">ttc · 267,571 rows</span>
-          <span class="pin" style="left:24%;top:48%" aria-hidden="true">churn · 7,043 rows</span>
-          <div style="position:relative">
-            <div class="lab mono"><span>A</span><span>SQL</span></div>
-            <h3>Shape the data before trusting it.</h3>
-            <p>DuckDB and Postgres: CTEs, window functions, joins across messy sources, and data-quality checks written as SQL tests. Read the real queries:</p>
-            <div class="tags"><a class="tag" href="https://github.com/BoredMongoose/ipl-moneyball/blob/main/sql/03_player_impact.sql">IPL player impact ↗</a><a class="tag" href="https://github.com/BoredMongoose/ttc-subway-delays/blob/main/sql/02_marts.sql">TTC marts ↗</a><a class="tag" href="https://github.com/BoredMongoose/express-entry-draws/blob/main/sql/03_data_quality.sql">DQ tests ↗</a></div>
-          </div>
-        </div>
-        <div class="b">
-          <div class="lab mono"><span>B</span><span>Python</span></div>
-          <h3>Model it.</h3>
-          <p>pandas for cleaning, scikit-learn and statsmodels for the models, matplotlib for charts people can read.</p>
-          <div class="bars" id="bars" aria-hidden="true"></div>
-          <div class="tags"><span class="tag">pandas</span><span class="tag">scikit-learn</span><span class="tag">statsmodels</span></div>
-        </div>
-        <div class="b red">
-          <div class="lab mono"><span>C</span><span>Statistics</span></div>
-          <h3>Know when to trust it.</h3>
-          <p>A/B tests, forecasts and causal checks, with the uncertainty said out loud.</p>
-          <svg viewBox="0 0 400 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 88 L30 80 L60 84 L90 70 L120 74 L150 58 L180 62 L210 46 L240 50 L270 36 L300 40 L330 24 L360 28 L392 12 L400 12 L400 100 L0 100Z" fill="rgba(255,255,255,.14)"/><path d="M0 88 L30 80 L60 84 L90 70 L120 74 L150 58 L180 62 L210 46 L240 50 L270 36 L300 40 L330 24 L360 28 L392 12" fill="none" stroke="#fff" stroke-width="2"/><circle cx="392" cy="12" r="5" fill="#fff"/></svg>
-          <div class="tags"><span class="tag">A/B tests</span><span class="tag">Forecasting</span><span class="tag">Diff-in-diff</span></div>
-        </div>
-        <div class="b term">
-          <div>
-            <div class="lab mono"><span>D</span><span>Ask a question</span></div>
-            <h3>Describe the decision. I'll find the data.</h3>
-            <p>Every project starts with a plain-English question a manager would ask, and ends with an answer they can act on, in Power BI, Excel or a <a href="projects/retention-dashboard.html" style="color:var(--accent)">live dashboard</a> when they need to explore it themselves.</p>
-          </div>
-          <div class="termwin" aria-hidden="true"><div class="tb"><i></i><i></i><i></i>question-runner</div>
-            <div class="body"><div class="pr">&gt; what does the business need to know?</div><div class="q" id="tq"></div></div>
-            <div class="rows"><div class="row"><span>rows scanned</span><span></span><b id="tr1">–</b></div><div class="row"><span>quality checks</span><span></span><b id="tr2">–</b></div><div class="row"><span>answer</span><span></span><b id="tr3">–</b></div></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="sec wrap" id="checks" aria-labelledby="checks-title">
-      <p class="kick mono"><b>04</b><i></i>Checks</p>
-      <div class="sec-head"><h2 class="metal" id="checks-title">Every number, <span class="it">checked.</span></h2>
-        <p>Analysis is only worth acting on if you can defend where each number came from.</p></div>
-      <div class="checks">
-        <div class="panel json">
-          <div class="head"><span>PLAYER_ROW.JSON</span><span>RAW → CLEAN</span></div>
-          {<br>
-          &nbsp;&nbsp;<span class="k">"player"</span>: <span class="bad">"Varun Chakaravarthy "</span><span class="fix">"Varun Chakravarthy"</span><br>
-          &nbsp;&nbsp;<span class="k">"price"</span>: <span class="bad">"12.00 Cr"</span><span class="fix">12.0</span><br>
-          &nbsp;&nbsp;<span class="k">"team"</span>: "KKR"<br>
-          &nbsp;&nbsp;<span class="k">"matched_by"</span>: <span class="bad">null</span><span class="fix">"fuzzy · logged"</span><br>
-          &nbsp;&nbsp;<span class="k">"runs_added"</span>: <span class="bad">null</span><span class="fix">+98</span><br>
-          &nbsp;&nbsp;<span class="k">"checked"</span>: <span class="fix" style="margin:0">true</span><br>
-          }<br>
-          <span class="mono fig" style="font-size:10.5px">Illustrative record: what a messy source looks like, and what reaches the analysis.</span>
-        </div>
-        <div class="rules">
-          <div class="rule"><b>R1</b><div><h4>Check the test before the result</h4><p>A sample-ratio check found 823 extra players in Cookie Cats and changed the answer.</p></div></div>
-          <div class="rule"><b>R2</b><div><h4>Log every unmatched row</h4><p>Four name-matching methods for the IPL data, and every manual fix documented.</p></div></div>
-          <div class="rule"><b>R3</b><div><h4>Data-quality tests in SQL</h4><p>18 automated checks on the TTC data caught real duplicates before any analysis.</p></div></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="sec wrap" id="about" aria-labelledby="about-title">
-      <p class="kick mono"><b>05</b><i></i>About</p>
-      <div class="about">
-        <div class="photo"><picture><source srcset="assets/milind.webp" type="image/webp"><img src="assets/milind.png" width="656" height="836" loading="lazy" decoding="async" alt="Milind Saxena"></picture><span class="mono">Ghaziabad · Delhi NCR</span></div>
-        <div class="about-text">
-          <h2 class="metal" id="about-title" style="font-weight:500;font-size:clamp(34px,4.4vw,56px);line-height:1.02;letter-spacing:-.035em;margin-bottom:24px">Hi, I'm <span class="it">Milind.</span></h2>
-          <p>I'm a <b>Computer Science and Economics</b> graduate interested in where data, products and business meet. I like using analysis to answer three questions: why is this happening, what should we do, and how much is it worth?</p>
-          <p>I try to prove my own answers wrong before I trust them. That habit caught a broken random split in the Cookie Cats A/B test, and a model in my Delhi project that was really just measuring the season.</p>
-          <dl class="edu">
-            <dt>Education</dt><dd>Honours B.A., Computer Science &amp; Economics · McMaster University · 2023 · Dean's Honour List</dd>
-            <dt>Looking for</dt><dd>Data analyst or junior data scientist roles, Delhi NCR or remote. Available immediately.</dd>
-          </dl>
-          <div class="acts" style="margin-top:26px"><a class="btn" href="assets/Milind_Saxena_Resume.pdf">Download résumé (PDF)</a></div>
-        </div>
-      </div>
-    </section>
-
-    <div class="wrap">
-      <section class="cta" id="contact" aria-labelledby="contact-title">
-        <svg class="big-m" aria-hidden="true"><use href="#mark"/></svg>
-        <p class="kick mono"><b>06</b><i></i>Contact</p>
-        <h2 class="metal" id="contact-title">Need an analyst who <span class="it">checks the numbers?</span></h2>
-        <p>I'm looking for a data analyst or junior data scientist role, in Delhi NCR or remote. I can start immediately.</p>
-        <div class="acts"><a class="btn red" href="mailto:milind.sax01@gmail.com">milind.sax01@gmail.com</a><a class="btn" href="https://www.linkedin.com/in/milind-saxena-54399722a">LinkedIn</a><a class="btn" href="https://github.com/BoredMongoose">GitHub</a></div>
-      </section>
-    </div>
-  </main>
-
-  <footer class="foot mono"><div class="wrap"><span>© 2026 Milind Saxena</span><span>Built with plain HTML, CSS and JavaScript</span><span class="links"><a href="mailto:milind.sax01@gmail.com">Email</a><a href="https://www.linkedin.com/in/milind-saxena-54399722a">LinkedIn</a><a href="https://github.com/BoredMongoose">GitHub</a></span></div></footer>
-
-  <script src="assets/hero-data.js" defer></script>
-  <script src="assets/hero.js?v=4" defer></script>
-  <script src="assets/home.js?v=3" defer></script>
+  <script src="assets/chart-data.js?v=1" defer></script>
+  <script src="assets/charts.js?v=1" defer></script>
+  <script src="assets/home.js?v=4" defer></script>
 </body>
 </html>

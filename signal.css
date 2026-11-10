@@ -53,6 +53,8 @@ img { max-width: 100%; height: auto; }
 .top { display: flex; justify-content: space-between; align-items: end; gap: 24px; padding-bottom: 16px; }
 .top h1 { font-weight: 500; font-size: 30px; letter-spacing: -.015em; line-height: 1.1; }
 .top p { color: var(--ink-2); font-size: 15px; margin-top: 3px; }
+.skills { list-style: none; padding: 0; margin: 10px 0 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.skills li { font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-2); padding: 4px 9px; border: 1px solid var(--line2); border-radius: 999px; background: var(--card); }
 .top nav { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 14px; color: var(--ink-2); flex: none; }
 .top nav a:hover, .about a:hover { color: var(--accent); }
 .wall { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; min-height: 780px; }
@@ -76,7 +78,13 @@ dialog::backdrop { background: rgba(35, 47, 61, .35); }
 .d-head h2 { font-weight: 500; font-size: 26px; line-height: 1.15; letter-spacing: -.015em; }
 .d-head button { all: unset; cursor: pointer; font-size: 24px; line-height: 1; color: var(--ink-2); padding: 2px 8px; }
 .d-head button:focus-visible { outline: 2px solid var(--accent); }
-#detail-chart { height: min(440px, 56vh); margin-top: 12px; }
+.d-body { display: grid; grid-template-columns: minmax(260px, 330px) minmax(0, 1fr); gap: 28px; margin-top: 16px; align-items: start; }
+.d-sum { margin: 0; display: grid; gap: 14px; }
+.d-sum dt { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); }
+.d-sum dd { margin: 3px 0 0; font-size: 14.5px; line-height: 1.5; color: var(--ink); }
+.d-sum .d-meta { padding-top: 12px; border-top: 1px solid var(--line); display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; align-items: baseline; }
+.d-sum .d-meta dd { margin: 0; font-size: 13px; color: var(--ink-2); }
+#detail-chart { height: min(420px, 56vh); min-width: 0; }
 .d-foot { display: flex; justify-content: space-between; gap: 20px; font-size: 14px; color: var(--ink-2); margin-top: 10px; }
 .d-foot a { color: var(--accent); font-weight: 500; white-space: nowrap; }
 .tip { position: fixed; z-index: 99; padding: 6px 10px; border-radius: 7px; background: var(--ink); color: var(--card); font-size: 12.5px; pointer-events: none; max-width: 280px; }
@@ -165,6 +173,11 @@ ul.notes li span { font-family: var(--mono); font-size: 11px; color: var(--accen
   .t .n span { display: block; margin: 2px 0 0; }
   .d-foot { flex-direction: column; gap: 4px; }
   dialog { padding: 18px 16px; }
+  .d-head h2 { font-size: 21px; }
+}
+@media (max-width: 860px) {
+  .d-body { grid-template-columns: 1fr; gap: 18px; }
+  #detail-chart { height: min(320px, 46vh); }
 }
 @media (max-width: 600px) {
   .wrap { padding-left: 16px; padding-right: 16px; }

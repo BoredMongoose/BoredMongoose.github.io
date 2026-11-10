@@ -14,13 +14,15 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Milind Saxena, data analyst: I turn messy data into business decisions.">
   <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://boredmongoose.github.io/">
   <meta name="theme-color" content="#f3efe5">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Milind Saxena","jobTitle":"Data Analyst","url":"https://boredmongoose.github.io/","email":"mailto:milind.sax01@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Ghaziabad","addressRegion":"Delhi NCR","addressCountry":"IN"},"alumniOf":{"@type":"CollegeOrUniversity","name":"McMaster University"},"knowsAbout":["SQL","Python","Power BI","Excel","Statistics","A/B testing","Forecasting"],"sameAs":["https://www.linkedin.com/in/milind-saxena-54399722a","https://github.com/BoredMongoose"]}</script>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="signal.css?v=3">
+  <link rel="stylesheet" href="signal.css?v=5">
 </head>
 <body>
   <a class="skip-link" href="#work">Skip to the work</a>
@@ -28,7 +30,8 @@
     <header class="top">
       <div>
         <h1>Build the future with data.</h1>
-        <p>Milind Saxena, data analyst in Delhi NCR. Eleven findings at a glance. Tap one to explore it.</p>
+        <p>Milind Saxena, data analyst in Delhi NCR. Eleven findings at a glance. Open one to explore it.</p>
+        <ul class="skills" aria-label="Tools"><li>SQL</li><li>Python</li><li>Power BI</li><li>Excel</li><li>Statistics</li><li>A/B testing</li></ul>
       </div>
       <nav aria-label="Main">
         <a href="projects/retention-dashboard.html">Live dashboard</a>
@@ -68,14 +71,22 @@
 
   <dialog id="detail" aria-labelledby="detail-title">
     <div class="d-head"><div><small id="detail-tag"></small><h2 id="detail-title"></h2></div><button type="button" id="detail-close" aria-label="Close">×</button></div>
-    <div id="detail-chart"></div>
+    <div class="d-body">
+      <dl class="d-sum">
+        <div><dt>The question</dt><dd id="sum-q"></dd></div>
+        <div><dt>What I found</dt><dd id="sum-a"></dd></div>
+        <div><dt>What I'd do</dt><dd id="sum-rec"></dd></div>
+        <div class="d-meta"><dt>Data</dt><dd id="sum-data"></dd><dt>Tools</dt><dd id="sum-tools"></dd></div>
+      </dl>
+      <div id="detail-chart"></div>
+    </div>
     <div class="d-foot"><span id="detail-note"></span><a id="detail-link">Full study →</a></div>
   </dialog>
 
   <footer class="foot mono"><div class="wrap"><span>© 2026 Milind Saxena</span><span class="links"><a href="mailto:milind.sax01@gmail.com">Email</a><a href="https://www.linkedin.com/in/milind-saxena-54399722a">LinkedIn</a><a href="https://github.com/BoredMongoose">GitHub</a></span></div></footer>
 
   <script src="assets/chart-data.js?v=1" defer></script>
-  <script src="assets/charts.js?v=1" defer></script>
-  <script src="assets/home.js?v=4" defer></script>
+  <script src="assets/charts.js?v=3" defer></script>
+  <script src="assets/home.js?v=6" defer></script>
 </body>
 </html>
